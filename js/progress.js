@@ -7,11 +7,10 @@ const Progress = (() => {
 
     const KEY = 'mm_progress';
 
-    // ── Struttura dati di un nuovo utente ────────────────────────
     const defaultState = () => ({
         totalXP:          0,
         streakDays:       0,
-        lastLearnedDate:  null,   // formato 'YYYY-MM-DD'
+        lastLearnedDate:  null,
         badges:           [],
         fondamentali:     { completed: [] },
         prompting:        { completed: [] },
@@ -20,24 +19,20 @@ const Progress = (() => {
         agenti:           { completed: [] }
     });
 
-    // ── Lettura ──────────────────────────────────────────────────
     function get() {
         try {
             const raw = localStorage.getItem(KEY);
             if (!raw) return defaultState();
-            // Merge con defaultState per gestire campi aggiunti in futuro
             return { ...defaultState(), ...JSON.parse(raw) };
         } catch {
             return defaultState();
         }
     }
 
-    // ── Scrittura ────────────────────────────────────────────────
     function save(state) {
         localStorage.setItem(KEY, JSON.stringify(state));
     }
 
-    // ── Utilities data ───────────────────────────────────────────
     function today() {
         return new Date().toISOString().slice(0, 10);
     }
@@ -48,27 +43,26 @@ const Progress = (() => {
         );
     }
 
-    // ── Aggiorna la streak ───────────────────────────────────────
-    // Stesso giorno     → streak invariata
-    // Giorno dopo       → streak + 1
-    // Salto di 2+ giorni → ricomincia da 1
     function updateStreak(state) {
         const t    = today();
         const last = state.lastLearnedDate;
-
-        if (last === t) return state; // già studiato oggi, niente da fare
-
+        if (last === t) return state;
         if (last && daysBetween(last, t) === 1) {
             state.streakDays++;
         } else {
             state.streakDays = 1;
         }
-
         state.lastLearnedDate = t;
         return state;
     }
 
-    // ── Definizione badge ────────────────────────────────────────
+    // ── Totali percorso aggiornati ───────────────────────────────
+    //  fondamentali: 11 lezioni (f1–f11)
+    //  prompting:    12 lezioni (p1–p12)
+    //  lavoro:        9 lezioni
+    //  privacy:       6 lezioni
+    //  agenti:        7 lezioni
+
     const BADGES = [
         {
             id:    'first_step',
@@ -138,14 +132,14 @@ const Progress = (() => {
             emoji: '🧠',
             name:  'Basi solide',
             desc:  'Hai completato "Fondamentali AI". Ora capisci davvero come funziona.',
-            check: s => isTrackComplete(s, 'fondamentali', 8)
+            check: s => isTrackComplete(s, 'fondamentali', 11)   // ← aggiornato da 8
         },
         {
             id:    'track_prompting',
             emoji: '✍️',
             name:  'Prompt Master',
             desc:  'Hai completato "Prompt Engineering". Sai come parlare con l\'AI.',
-            check: s => isTrackComplete(s, 'prompting', 10)
+            check: s => isTrackComplete(s, 'prompting', 12)      // ← aggiornato da 10
         },
         {
             id:    'track_lavoro',
@@ -174,15 +168,14 @@ const Progress = (() => {
             name:  'MiniMind Completo',
             desc:  'Hai completato tutti i percorsi. Non molti ci riescono.',
             check: s =>
-                isTrackComplete(s, 'fondamentali', 8)  &&
-                isTrackComplete(s, 'prompting', 10)     &&
-                isTrackComplete(s, 'lavoro', 9)          &&
-                isTrackComplete(s, 'privacy', 6)         &&
+                isTrackComplete(s, 'fondamentali', 11) &&   // ← aggiornato da 8
+                isTrackComplete(s, 'prompting', 12)    &&   // ← aggiornato da 10
+                isTrackComplete(s, 'lavoro', 9)        &&
+                isTrackComplete(s, 'privacy', 6)       &&
                 isTrackComplete(s, 'agenti', 7)
         }
     ];
 
-    // ── Helper badge ─────────────────────────────────────────────
     function totalCompleted(state) {
         return ['fondamentali', 'prompting', 'lavoro', 'privacy', 'agenti']
             .reduce((sum, id) => sum + (state[id]?.completed?.length || 0), 0);
@@ -192,47 +185,33 @@ const Progress = (() => {
         return (state[trackId]?.completed?.length || 0) >= expectedTotal;
     }
 
-    // Controlla se c'è un badge appena sbloccato e lo restituisce
     function checkNewBadge(state) {
         for (const badge of BADGES) {
             if (!state.badges.includes(badge.id) && badge.check(state)) {
                 state.badges.push(badge.id);
-                return badge; // ritorna solo il primo badge nuovo trovato
+                return badge;
             }
         }
         return null;
     }
 
-    // ── Funzione principale: registra una lezione completata ─────
     function completeLesson(trackId, lessonId, xpEarned) {
         let state = get();
-
-        // Inizializza il percorso se per qualche motivo mancasse
         if (!state[trackId]) state[trackId] = { completed: [] };
-
-        // Aggiungi la lezione solo se non già completata in precedenza
-        // (evita di guadagnare XP due volte sulla stessa lezione)
         if (!state[trackId].completed.includes(lessonId)) {
             state[trackId].completed.push(lessonId);
             state.totalXP += xpEarned;
         }
-
-        // Aggiorna la streak giornaliera
         state = updateStreak(state);
-
-        // Controlla se si è sbloccato un badge nuovo
         const newBadge = checkNewBadge(state);
-
         save(state);
-        return newBadge; // null oppure { emoji, name, desc }
+        return newBadge;
     }
 
-    // ── Reset completo (usato dalla progress.html) ───────────────
     function reset() {
         localStorage.removeItem(KEY);
     }
 
-    // ── API pubblica ─────────────────────────────────────────────
     return {
         get,
         save,
