@@ -671,11 +671,443 @@
             }
           ]
         },
-        {
+                {
           "id": "l8",
           "title": "Costruire il tuo workflow AI",
           "duration": 5,
           "xp": 15,
-          "concept": "Il vero salto di produttività non viene dall'uso occasionale dell'AI, ma dalla costruzione di un <strong>workflow sistematico</strong>: una serie di passaggi definiti in cui l'AI ha un ruolo preciso per ogni tipo di compito. Il workflow non si costruisce in un giorno — si evolve iterativamente. Si inizia con un processo, si testa, si migliora, si aggiunge il successivo. Chi ha un workflow AI consolidato risparmia in media 2-4 ore a settimana.",
-          "example": "Workflow per rispondere alle email complesse: 1) L'AI classifica il tipo di email e il tono del mittente. 2) Genera 3 bozze di risposta con toni diversi. 3) Tu scegli e aggiusti. 4) L'AI fa una revisione finale di grammatica e tono. Totale: 3 minuti invece di 20.",
-          "tip": "💡 Documenta il tuo workflow su Notion, Obsidian o anche in un documento di testo. Un sistema documentato si replica, si migliora e
+          "concept": "Il vero salto di produttività non viene dall'uso occasionale dell'AI, ma dalla costruzione di un <strong>workflow sistematico</strong>: una serie di passaggi definiti in cui l'AI ha un ruolo preciso per ogni tipo di compito ricorrente. Non si costruisce in un giorno — si parte da un processo, si testa, si migliora, poi si aggiunge il successivo. Chi ha un workflow AI consolidato risparmia in media 2-4 ore a settimana, non perché l'AI sia magica, ma perché elimina la frizione decisionale: non devi ogni volta pensare 'come lo chiedo?', hai già la risposta pronta.",
+          "example": "Workflow per rispondere alle email complesse: 1) Incolla l'email nell'AI con il tuo template 'classifica e suggerisci'. 2) L'AI identifica il tipo e il tono del mittente. 3) Genera 3 bozze di risposta con toni diversi. 4) Tu scegli e aggiusti in 30 secondi. 5) Invii. Totale: 3 minuti invece di 20. Moltiplicato per 10 email al giorno: un'ora risparmiata ogni giorno.",
+          "tip": "💡 Documenta il tuo workflow anche solo in un file di testo. Un sistema scritto si migliora, si condivide col team e non sparisce quando cambi dispositivo.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Qual è la differenza tra usare l'AI occasionalmente e avere un workflow AI?",
+              "options": [
+                "Il workflow richiede un abbonamento premium",
+                "Con il workflow hai risposte migliori perché l'AI impara da te",
+                "Il workflow elimina la frizione decisionale: sai già come usare l'AI per ogni compito ricorrente",
+                "Non c'è differenza pratica, dipende solo dalla frequenza d'uso"
+              ],
+              "correct": 2,
+              "explanation": "Esatto! La vera produttività non viene dalla potenza del modello ma dall'eliminazione della frizione. Quando hai template e passaggi definiti, smetti di perdere tempo a capire come fare la domanda giusta."
+            }
+          ]
+        },
+        {
+          "id": "l9",
+          "title": "Il tuo piano AI personale",
+          "duration": 5,
+          "xp": 15,
+          "concept": "Arrivati alla fine di questo percorso, il passo più utile è trasformare quello che hai imparato in un <strong>piano personale concreto</strong>: 3 compiti del tuo lavoro che automatizzi con l'AI questa settimana, 2 template da costruire, 1 workflow da testare per 30 giorni. L'AI non cambia la vita in un giorno — la cambia attraverso piccoli miglioramenti accumulati nel tempo. Chi fa questo piano e lo segue per un mese si ritrova con un set di strumenti su misura che nessun corso può darti già pronto.",
+          "example": "Piano esempio per un avvocato: (1) Template per rispondere a richieste di preventivo. (2) Template per spiegare concetti legali complessi ai clienti in linguaggio semplice. (3) Workflow per analizzare contratti: estrai obbligazioni, penali, condizioni di recesso. Prima settimana: testa solo il punto 1. Seconda settimana: aggiungi il 2. Terza settimana: aggiungi il 3.",
+          "tip": "💡 Non cercare la perfezione. Un template imperfetto usato ogni giorno vale dieci template perfetti che non usi mai. Inizia grezzo, migliora nel tempo.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Qual è l'approccio più efficace per integrare l'AI nel proprio lavoro?",
+              "options": [
+                "Sostituire tutti i processi esistenti con l'AI il prima possibile",
+                "Aspettare che l'AI sia abbastanza matura prima di usarla seriamente",
+                "Iniziare da un processo alla volta, testare, migliorare, poi aggiungerne altri",
+                "Usare l'AI solo per i compiti meno importanti per non rischiare errori"
+              ],
+              "correct": 2,
+              "explanation": "Corretto! L'integrazione graduale è la strategia più sostenibile. Un processo alla volta, testato e raffinato, costruisce un sistema solido. Cercare di cambiare tutto in una volta porta frustrazione e abbandono."
+            },
+            {
+              "question": "Cosa rende un template AI davvero utile nel tempo?",
+              "options": [
+                "Essere molto lungo e dettagliato per coprire ogni scenario",
+                "Essere usato ogni giorno, anche se imperfetto, e migliorato gradualmente",
+                "Essere scritto da un esperto di prompt engineering certificato",
+                "Funzionare solo con un modello AI specifico"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! La costanza batte la perfezione. Un template semplice che usi ogni giorno ti insegna cosa migliorare. Uno perfetto che non usi non ti dà nulla."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "emoji": "🛡️",
+      "title": "AI & Privacy",
+      "lessons": [
+        {
+          "id": "pr1",
+          "title": "Perché la privacy AI ti riguarda",
+          "duration": 5,
+          "xp": 10,
+          "concept": "Ogni volta che scrivi qualcosa a ChatGPT, Claude o Gemini, quei dati vengono inviati ai server dell'azienda produttrice — spesso negli Stati Uniti. Questo non è un problema in assoluto, ma lo diventa quando condividi informazioni personali, dati di clienti, strategie aziendali riservate o qualsiasi cosa che non vorresti fosse letta da terzi. La questione non è 'l'AI è pericolosa' — è 'so cosa succede ai dati che le affido?' In Europa, la risposta a questa domanda ha anche implicazioni legali precise legate al <strong>GDPR</strong>.",
+          "example": "Un commercialista che incolla i dati fiscali di un cliente in ChatGPT per farsi aiutare con un calcolo sta potenzialmente inviando dati personali sensibili a server fuori dall'UE, senza aver informato il cliente né verificato se il suo contratto di lavoro lo permette. Non è fantascienza — è già successo in molti studi professionali.",
+          "tip": "💡 La regola pratica è semplice: prima di incollare qualcosa in un tool AI, chiediti 'sarei a disagio se questa informazione fosse letta da qualcun altro?' Se la risposta è sì, anonimizzala o non usarla.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Cosa succede ai dati che invii a un tool AI come ChatGPT?",
+              "options": [
+                "Vengono elaborati localmente sul tuo dispositivo e non escono mai",
+                "Vengono inviati ai server dell'azienda produttrice, spesso fuori dall'UE",
+                "Vengono cancellati automaticamente dopo 24 ore",
+                "Vengono cifrati in modo che nessuno possa leggerli, nemmeno OpenAI"
+              ],
+              "correct": 1,
+              "explanation": "Corretto! I dati vengono inviati ai server del provider — che sia OpenAI, Anthropic o Google. Capire dove vanno e come vengono trattati è il primo passo per usare l'AI in modo consapevole."
+            }
+          ]
+        },
+        {
+          "id": "pr2",
+          "title": "Cos'è il GDPR e perché conta",
+          "duration": 5,
+          "xp": 10,
+          "concept": "Il <strong>GDPR</strong> (General Data Protection Regulation) è il regolamento europeo sulla protezione dei dati personali, in vigore dal 2018. Stabilisce che i dati personali dei cittadini europei devono essere trattati con specifiche garanzie: consenso informato, finalità dichiarata, minimizzazione dei dati raccolti, diritto alla cancellazione. Per chi usa l'AI in contesto professionale, il GDPR si applica ogni volta che i dati trattati riguardano persone fisiche identificabili: clienti, dipendenti, fornitori. Non è una questione solo per i grandi — si applica anche ai liberi professionisti e alle piccole imprese.",
+          "example": "Se sei un consulente HR e usi l'AI per analizzare i CV dei candidati, stai trattando dati personali. Devi avere una base legale per farlo (es. il consenso del candidato), e devi poter dimostrare che il tool AI che usi offre garanzie adeguate. In caso di controllo, 'non lo sapevo' non è una difesa valida.",
+          "tip": "💡 Il GDPR non vieta di usare l'AI — richiede che tu sappia cosa fai con i dati altrui. La chiave è la consapevolezza e la documentazione, non l'astensione.",
+          "source": "Google",
+          "quiz": [
+            {
+              "question": "Il GDPR si applica al tuo uso dell'AI se:",
+              "options": [
+                "Usi tool AI con abbonamento a pagamento",
+                "Tratti dati personali di persone fisiche identificabili, anche come libero professionista",
+                "Hai un'azienda con più di 50 dipendenti",
+                "Usi server fisicamente ubicati in Europa"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! Il GDPR si applica a chiunque tratti dati personali di cittadini UE, indipendentemente dalle dimensioni dell'azienda. Anche un singolo freelance che gestisce i dati dei propri clienti è soggetto al regolamento."
+            },
+            {
+              "question": "Qual è l'approccio corretto al GDPR nell'uso dell'AI?",
+              "options": [
+                "Evitare completamente l'AI per non incorrere in violazioni",
+                "Usare l'AI liberamente — la responsabilità è del provider",
+                "Essere consapevoli di cosa si tratta, avere una base legale e documentare",
+                "Applicare il GDPR solo se si hanno più di 10 clienti"
+              ],
+              "correct": 2,
+              "explanation": "Corretto! Il GDPR è una questione di consapevolezza e processo, non di divieto. Sapere cosa tratti, perché lo tratti e come lo proteggi è la base di ogni uso professionale responsabile."
+            }
+          ]
+        },
+        {
+          "id": "pr3",
+          "title": "Le policy dei principali tool AI",
+          "duration": 5,
+          "xp": 15,
+          "concept": "Ogni provider AI ha una policy diversa su come usa i dati che gli invii. Le differenze sono importanti e spesso sconosciute agli utenti. <strong>OpenAI</strong> (ChatGPT): di default usa le conversazioni per migliorare i modelli, ma puoi disattivarlo dalle impostazioni. Con l'API o ChatGPT Team/Enterprise i dati non vengono usati per l'addestramento. <strong>Anthropic</strong> (Claude): non usa le conversazioni degli utenti API per addestrare i modelli. <strong>Google</strong> (Gemini): nelle versioni consumer può usare i dati per migliorare i servizi; le versioni Workspace hanno garanzie maggiori. La versione che usi — gratuita, a pagamento, API — fa una differenza enorme.",
+          "example": "La stessa identica domanda inviata a ChatGPT gratuito vs ChatGPT Enterprise ha due destini completamente diversi: nel primo caso può essere usata per addestrare il modello, nel secondo è contrattualmente esclusa da qualsiasi uso esterno alla sessione.",
+          "tip": "💡 Per uso professionale con dati sensibili, usa sempre le versioni a pagamento o API dei provider — non le versioni gratuite consumer. Il costo è minimo rispetto al rischio.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Qual è la differenza principale tra ChatGPT gratuito e ChatGPT Enterprise riguardo ai dati?",
+              "options": [
+                "Enterprise è più veloce ma usa gli stessi dati",
+                "Nella versione gratuita le conversazioni possono essere usate per addestrare il modello; in Enterprise no",
+                "La versione gratuita è più sicura perché non richiede login",
+                "Non c'è differenza — OpenAI tratta tutti i dati allo stesso modo"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! Il piano che scegli determina come vengono trattati i tuoi dati. Per uso professionale con informazioni sensibili, le versioni business/enterprise offrono garanzie contrattuali che le versioni gratuite non hanno."
+            }
+          ]
+        },
+        {
+          "id": "pr4",
+          "title": "Dati sensibili: cosa non mandare mai",
+          "duration": 5,
+          "xp": 15,
+          "concept": "Esistono categorie di dati che richiedono protezione rafforzata per legge e che non dovresti mai inviare a tool AI non certificati per quel trattamento. Il GDPR individua categorie speciali: dati sanitari, dati biometrici, orientamento sessuale, opinioni politiche, dati relativi a condanne penali. Fuori dalle categorie speciali, ci sono dati che per buon senso professionale non si condividono: strategie aziendali riservate, dati finanziari di clienti, password e credenziali, segreti industriali, dati di minori.",
+          "example": "Cosa puoi fare se devi comunque usare l'AI su documenti con dati sensibili? <strong>Anonimizzare</strong>: sostituisci nomi, CF, indirizzi con placeholder prima di incollare. 'Mario Rossi, CF RSSMRA80A01H501Z' diventa 'CLIENTE_A, CF_RIMOSSO'. L'AI ti aiuta ugualmente, ma non riceve i dati reali.",
+          "tip": "💡 L'anonimizzazione prima di usare l'AI non è solo una precauzione legale — ti protegge anche da eventuali data breach futuri sul provider. Crea un template di 'sanitizzazione' per i tuoi documenti più comuni.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Hai un documento medico di un paziente e vuoi usare l'AI per aiutarti a strutturare una relazione. Cosa fai?",
+              "options": [
+                "Lo invii direttamente — ChatGPT è sicuro e cifrato",
+                "Anonimizzi il documento sostituendo i dati personali con placeholder prima di inviarlo",
+                "Usi solo Google Gemini che è europeo e quindi GDPR-compliant",
+                "Non puoi mai usare l'AI con documenti medici in nessun caso"
+              ],
+              "correct": 1,
+              "explanation": "Corretto! L'anonimizzazione è la soluzione pratica. Rimuovi o sostituisci i dati identificativi prima di inviare il documento — l'AI può aiutarti sulla struttura e il contenuto senza mai ricevere i dati reali della persona."
+            },
+            {
+              "question": "Quale di questi dati rientra nelle 'categorie speciali' del GDPR con protezione rafforzata?",
+              "options": [
+                "L'indirizzo email di un cliente",
+                "Il nome e cognome di un fornitore",
+                "I dati sanitari di una persona",
+                "Il numero di telefono di un collaboratore"
+              ],
+              "correct": 2,
+              "explanation": "Esatto! I dati sanitari sono una categoria speciale GDPR che richiede base legale esplicita e misure di sicurezza rinforzate. Email, nomi e telefoni sono dati personali ordinari — protetti, ma non nelle categorie speciali."
+            }
+          ]
+        },
+        {
+          "id": "pr5",
+          "title": "AI in azienda: come fare le cose per bene",
+          "duration": 5,
+          "xp": 10,
+          "concept": "Se usi l'AI in un contesto aziendale — anche come libero professionista con clienti — ci sono alcune pratiche di base che ti proteggono sia legalmente che professionalmente. Prima di tutto: <strong>verifica cosa permette il tuo contratto</strong> con i clienti riguardo all'uso di tool di terze parti. Poi: <strong>scegli tool con DPA</strong> (Data Processing Agreement) — un contratto specifico sul trattamento dei dati che i provider seri offrono. Infine: <strong>forma chi lavora con te</strong> — il rischio più comune non è tecnico, è umano: un collaboratore che incolla un database clienti in ChatGPT senza sapere cosa sta facendo.",
+          "example": "Una piccola agenzia di marketing decide di usare l'AI per i testi dei clienti. I passi corretti: (1) Firmano il DPA con OpenAI/Anthropic. (2) Creano una policy interna di due righe su cosa si può e non si può inviare all'AI. (3) La condividono col team. Tempo totale: meno di un'ora. Rischio ridotto: significativamente.",
+          "tip": "💡 Un DPA non è un documento complicato — è un modulo standard che quasi tutti i provider offrono. Cercalo nelle impostazioni account o scrivi al supporto. Per uso professionale è quasi sempre disponibile.",
+          "source": "Google",
+          "quiz": [
+            {
+              "question": "Cos'è un DPA (Data Processing Agreement) nel contesto dell'AI?",
+              "options": [
+                "Un abbonamento premium che sblocca funzioni avanzate",
+                "Un contratto tra te e il provider AI che definisce come vengono trattati i dati",
+                "Un certificato di sicurezza che garantisce zero violazioni",
+                "Un documento richiesto solo dalle aziende con più di 250 dipendenti"
+              ],
+              "correct": 1,
+              "explanation": "Corretto! Il DPA è l'accordo contrattuale che formalizza le responsabilità del provider sul trattamento dei dati. È fondamentale per l'uso professionale perché ti dà garanzie legali che la versione consumer non offre."
+            }
+          ]
+        },
+        {
+          "id": "pr6",
+          "title": "Il futuro: AI Act e nuove regole",
+          "duration": 5,
+          "xp": 15,
+          "concept": "Il <strong>EU AI Act</strong> è il primo regolamento europeo specificamente dedicato all'intelligenza artificiale, entrato gradualmente in vigore dal 2024. Classifica i sistemi AI per livello di rischio: inaccettabile (vietati), alto rischio (con obblighi severi), limitato rischio (con obblighi di trasparenza), rischio minimo (liberamente usabili). I sistemi ad alto rischio includono: AI usata in selezione del personale, scoring creditizio, decisioni giudiziarie, sistemi di sorveglianza. Per la maggior parte degli usi quotidiani professionali si ricade nella categoria a rischio minimo o limitato.",
+          "example": "Un'azienda che usa l'AI per filtrare automaticamente i CV e decidere chi non chiamare a colloquio sta usando un sistema AI ad alto rischio secondo l'AI Act — con obblighi di trasparenza verso i candidati e di supervisione umana. Un'azienda che usa l'AI per aiutare un HR a scrivere le job description sta usando un sistema a rischio minimo.",
+          "tip": "💡 L'AI Act non è un ostacolo — è un framework che chiarisce le regole del gioco. Conoscerlo ti mette in vantaggio rispetto a chi lo ignora e rischia sanzioni future.",
+          "source": "Google",
+          "quiz": [
+            {
+              "question": "Secondo l'EU AI Act, quale uso dell'AI rientra nella categoria 'alto rischio'?",
+              "options": [
+                "Usare l'AI per scrivere email di marketing",
+                "Usare l'AI per generare immagini creative",
+                "Usare l'AI per filtrare automaticamente le candidature di lavoro",
+                "Usare l'AI per tradurre documenti interni"
+              ],
+              "correct": 2,
+              "explanation": "Esatto! I sistemi AI che prendono o influenzano decisioni su persone — come la selezione del personale — sono classificati ad alto rischio dall'AI Act. Richiedono trasparenza, supervisione umana e documentazione specifica."
+            },
+            {
+              "question": "L'EU AI Act si applica:",
+              "options": [
+                "Solo alle aziende tech che sviluppano modelli AI",
+                "Solo alle aziende con sede legale in Europa",
+                "A chiunque usi sistemi AI che impattano persone nell'UE, indipendentemente da dove ha sede",
+                "Solo a sistemi AI con più di 1 milione di utenti"
+              ],
+              "correct": 2,
+              "explanation": "Corretto! Come il GDPR, l'AI Act ha portata extraterritoriale: si applica a chiunque fornisca o usi sistemi AI che impattano persone nell'UE, anche se l'azienda ha sede fuori dall'Europa."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agenti",
+      "emoji": "🤖",
+      "title": "Agenti & Futuro",
+      "lessons": [
+        {
+          "id": "ag1",
+          "title": "Cosa sono gli agenti AI",
+          "duration": 5,
+          "xp": 10,
+          "concept": "Fino ad ora abbiamo parlato di LLM che <em>rispondono</em> — tu scrivi, loro scrivono. Un <strong>agente AI</strong> va oltre: è un sistema che non si limita a rispondere ma può <em>agire</em> nel mondo. Può eseguire ricerche, cliccare su pagine web, scrivere e eseguire codice, inviare email, interagire con altre applicazioni. La differenza fondamentale è l'autonomia: un agente può completare un compito multi-step senza che tu intervenga a ogni passaggio. È come avere un assistente che non solo ti suggerisce cosa fare, ma lo fa direttamente per te.",
+          "example": "Esempio reale: un agente AI a cui chiedi 'Analizza le ultime 50 recensioni del mio prodotto su Amazon e preparami un report con i temi principali e i suggerimenti di miglioramento.' Un LLM normale aspetta che tu incolli le recensioni. Un agente le va a cercare da solo, le analizza, struttura il report e te lo consegna — tutto senza intervento umano intermedio.",
+          "tip": "💡 Gli agenti AI non sono fantascienza futura — esistono già. Strumenti come Claude con computer use, ChatGPT con Actions, e Cursor per il codice sono forme di agente già disponibili oggi.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Qual è la differenza principale tra un LLM standard e un agente AI?",
+              "options": [
+                "L'agente AI è più intelligente e fa meno errori",
+                "L'LLM risponde al testo; l'agente può compiere azioni nel mondo reale in modo autonomo",
+                "L'agente AI funziona solo in locale senza internet",
+                "Non c'è differenza pratica — 'agente' è solo un termine di marketing"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! Il salto concettuale è dall'AI che risponde all'AI che agisce. Un agente può eseguire sequenze di azioni — cercare, cliccare, scrivere codice, inviare — senza intervento umano a ogni step."
+            }
+          ]
+        },
+        {
+          "id": "ag2",
+          "title": "Come funziona un agente",
+          "duration": 5,
+          "xp": 10,
+          "concept": "Un agente AI funziona attraverso un ciclo continuo chiamato <strong>ReAct loop</strong> (Reason + Act): pensa a cosa fare, esegue un'azione, osserva il risultato, poi decide il passo successivo sulla base di quello che ha visto. Questo ciclo si ripete finché il compito non è completato o finché l'agente non decide che ha bisogno dell'intervento umano. Gli ingredienti essenziali sono tre: un <strong>LLM</strong> che ragiona, un set di <strong>tool</strong> (strumenti) che l'agente può usare, e una <strong>memoria</strong> che tiene traccia di cosa è già stato fatto.",
+          "example": "Obiettivo: 'Prenota il volo più economico Milano-Barcellona per il 15 maggio.' Ciclo: (1) Ragiona: devo cercare i voli. (2) Usa il tool di ricerca voli. (3) Osserva i risultati. (4) Ragiona: devo confrontare i prezzi. (5) Identifica il più economico. (6) Ragiona: devo procedere alla prenotazione. (7) Chiede conferma umana prima di pagare. Fine.",
+          "tip": "💡 La supervisione umana resta fondamentale negli agenti attuali — soprattutto per azioni irreversibili come pagamenti, invio di email o cancellazione di file. I migliori agenti chiedono conferma prima di agire in modo definitivo.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Cos'è il ciclo ReAct in un agente AI?",
+              "options": [
+                "Un framework per addestrare i modelli AI più velocemente",
+                "Il ciclo continuo di ragionamento, azione e osservazione del risultato che guida l'agente",
+                "Un protocollo di sicurezza che blocca azioni pericolose",
+                "Il modo in cui gli agenti AI comunicano tra loro"
+              ],
+              "correct": 1,
+              "explanation": "Corretto! ReAct (Reason + Act) è il cuore degli agenti: il modello ragiona, esegue, osserva il risultato, e decide il passo successivo. Questo ciclo è ciò che dà agli agenti la capacità di affrontare compiti multi-step."
+            }
+          ]
+        },
+        {
+          "id": "ag3",
+          "title": "Cos'è RAG",
+          "duration": 5,
+          "xp": 15,
+          "concept": "<strong>RAG</strong> sta per Retrieval-Augmented Generation — in italiano: generazione aumentata dal recupero di informazioni. È una tecnica che risolve uno dei limiti più grandi degli LLM: la conoscenza bloccata alla data di addestramento. Con RAG, prima di generare una risposta il modello recupera documenti rilevanti da una base di conoscenza esterna (la tua documentazione aziendale, un database, articoli recenti), li usa come contesto, e solo poi genera la risposta. Il risultato è un'AI che 'sa' cose che non erano nel suo addestramento originale — i tuoi dati, aggiornati in tempo reale.",
+          "example": "Immagina un chatbot di assistenza clienti per una software house. Senza RAG: risponde con conoscenze generali, non sa nulla del tuo prodotto specifico. Con RAG: prima cerca nella tua documentazione tecnica, nei ticket risolti, nei changelog — poi risponde usando quelle informazioni. Può rispondere a domande come 'Come configuro l'integrazione con Salesforce nella versione 3.2?' con precisione reale.",
+          "tip": "💡 RAG è la tecnologia dietro a molti chatbot aziendali intelligenti. Quando un'azienda ti dice 'abbiamo un AI addestrato sui nostri dati', nella maggior parte dei casi usa RAG, non un vero fine-tuning del modello.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Qual problema risolve principalmente la tecnica RAG?",
+              "options": [
+                "Rende il modello più veloce nelle risposte",
+                "Riduce i costi delle API di accesso ai modelli",
+                "Permette al modello di rispondere usando conoscenze esterne aggiornate, non solo quelle dell'addestramento",
+                "Migliora la qualità grammaticale delle risposte"
+              ],
+              "correct": 2,
+              "explanation": "Esatto! RAG risolve il problema della conoscenza statica. Invece di rispondere solo con ciò che ha imparato durante l'addestramento, il modello recupera informazioni aggiornate da fonti esterne prima di generare la risposta."
+            },
+            {
+              "question": "Un'azienda dice 'il nostro chatbot AI è addestrato sui nostri documenti interni'. Cosa usa molto probabilmente?",
+              "options": [
+                "Un modello AI sviluppato completamente da zero",
+                "RAG — che recupera i documenti aziendali come contesto prima di rispondere",
+                "Un semplice motore di ricerca con parole chiave",
+                "Fine-tuning completo su tutti i documenti aziendali"
+              ],
+              "correct": 1,
+              "explanation": "Corretto! RAG è la soluzione più comune per 'far sapere all'AI le cose della nostra azienda' perché è più economica e aggiornabile del fine-tuning. Il modello base rimane invariato; cambiano solo i documenti che recupera."
+            }
+          ]
+        },
+        {
+          "id": "ag4",
+          "title": "Cos'è MCP",
+          "duration": 5,
+          "xp": 15,
+          "concept": "<strong>MCP</strong> (Model Context Protocol) è un protocollo aperto sviluppato da Anthropic che standardizza il modo in cui i modelli AI si connettono a strumenti e fonti di dati esterni. Prima di MCP, ogni integrazione tra un modello AI e un'app esterna (GitHub, Google Drive, database, API) richiedeva uno sviluppo custom. MCP è come un connettore universale: definisce un linguaggio comune che permette a qualsiasi modello AI compatibile di connettersi a qualsiasi tool che supporti il protocollo — senza lavoro di integrazione ad hoc.",
+          "example": "Con MCP, Claude può connettersi direttamente al tuo repository GitHub, leggere il codice, fare commit, aprire issue — tutto nella stessa conversazione. O al tuo Google Drive per leggere e modificare documenti. O al tuo database aziendale per fare query. E lo stesso vale per qualsiasi altro modello che adotti il protocollo.",
+          "tip": "💡 MCP è molto recente (fine 2024) ma si sta diffondendo rapidamente. Se senti parlare di 'AI con accesso agli strumenti' o 'AI che lavora con le tue app', MCP è spesso la tecnologia sottostante.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Qual è il principale vantaggio di MCP rispetto alle integrazioni AI precedenti?",
+              "options": [
+                "È più veloce perché usa meno token",
+                "Standardizza le connessioni AI-tool, eliminando la necessità di integrazioni custom per ogni coppia",
+                "Funziona solo offline per maggiore sicurezza",
+                "È esclusivo di Claude e non disponibile ad altri modelli"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! MCP è un protocollo universale — come l'USB per i dispositivi fisici. Invece di sviluppare ogni volta un connettore diverso per ogni combinazione AI+tool, esiste un linguaggio standard che funziona per tutti."
+            }
+          ]
+        },
+        {
+          "id": "ag5",
+          "title": "Tool use e function calling",
+          "duration": 5,
+          "xp": 10,
+          "concept": "Il <strong>tool use</strong> (o function calling) è la capacità di un LLM di decidere autonomamente quando chiamare una funzione esterna — un'API, uno script, un database — e di interpretarne il risultato. Non è l'AI che esegue il codice direttamente: è l'AI che dice 'ho bisogno di chiamare questo strumento con questi parametri', il sistema esegue la chiamata, e restituisce il risultato all'AI che lo usa per continuare il ragionamento. È il meccanismo base che trasforma un LLM in un agente capace di interagire con il mondo esterno.",
+          "example": "Prompt: 'Quant'è il tempo a Milano adesso?' Un LLM senza tool use inventa o ammette di non saperlo. Un LLM con tool use: (1) Riconosce che serve un dato in tempo reale. (2) Chiama il tool 'get_weather(city=Milano)'. (3) Riceve la risposta JSON dall'API meteo. (4) Risponde: 'A Milano adesso sono 18°C con cielo parzialmente nuvoloso.' Stessa domanda, risultati radicalmente diversi.",
+          "tip": "💡 Ogni volta che usi ChatGPT con la ricerca web attiva, con l'interprete di codice o con plugin — stai già usando il tool use. Non è una tecnologia futura: è già nelle mani di tutti.",
+          "source": "OpenAI",
+          "quiz": [
+            {
+              "question": "Cosa fa concretamente il tool use in un LLM?",
+              "options": [
+                "Permette all'AI di imparare nuove cose durante la conversazione",
+                "Permette all'AI di decidere quando chiamare funzioni esterne e usarne i risultati nel ragionamento",
+                "Aumenta la velocità di generazione del testo",
+                "Permette all'AI di modificare il proprio codice sorgente"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! Il tool use è il ponte tra il ragionamento del modello e il mondo esterno. L'AI non esegue direttamente — decide quando e come chiamare strumenti esterni, poi usa i risultati per rispondere."
+            }
+          ]
+        },
+        {
+          "id": "ag6",
+          "title": "I rischi degli agenti AI",
+          "duration": 5,
+          "xp": 15,
+          "concept": "Più potere di azione significa più potenziale di danno in caso di errore. I rischi principali degli agenti AI sono: <strong>prompt injection</strong> — un contenuto malevolo nei dati che l'agente legge che gli fa eseguire azioni non volute; <strong>azioni irreversibili</strong> — un agente che cancella file, invia email o fa acquisti non può facilmente tornare indietro; <strong>escalation di privilegi</strong> — l'agente che usa i permessi che ha per fare più di quanto dovrebbe; <strong>loop infiniti</strong> — l'agente che continua a provare soluzioni sbagliate consumando risorse. Non sono ragioni per non usare gli agenti, ma per usarli con supervisione e limiti espliciti.",
+          "example": "Un agente a cui dai accesso alla tua email per gestire le risposte potrebbe — se mal configurato o vittima di prompt injection — rispondere a email che non doveva toccare, inoltrare informazioni riservate o cancellare messaggi importanti. Il principio del minimo privilegio vale anche qui: dai all'agente solo i permessi strettamente necessari.",
+          "tip": "💡 Regola d'oro per gli agenti: inizia in modalità 'chiedi conferma prima di agire'. Solo dopo aver verificato che il comportamento è quello atteso puoi abilitare l'esecuzione autonoma.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Cos'è la prompt injection nel contesto degli agenti AI?",
+              "options": [
+                "Una tecnica per migliorare le prestazioni del modello",
+                "Un attacco in cui contenuti malevoli nei dati letti dall'agente lo fanno eseguire azioni non volute",
+                "Il processo di inserimento di istruzioni nel system prompt",
+                "Un errore di configurazione che rallenta l'agente"
+              ],
+              "correct": 1,
+              "explanation": "Corretto! La prompt injection è uno dei rischi più insidiosi degli agenti: se l'agente legge dati esterni (email, documenti, pagine web) contenenti istruzioni nascoste, potrebbe eseguirle. È il motivo per cui la supervisione umana resta essenziale."
+            },
+            {
+              "question": "Qual è il principio di sicurezza più importante quando si configura un agente AI?",
+              "options": [
+                "Dargli quanti più permessi possibile per massimizzare l'autonomia",
+                "Usare solo modelli open source per trasparenza",
+                "Dargli solo i permessi strettamente necessari e iniziare con conferma umana obbligatoria",
+                "Disabilitare l'accesso a internet per sicurezza"
+              ],
+              "correct": 2,
+              "explanation": "Esatto! Il principio del minimo privilegio vale doppio con gli agenti. Meno permessi hai dato, meno danno può fare un errore. Inizia sempre con supervisione umana su ogni azione, poi allarga l'autonomia gradualmente."
+            }
+          ]
+        },
+        {
+          "id": "ag7",
+          "title": "Dove stiamo andando",
+          "duration": 5,
+          "xp": 15,
+          "concept": "Il 2025-2026 ha segnato il passaggio dagli LLM come strumenti di risposta agli agenti come colleghi digitali capaci di lavorare in autonomia su task complessi. Le direzioni più concrete del prossimo futuro: <strong>agenti multi-agente</strong> — team di AI specializzate che collaborano dividendosi il lavoro; <strong>computer use</strong> — AI che usano il computer come un essere umano, navigando interfacce grafiche; <strong>AI personale continua</strong> — modelli con memoria persistente che ti conoscono nel tempo e si adattano al tuo stile. Tutto questo non è fantascienza: esistono già versioni early di ognuna di queste tecnologie.",
+          "example": "Oggi puoi già usare Claude con computer use per automatizzare task su interfacce grafiche che non hanno API. Cursor e Windsurf sono agenti per sviluppatori che scrivono, testano e correggono codice in autonomia. Perplexity è un agente di ricerca. Quello che sembrava futuristico 18 mesi fa è già nel telefono di milioni di persone.",
+          "tip": "💡 La competenza più duratura non è imparare a usare uno strumento specifico — è capire i principi sottostanti. I tool cambieranno ogni 6 mesi; la capacità di ragionare su come usare l'AI nel tuo lavoro resterà per anni.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Cosa si intende con 'computer use' nel contesto degli agenti AI?",
+              "options": [
+                "L'uso dell'AI per ottimizzare le prestazioni del computer",
+                "La capacità dell'AI di interagire con interfacce grafiche come farebbe un essere umano",
+                "Un sistema di sicurezza che monitora l'uso del computer",
+                "Un protocollo per connettere più computer in rete"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! Computer use è la capacità di un agente AI di vedere lo schermo, cliccare, scrivere e navigare interfacce grafiche — esattamente come farebbe un essere umano. Apre la porta all'automazione di qualsiasi task visibile sullo schermo, anche senza API."
+            },
+            {
+              "question": "Qual è la competenza più duratura da sviluppare nel mondo AI in rapida evoluzione?",
+              "options": [
+                "Imparare a usare perfettamente ChatGPT nella versione attuale",
+                "Specializzarsi in un solo strumento AI per diventarne esperto",
+                "Capire i principi fondamentali dell'AI per adattarsi a qualsiasi tool futuro",
+                "Seguire ogni aggiornamento di ogni modello disponibile"
+              ],
+              "correct": 2,
+              "explanation": "Corretto! I tool cambiano rapidamente — quello che hai imparato qui sono i principi che restano stabili: come funzionano gli LLM, come si comunica con l'AI, cosa ci si può fidare e cosa va verificato. Questi ti servono qualunque cosa esca nei prossimi anni."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
