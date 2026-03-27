@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMind – Lezione</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .option-btn { transition: all 0.15s ease; }
+        .option-btn:hover:not(:disabled) { transform: translateX(4px); }
+        .option-correct { background: #f0fdf4 !important; border-color: #22c55e !important; color: #15803d !important; }
+        .option-wrong   { background: #fef2f2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+        .progress-bar   { transition: width 0.5s ease; }
+        .fade-in        { animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .streak-pulse   { animation: pulse 0.6s ease; }
+        @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.3); } }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full bg-white border-b border-gray-100 z-50">
+        <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-xl">🧠</span>
+                <span class="font-bold gradient-text">MiniMind</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-1.5 text-sm font-semibold text-orange-500" id="streak-display">
+                    <span>🔥</span><span id="streak-count">0</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-sm font-semibold text-indigo-600">
+                    <span>⭐</span><span id="xp-display">0</span> XP
+                </div>
+                <a href="progress.html" class="text-sm text-gray-400 hover:text-indigo-600 transition-colors">I miei progressi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SCHERMATA: SELEZIONE PERCORSO -->
+    <div id="screen-tracks" class="pt-24 pb-16 px-6 hidden">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl font-bold mb-3">Da dove vuoi iniziare?</h1>
+                <p class="text-gray-500">Scegli un percorso e fai la tua prima lezione oggi.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4" id="track-list"></div>
+        </div>
+    </div>
+
+    <!-- SCHERMATA: SELEZIONE LEZIONE -->
+    <div id="screen-lessons" class="pt-24 pb-16 px-6 hidden">
+        <div class="max-w-3xl mx-auto">
+            <button onclick="showTracks()" class="flex items-center gap-2 text-sm text-gray-400 hover:text-indigo-600 mb-8 transition-colors">
+                ← Tutti i percorsi
+            </button>
+            <div class="flex items-center gap-3 mb-2">
+                <span id="track-emoji" class="text-4xl"></span>
+                <div>
+                    <h1 id="track-title" class="text-2xl font-bold"></h1>
+                    <p id="track-meta" class="text-sm text-gray-400"></p>
+                </div>
+            </div>
+            <!-- Track progress bar -->
+            <div class="mt-4 mb-10 h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div id="track-progress-bar" class="progress-bar h-full bg-indigo-500 rounded-full" style="width:0%"></div>
+            </div>
+            <div class="space-y-3" id="lesson-list"></div>
+        </div>
+    </div>
+
+    <!-- SCHERMATA: LEZIONE -->
+    <div id="screen-lesson" class="pt-24 pb-16 px-6 hidden">
+        <div class="max-w-2xl mx-auto">
+            <!-- Header lezione -->
+            <div class="flex items-center justify-between mb-6">
+                <button onclick="showLessons(currentTrackId)" class="flex items-center gap-2 text-sm text-gray-400 hover:text-indigo-600 transition-colors">
+                    ← Indietro
+                </button>
+                <div class="flex items-center gap-2 text-xs text-gray-400">
+                    <span id="lesson-counter"></span>
+                    <div class="w-24 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                        <div id="lesson-progress-bar" class="progress-bar h-full bg-indigo-500 rounded-full" style="width:0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP: Lezione -->
+            <div id="lesson-content" class="fade-in">
+                <div class="bg-white rounded-3xl border border-gray-200 p-8 shadow-sm mb-4">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-indigo-500 uppercase tracking-wide mb-4">
+                        <span>📖</span> Lezione
+                        <span class="ml-auto flex items-center gap-1 text-gray-400 normal-case font-normal">
+                            <span>⏱</span> <span id="lesson-duration"></span> min
+                            <span class="ml-2 text-yellow-500">+<span id="lesson-xp"></span> XP</span>
+                        </span>
+                    </div>
+                    <h2 id="lesson-title" class="text-2xl font-bold mb-5"></h2>
+                    <div id="lesson-concept" class="text-gray-600 leading-relaxed mb-6"></div>
+
+                    <!-- Esempio pratico -->
+                    <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-5 mb-5">
+                        <div class="text-xs font-semibold text-indigo-500 uppercase tracking-wide mb-2">💡 Esempio pratico</div>
+                        <div id="lesson-example" class="text-sm text-gray-600 leading-relaxed italic"></div>
+                    </div>
+
+                    <!-- Tip -->
+                    <div id="lesson-tip-box" class="bg-amber-50 border border-amber-100 rounded-2xl p-5">
+                        <div id="lesson-tip" class="text-sm text-amber-800 leading-relaxed"></div>
+                    </div>
+                </div>
+
+                <!-- Source badge -->
+                <div class="flex items-center justify-between px-2 mb-6">
+                    <span class="text-xs text-gray-300">Fonte: <span id="lesson-source" class="text-gray-400 font-medium"></span></span>
+                </div>
+
+                <button onclick="startQuiz()" class="w-full bg-indigo-600 text-white font-semibold py-4 rounded-2xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 text-lg">
+                    Mettiti alla prova →
+                </button>
+            </div>
+
+            <!-- STEP: Quiz -->
+            <div id="quiz-content" class="hidden fade-in">
+                <div id="quiz-questions"></div>
+            </div>
+
+            <!-- STEP: Completamento -->
+            <div id="complete-content" class="hidden fade-in text-center">
+                <div class="bg-white rounded-3xl border border-gray-200 p-10 shadow-sm mb-6">
+                    <div class="text-7xl mb-5" id="complete-emoji">🎉</div>
+                    <h2 class="text-3xl font-bold mb-3" id="complete-title">Lezione completata!</h2>
+                    <p class="text-gray-500 mb-8" id="complete-subtitle"></p>
+
+                    <!-- XP guadagnato -->
+                    <div class="inline-flex items-center gap-3 bg-indigo-50 border border-indigo-100 rounded-2xl px-6 py-4 mb-8">
+                        <span class="text-3xl">⭐</span>
+                        <div class="text-left">
+                            <div class="text-2xl font-bold text-indigo-600" id="complete-xp"></div>
+                            <div class="text-xs text-indigo-400">XP guadagnati</div>
+                        </div>
+                    </div>
+
+                    <!-- Badge eventuale -->
+                    <div id="badge-earned" class="hidden mb-8 p-5 bg-yellow-50 border border-yellow-200 rounded-2xl">
+                        <div class="text-4xl mb-2" id="badge-emoji"></div>
+                        <div class="font-bold text-yellow-800" id="badge-name"></div>
+                        <div class="text-sm text-yellow-600" id="badge-desc"></div>
+                    </div>
+
+                    <div class="flex flex-col gap-3">
+                        <button onclick="nextLesson()" id="btn-next" class="w-full bg-indigo-600 text-white font-semibold py-4 rounded-2xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 text-lg">
+                            Prossima lezione →
+                        </button>
+                        <button onclick="showLessons(currentTrackId)" class="w-full bg-gray-100 text-gray-600 font-semibold py-3 rounded-2xl hover:bg-gray-200 transition-colors">
+                            Torna al percorso
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/progress.js"></script>
+    <script src="js/engine.js"></script>
+</body>
+</html>
