@@ -7,126 +7,104 @@
       "lessons": [
         {
           "id": "f1",
-          "title": "Cos'è davvero l'AI?",
+          "title": "Cos'è l'intelligenza artificiale (davvero)",
           "duration": 5,
           "xp": 10,
-          "concept": "L'intelligenza artificiale non è una mente magica né un robot che pensa come noi. È un sistema che impara a riconoscere schemi nei dati — miliardi di esempi — per poi fare previsioni e generare risposte. Gli strumenti come ChatGPT, Claude e Gemini sono un tipo specifico di AI chiamato <strong>Large Language Model (LLM)</strong>: modelli addestrati su enormi quantità di testo, che imparano a prevedere parola per parola cosa ha senso scrivere in risposta a una domanda.",
-          "example": "Quando scrivi \"Come si fa la carbonara?\" a ChatGPT, l'AI non \"sa\" cucinare: ha semplicemente visto milioni di ricette, tutorial e discussioni sulla carbonara, e sa ricostruire una risposta coerente basandosi su quegli schemi.",
-          "tip": "💡 L'AI non capisce davvero, non ragiona come un umano, non ha opinioni proprie. È uno strumento statistica​mente potentissimo — e conoscerne i limiti ti rende un utente molto più efficace.",
+          "concept": "L'intelligenza artificiale è un insieme di tecniche che permettono ai computer di svolgere compiti che, fino a pochi anni fa, richiedevano intelligenza umana: capire il linguaggio, riconoscere immagini, prendere decisioni. La forma più diffusa oggi si chiama <strong>machine learning</strong>: invece di programmare regole esplicite ('se vedi un gatto, scrivi gatto'), si mostrano al sistema milioni di esempi e lui impara i pattern da solo. Il risultato non è un sistema che 'capisce' come un essere umano — è un sistema molto bravo a riconoscere pattern statistici in dati enormi. Questa distinzione è importante: spiega sia i risultati sorprendenti che i fallimenti inaspettati.",
+          "example": "Un filtro antispam tradizionale funzionava con regole scritte a mano: 'se l'email contiene la parola GRATIS in maiuscolo, è spam'. Un filtro basato su machine learning ha analizzato milioni di email etichettate come spam o non-spam, e ha imparato da solo quali pattern le distinguono — inclusi pattern che nessun programmatore avrebbe pensato di scrivere. Risultato: funziona meglio e si adatta ai nuovi tipi di spam senza che nessuno lo riprogrammi.",
+          "tip": "💡 Quando senti 'AI' nei titoli di giornale, chiediti sempre: di quale tipo di AI si parla? Computer vision, NLP, reinforcement learning? Sono tecnologie diverse con capacità e limiti diversi. Il termine 'AI' da solo non dice nulla di utile.",
           "source": "Anthropic",
           "quiz": [
             {
-              "question": "Cosa fa concretamente un Large Language Model come ChatGPT?",
+              "question": "Qual è la differenza fondamentale tra programmazione tradizionale e machine learning?",
               "options": [
-                "Cerca informazioni su internet in tempo reale",
-                "Riconosce schemi nel testo e genera risposte statisticamente coerenti",
-                "Ragiona come un essere umano usando la logica",
-                "Recupera risposte da un database di domande e risposte"
+                "Il machine learning usa computer più potenti",
+                "Nella programmazione tradizionale si scrivono regole esplicite; nel machine learning il sistema impara i pattern dai dati",
+                "Il machine learning funziona solo con immagini, non con testo",
+                "Non c'è differenza pratica, è solo una questione di terminologia"
               ],
               "correct": 1,
-              "explanation": "Esatto! Un LLM impara a prevedere testo coerente basandosi su schemi appresi durante l'addestramento. Non cerca su internet (a meno che non abbia strumenti aggiuntivi) e non ragiona come un umano."
-            },
-            {
-              "question": "Quale di queste affermazioni sull'AI è corretta?",
-              "options": [
-                "L'AI ha una coscienza propria",
-                "L'AI inventa sempre risposte casuali",
-                "Conoscere i limiti dell'AI ti rende un utente più efficace",
-                "L'AI è infallibile se usata correttamente"
-              ],
-              "correct": 2,
-              "explanation": "Perfetto! Capire cosa l'AI sa fare — e cosa no — è la competenza più importante. Non ha coscienza, non è infallibile, ma può sbagliare in modo prevedibile se sai come funziona."
+              "explanation": "Esatto! La distinzione è fondamentale: invece di scrivere regole, si forniscono esempi. Questo permette al sistema di trovare pattern che un programmatore non avrebbe mai pensato di codificare esplicitamente."
             }
           ]
         },
         {
           "id": "f2",
-          "title": "Come 'pensa' un LLM",
+          "title": "Cosa sono i Large Language Model",
           "duration": 5,
           "xp": 10,
-          "concept": "Un LLM genera testo un pezzo alla volta — tecnicamente, un <strong>token</strong> alla volta (ne parliamo nella prossima lezione). Ogni parola che produce dipende da tutto ciò che è stato scritto prima. Il modello calcola la probabilità di ogni possibile prossima parola e sceglie tra le più probabili. Non ha un piano prefissato: costruisce la risposta \"al volo\", parola dopo parola. Ecco perché a volte sembra incredibilmente coerente e altre volte va fuori strada.",
-          "example": "Se scrivi \"La capitale della Francia è...\", il modello sa con altissima probabilità che la prossima parola è \"Parigi\". Ma se la domanda è ambigua o rarissima nel suo addestramento, la probabilità si distribuisce su molte opzioni — e il modello può prendere una direzione sbagliata.",
-          "tip": "💡 Più dai contesto preciso all'AI, più guidi la distribuzione di probabilità verso la risposta che vuoi. È uno dei principi base del buon prompting.",
+          "concept": "Un <strong>Large Language Model</strong> (LLM) è un modello di machine learning addestrato su quantità enormi di testo — libri, articoli, siti web, codice — con un unico obiettivo: imparare a prevedere la parola successiva più probabile dato un contesto. Da questo obiettivo apparentemente semplice emergono capacità sorprendenti: ragionamento, traduzione, sintesi, scrittura creativa. Gli LLM non 'sanno' le cose come le sa un essere umano — hanno compresso miliardi di pattern linguistici in miliardi di parametri numerici. GPT-4 di OpenAI, Claude di Anthropic e Gemini di Google sono tutti LLM, con architetture e dati di addestramento diversi.",
+          "example": "Immagina di leggere milioni di libri e articoli, assorbendo non solo i fatti ma anche i pattern di come le idee si collegano, come si strutturano gli argomenti, come si risponde a certe domande. Alla fine riesci a completare qualsiasi frase in modo coerente, a rispondere a domande su argomenti che hai 'letto' durante l'addestramento, a imitare stili diversi. Non perché 'capisci' nel senso umano — ma perché hai interiorizzato miliardi di pattern statistici. Questo è, semplificando, un LLM.",
+          "tip": "💡 'Large' in LLM si riferisce al numero di parametri — i valori numerici interni che il modello impara durante l'addestramento. GPT-4 ha centinaia di miliardi di parametri. Le dimensioni contano, ma non sono l'unico fattore: il modo in cui il modello viene addestrato (RLHF, dati di qualità) conta altrettanto.",
           "source": "Anthropic",
           "quiz": [
             {
-              "question": "Come genera testo un LLM?",
+              "question": "Su quale obiettivo vengono addestrati gli LLM?",
               "options": [
-                "Scrive l'intera risposta in una volta sola, poi la mostra",
-                "Copia frasi da un database di testi",
-                "Genera un token alla volta, basandosi su tutto ciò che è venuto prima",
-                "Usa una mappa concettuale per costruire la risposta"
-              ],
-              "correct": 2,
-              "explanation": "Giusto! La generazione è sequenziale: ogni token dipende da tutto il contesto precedente. Questo spiega sia la coerenza che gli errori dell'AI."
-            },
-            {
-              "question": "Perché dare più contesto a un LLM migliora la risposta?",
-              "options": [
-                "Perché il modello ha più tempo per elaborare",
-                "Perché guida le probabilità verso la direzione giusta",
-                "Perché l'AI legge più velocemente i testi lunghi",
-                "Perché riduce il numero di token utilizzati"
+                "Rispondere correttamente a domande di cultura generale",
+                "Prevedere la parola successiva più probabile dato un contesto",
+                "Tradurre testi da una lingua all'altra",
+                "Riassumere documenti lunghi in forma breve"
               ],
               "correct": 1,
-              "explanation": "Esatto! Più contesto = probabilità più concentrate = risposta più pertinente. È la logica matematica dietro al prompt engineering."
+              "explanation": "Corretto! La previsione della parola successiva è l'obiettivo di addestramento primario. Da questo compito semplice emergono tutte le altre capacità: ragionamento, sintesi, traduzione. È uno dei risultati più sorprendenti dell'AI moderna."
+            },
+            {
+              "question": "Un LLM 'sa' le cose nello stesso modo in cui le sa un essere umano?",
+              "options": [
+                "Sì, durante l'addestramento acquisisce conoscenza autentica",
+                "No, ha compresso pattern statistici dal testo — non ha comprensione nel senso umano del termine",
+                "Sì, ma solo per i fatti appresi durante l'addestramento",
+                "Dipende dal modello: i più grandi capiscono davvero, i piccoli no"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! Questa distinzione è cruciale per capire sia le capacità che i limiti degli LLM. Non c'è 'comprensione' nel senso intenzionale umano — ci sono pattern statistici molto sofisticati. Questo spiega perché l'AI può rispondere correttamente a domande difficili e sbagliare domande banali."
             }
           ]
         },
         {
           "id": "f3",
-          "title": "Cosa sono i token",
+          "title": "Token: l'unità di misura dell'AI",
           "duration": 5,
           "xp": 10,
-          "concept": "I token sono i \"mattoncini\" con cui l'AI legge e scrive testo. Non corrispondono esattamente alle parole: possono essere sillabe, parole intere o punteggiatura. In inglese, una parola comune come \"cat\" è 1 token. Una parola rara o lunga può essere spezzata in più token. In italiano, una regola pratica: <strong>100 token ≈ 75 parole</strong>. Perché è importante? Perché ogni modello ha un <strong>limite di token</strong> che può processare in una volta sola — si chiama <em>context window</em> (finestra di contesto). Oltre quel limite, l'AI \"non vede\" più le parti più vecchie della conversazione.",
-          "example": "GPT-4 ha una context window di ~128.000 token. Claude di Anthropic arriva a 200.000 token. Questo significa che Claude può \"tenere a mente\" l'equivalente di un romanzo intero durante una conversazione, mentre modelli più piccoli perdono il filo molto prima.",
-          "tip": "💡 Se noti che l'AI sembra dimenticare cose dette all'inizio di una lunga conversazione, hai raggiunto il limite della context window. La soluzione: inizia una nuova chat con un riassunto del contesto essenziale.",
+          "concept": "Gli LLM non leggono il testo lettera per lettera né parola per parola: lo elaborano in <strong>token</strong>, che sono pezzi di testo di lunghezza variabile. In inglese, un token corrisponde mediamente a 3-4 caratteri o circa 0,75 parole. In italiano e in altre lingue non anglosassoni i token sono leggermente meno efficienti — la stessa frase occupa più token. Capire i token serve per tre motivi pratici: capire i limiti di lunghezza dei modelli (context window), capire perché le API si pagano a token, e capire perché l'AI a volte 'taglia' le risposte a metà quando il contesto è pieno. I modelli attuali top hanno context window che vanno da 128.000 token (circa 100.000 parole) a 1 milione di token.",
+          "example": "La frase 'intelligenza artificiale' in italiano viene tipicamente divisa in 4-5 token: 'int', 'ell', 'igenza', 'art', 'ificiale'. La stessa frase in inglese 'artificial intelligence' diventa 3 token: 'artificial', ' intel', 'ligence'. Questo non cambia la qualità delle risposte, ma impatta il costo delle API e il limite di testo che puoi inviare in una singola conversazione.",
+          "tip": "💡 Se vuoi stimare quanti token occupa un testo, usa la regola approssimativa: 1 token ≈ 4 caratteri in inglese, ≈ 5 caratteri in italiano. Per calcoli precisi, OpenAI offre uno strumento gratuito chiamato Tokenizer su platform.openai.com.",
           "source": "OpenAI",
           "quiz": [
             {
-              "question": "Cosa si intende con 'context window' di un LLM?",
+              "question": "Perché l'italiano occupa più token dell'inglese per lo stesso contenuto?",
               "options": [
-                "Il numero di finestre del browser che puoi aprire",
-                "La quantità massima di testo che il modello può processare in una volta",
-                "La velocità con cui l'AI risponde",
-                "Il numero di lingue che il modello supporta"
+                "Perché i modelli AI sono stati addestrati principalmente in inglese e tokenizzano le altre lingue meno efficientemente",
+                "Perché l'italiano ha parole più lunghe in media",
+                "Non è vero, occupano la stessa quantità di token",
+                "Perché l'italiano usa caratteri speciali come accenti"
               ],
-              "correct": 1,
-              "explanation": "Corretto! La context window è il \"campo visivo\" del modello: tutto ciò che supera quel limite viene ignorato. È per questo che conversazioni molto lunghe possono perdere coerenza."
-            },
-            {
-              "question": "Hai una conversazione molto lunga con ChatGPT e noti che ha dimenticato cose dette all'inizio. Cosa è successo?",
-              "options": [
-                "ChatGPT ha avuto un errore tecnico",
-                "Hai superato la context window del modello",
-                "ChatGPT non salva le conversazioni per privacy",
-                "Il modello era sovraccarico di utenti"
-              ],
-              "correct": 1,
-              "explanation": "Esatto! Hai superato la context window. I token più vecchi vengono \"dimenticati\" per fare spazio a quelli nuovi. Ricomincia con un riassunto per risolvere il problema."
+              "correct": 0,
+              "explanation": "Esatto! I tokenizer sono ottimizzati per l'inglese, che rappresenta la maggioranza dei dati di addestramento. Le altre lingue vengono tokenizzate con granularità maggiore (pezzi più piccoli), risultando in più token per la stessa quantità di informazione."
             }
           ]
         },
         {
           "id": "f4",
-          "title": "La memoria dell'AI",
+          "title": "La context window: la memoria dell'AI",
           "duration": 5,
           "xp": 10,
-          "concept": "Un LLM, di base, non ha memoria tra una conversazione e l'altra. Ogni nuova chat riparte da zero. La \"memoria\" che percepisce durante una conversazione è semplicemente il testo della chat stessa — tutto ciò che hai scritto e che il modello ha risposto forma il contesto che il modello legge ogni volta che genera una nuova risposta. Alcuni strumenti (come la funzione Memory di ChatGPT) simulano una memoria persistente salvando manualmente informazioni chiave da richiamare nelle sessioni future — ma è una funzionalità aggiuntiva, non nativa del modello.",
-          "example": "Immagina di parlare con qualcuno che ha una memoria fotografica durante la conversazione, ma al mattino seguente non ricorda nulla. Ogni volta che lo incontri, devi ripresentarti. L'AI funziona esattamente così — a meno che tu non le ricordi da solo chi sei e cosa hai discusso.",
-          "tip": "💡 Per lavori ricorrenti, crea un 'prompt di contesto' personale: 2-3 righe che descrivono chi sei, il tuo ruolo e le preferenze di stile che vuoi dall'AI. Incollalo sempre all'inizio di ogni nuova chat.",
+          "concept": "La <strong>context window</strong> è la quantità massima di testo che un LLM può 'tenere in mente' in una singola conversazione — sia quello che tu scrivi, sia quello che l'AI risponde. Tutto quello che supera questo limite viene dimenticato. Non è memoria come quella umana: l'AI non ricorda le conversazioni passate tra sessioni diverse, e all'interno di una sessione tratta tutto il contesto con la stessa 'attenzione'. I modelli attuali hanno context window molto ampie: Claude 3.5 arriva a 200.000 token (circa 150.000 parole), Gemini 1.5 Pro a 1 milione di token — abbastanza per analizzare interi libri o basi di codice.",
+          "example": "Hai una conversazione lunga con ChatGPT sulla strategia di marketing della tua azienda. Dopo 50 scambi di messaggi, noti che il modello non ricorda più i dettagli che hai menzionato all'inizio. Non è 'pigrizia' — è il contesto che si è riempito e le prime informazioni sono uscite dalla finestra. Soluzione: all'inizio di ogni nuova sessione su argomenti complessi, inserisci un breve riassunto del contesto rilevante.",
+          "tip": "💡 Per conversazioni lunghe e importanti, crea un 'documento di contesto' da incollare all'inizio di ogni sessione: chi sei, il tuo ruolo, il progetto su cui stai lavorando, le decisioni già prese. 10 righe di contesto all'inizio valgono molto più che sperare che l'AI ricordi.",
           "source": "Anthropic",
           "quiz": [
             {
-              "question": "Di default, cosa ricorda un LLM tra una conversazione e l'altra?",
+              "question": "Cosa succede quando una conversazione supera la context window di un LLM?",
               "options": [
-                "Tutto ciò che hai detto nelle ultime 30 sessioni",
-                "Solo il tuo nome e la tua lingua preferita",
-                "Nulla — ogni conversazione riparte da zero",
-                "I messaggi che hai esplicitamente salvato"
+                "Il modello si blocca e chiede di iniziare una nuova conversazione",
+                "Il modello perde le informazioni più vecchie della conversazione",
+                "Il modello rallenta ma continua a ricordare tutto",
+                "Il modello riassume automaticamente le parti vecchie"
               ],
-              "correct": 2,
-              "explanation": "Giusto! La memoria di default è zero. La 'memoria' che senti durante la chat è solo il contesto della sessione corrente. Funzionalità come 'Memory' di ChatGPT sono aggiunte esterne al modello base."
+              "correct": 1,
+              "explanation": "Corretto! Quando il contesto si riempie, le informazioni più vecchie escono dalla finestra. Il modello continua a funzionare ma 'dimentica' i dettagli iniziali. Ecco perché le conversazioni molto lunghe a volte sembrano perdere il filo."
             }
           ]
         },
@@ -134,113 +112,204 @@
           "id": "f5",
           "title": "Perché l'AI inventa cose",
           "duration": 5,
-          "xp": 15,
-          "concept": "Le <strong>allucinazioni</strong> sono uno dei fenomeni più importanti da capire sull'AI. Succede quando il modello genera informazioni che suonano credibili e sicure ma sono semplicemente false — nomi inventati, date sbagliate, citazioni inesistenti. Non è un bug da correggere: è una conseguenza diretta di come funzionano gli LLM. Il modello non \"sa\" di non sapere qualcosa — genera sempre il testo statisticamente più plausibile, anche quando non ha informazioni reali su quel tema.",
-          "example": "Se chiedi a un LLM \"Cita tre articoli scientifici sull'effetto della musica sull'apprendimento\", potrebbe inventare titoli, autori e journal perfettamente plausibili — ma inesistenti. Le allucinazioni sono più frequenti su temi molto specifici, rari, o troppo recenti rispetto alla data di addestramento del modello.",
-          "tip": "💡 Regola d'oro: non usare mai l'AI come fonte primaria per fatti verificabili — dati, citazioni, nomi, date, leggi. Usala per strutturare, riformulare, brainstormare. Per i fatti, verifica sempre con una fonte reale.",
+          "xp": 10,
+          "concept": "Le <strong>allucinazioni</strong> sono risposte dell'AI che sembrano plausibili e sono presentate con sicurezza, ma sono false. Non è un bug — è una conseguenza diretta di come funzionano gli LLM: il modello genera la risposta statisticamente più probabile dato il contesto, non quella più vera. Se la risposta vera non è ben rappresentata nei dati di addestramento, il modello 'inventa' qualcosa di coerente con il pattern linguistico ma non con la realtà. Le allucinazioni sono più frequenti su: fatti specifici (date, nomi, cifre), fonti e citazioni, eventi recenti dopo il cutoff di addestramento, argomenti di nicchia poco rappresentati nei dati.",
+          "example": "Chiedi a un LLM: 'Cita tre studi scientifici sulla meditazione e produttività con autore e anno'. Il modello probabilmente genererà titoli convincenti, nomi di autori reali e anni plausibili — ma gli studi nella maggior parte dei casi non esistono. Il modello non 'sa' che sta inventando: sta generando la sequenza di token più probabile per una risposta di quel tipo. Sempre verificare i riferimenti bibliografici su Google Scholar prima di usarli.",
+          "tip": "💡 Regola pratica: usa l'AI per generare idee, strutture e testi — non per trovare fatti specifici da citare. Per dati, numeri, riferimenti e notizie recenti, verifica sempre su fonti primarie. L'AI è un ottimo pensatore, non un motore di ricerca affidabile.",
           "source": "Anthropic",
           "quiz": [
             {
-              "question": "Cos'è un'allucinazione in un LLM?",
+              "question": "Perché gli LLM producono allucinazioni?",
               "options": [
-                "Un errore di connessione che mostra testo corrotto",
-                "Quando il modello risponde in una lingua diversa da quella richiesta",
-                "Quando il modello genera informazioni false ma credibili",
-                "Un comportamento che si verifica solo con domande offensive"
-              ],
-              "correct": 2,
-              "explanation": "Esatto! L'allucinazione è testo falso ma convincente. È uno dei limiti strutturali degli LLM, non un errore corretto con gli aggiornamenti."
-            },
-            {
-              "question": "Quale uso dell'AI è più a rischio di allucinazioni?",
-              "options": [
-                "Chiedere di riformulare un tuo testo in stile più formale",
-                "Chiedere citazioni bibliografiche specifiche su un tema di nicchia",
-                "Chiedere di tradurre un paragrafo in inglese",
-                "Chiedere di scrivere una lista della spesa"
+                "Per un bug nei dati di addestramento che si può correggere",
+                "Perché generano la risposta statisticamente più probabile, non necessariamente quella più vera",
+                "Solo i modelli vecchi allucinano — i modelli recenti non hanno più questo problema",
+                "Perché non hanno accesso a internet per verificare i fatti"
               ],
               "correct": 1,
-              "explanation": "Corretto! Le citazioni bibliografiche sono un classico caso di allucinazione: il modello produce nomi, titoli e riviste plausibili ma spesso inventati. Sempre da verificare."
+              "explanation": "Esatto! Le allucinazioni sono una proprietà strutturale degli LLM, non un errore temporaneo. Il modello ottimizza per la plausibilità linguistica, non per la verità fattuale. I modelli migliorano nel tempo ma non eliminano completamente questo problema."
+            },
+            {
+              "question": "Per quale tipo di compito le allucinazioni sono più rischiose?",
+              "options": [
+                "Scrivere email di risposta a clienti",
+                "Generare idee per un brainstorming",
+                "Citare studi scientifici, leggi specifiche o dati numerici precisi",
+                "Riassumere un testo che hai già fornito"
+              ],
+              "correct": 2,
+              "explanation": "Corretto! Quando l'AI deve produrre informazioni verificabili specifiche — riferimenti, cifre, nomi, date — il rischio di allucinazione è molto alto. Per queste informazioni è sempre necessaria la verifica su fonti primarie."
             }
           ]
         },
         {
           "id": "f6",
-          "title": "AI, ML, Deep Learning: le differenze",
+          "title": "I principali modelli AI oggi",
           "duration": 5,
           "xp": 10,
-          "concept": "Tre termini che si sentono spesso in modo intercambiabile, ma hanno significati distinti. <strong>AI (Intelligenza Artificiale)</strong> è il termine ombrello: qualsiasi sistema che simula capacità cognitive umane. <strong>Machine Learning</strong> è un sottoinsieme dell'AI: sistemi che imparano dai dati senza essere programmati con regole esplicite. <strong>Deep Learning</strong> è un sottoinsieme del Machine Learning: usa reti neurali a molti strati per apprendere rappresentazioni complesse. I modelli linguistici come ChatGPT e Claude sono Deep Learning.",
-          "example": "Pensa a tre cerchi concentrici: AI è il cerchio più grande, ML sta dentro, Deep Learning sta ancora più dentro. Tutti i LLM sono Deep Learning, ma non tutto il Deep Learning è un LLM, e non tutto l'ML usa il Deep Learning.",
-          "tip": "💡 Quando senti 'AI' in senso generale (articoli, news, conversazioni) si intende quasi sempre 'LLM generativi'. Quando senti 'ML' in contesto aziendale, spesso ci si riferisce a modelli predittivi (es. previsione vendite). Sapere la distinzione ti aiuta a capire di cosa si parla davvero.",
-          "source": "Google",
+          "concept": "Il mercato degli LLM è dominato da tre aziende, ciascuna con il suo modello flagship. <strong>OpenAI</strong> (GPT-4o, o3): la più nota al grande pubblico, forte su coding, ragionamento e uso generale. <strong>Anthropic</strong> (Claude 3.5/3.7 Sonnet e Opus): fondata da ex-ricercatori OpenAI con focus sulla sicurezza AI, eccelle su testi lunghi, ragionamento complesso e compiti che richiedono affidabilità. <strong>Google</strong> (Gemini 1.5/2.0 Pro): integrato nell'ecosistema Google, ha la context window più ampia (fino a 1M token) ed è ottimo con documenti multimodali. Esistono anche modelli open source come Llama di Meta, che si possono eseguire localmente. La scelta del modello dipende dal compito: non esiste il 'migliore in assoluto'.",
+          "example": "Per scrivere un lungo report aziendale con molti documenti di contesto: Claude o Gemini (context window ampia). Per debugging di codice complesso: GPT-4o o Claude con extended thinking. Per integrazione con Google Workspace: Gemini. Per uso offline su dati sensibili senza inviare nulla al cloud: Llama in locale con LM Studio. La scelta giusta dipende sempre dal contesto.",
+          "tip": "💡 Non affidarti a un solo modello per tutto. I professionisti più efficaci usano 2-3 modelli diversi a seconda del compito. La maggior parte offre un piano gratuito sufficiente per testare le differenze prima di pagare.",
+          "source": "Anthropic",
           "quiz": [
             {
-              "question": "Qual è il rapporto corretto tra AI, Machine Learning e Deep Learning?",
+              "question": "Qual è la caratteristica distintiva principale di Gemini rispetto a GPT-4o e Claude?",
               "options": [
-                "Sono tre nomi diversi per la stessa tecnologia",
-                "Il Deep Learning contiene il ML che contiene l'AI",
-                "L'AI contiene il ML che contiene il Deep Learning",
-                "Sono tre tecnologie completamente separate e indipendenti"
+                "È completamente gratuito senza limiti",
+                "Ha la context window più ampia (fino a 1 milione di token) ed è integrato nell'ecosistema Google",
+                "Non produce allucinazioni grazie all'accesso a Google Search",
+                "È l'unico modello disponibile in italiano"
               ],
-              "correct": 2,
-              "explanation": "Giusto! È una gerarchia di cerchi concentrici: AI > ML > Deep Learning. Ogni livello è un sottoinsieme del precedente."
+              "correct": 1,
+              "explanation": "Esatto! La context window di 1 milione di token di Gemini 1.5 Pro è una caratteristica tecnica distintiva che permette di analizzare interi libri, basi di codice o ore di audio in una sola sessione."
             }
           ]
         },
         {
           "id": "f7",
-          "title": "I modelli principali oggi",
+          "title": "AI generativa vs altri tipi di AI",
           "duration": 5,
           "xp": 10,
-          "concept": "Il mercato degli LLM è dominato da pochi grandi player. <strong>OpenAI</strong> (ChatGPT, GPT-4o, o1) è il più noto al pubblico generale. <strong>Anthropic</strong> (Claude 3.5/3.7) è apprezzato per ragionamento complesso, sicurezza e finestre di contesto enormi. <strong>Google</strong> (Gemini) è integrato nell'ecosistema Google Workspace. <strong>Meta</strong> (Llama) è il principale modello open-source, eseguibile localmente. Esistono poi modelli specializzati per codice, immagini, audio e video. La competizione è intensa e i modelli migliorano ogni pochi mesi.",
-          "example": "Per scrivere email e testi → qualsiasi modello va bene. Per analisi di documenti lunghi → Claude (contesto 200K token). Per integrazioni con Google Drive/Gmail → Gemini. Per uso privato senza inviare dati a terze parti → Llama in locale.",
-          "tip": "💡 Non esiste il modello 'migliore' in assoluto — esiste il modello giusto per il tuo caso d'uso. Sperimenta almeno con due o tre diversi prima di stabilire il tuo preferito.",
-          "source": "Anthropic",
+          "concept": "Non tutta l'AI genera contenuti. Esistono due grandi famiglie. L'<strong>AI predittiva</strong> (o discriminativa) analizza dati esistenti per fare previsioni o classificazioni: riconoscere se un'email è spam, prevedere se un cliente è a rischio abbandono, diagnosticare una malattia da una radiografia. Lavora su pattern in dati strutturati e produce un'etichetta o un numero. L'<strong>AI generativa</strong> — quella a cui appartengono GPT, Claude, Gemini, DALL-E — produce contenuti nuovi: testo, immagini, audio, codice, video. Capire in quale famiglia rientra uno strumento AI aiuta a capirne le aspettative: l'AI predittiva ti dice 'probabilità 87% di abbandono', quella generativa ti scrive una lettera di retention.",
+          "example": "Netflix usa AI predittiva per raccomandare film (classifica i tuoi gusti e prevede cosa ti piacerà). Usa AI generativa per creare le thumbnail personalizzate dei film (immagini diverse per utenti diversi). Il tuo medico potrebbe usare AI predittiva per identificare anomalie in una TAC, e AI generativa per sintetizzare la letteratura medica rilevante al tuo caso. Due strumenti completamente diversi, spesso usati insieme.",
+          "tip": "💡 Quando leggi di un'azienda che 'usa l'AI', chiediti: è predittiva (analizza e classifica dati esistenti) o generativa (produce contenuti nuovi)? La risposta cambia completamente le implicazioni etiche, legali e pratiche.",
+          "source": "Google",
           "quiz": [
             {
-              "question": "Quale modello è particolarmente adatto per analizzare documenti molto lunghi?",
+              "question": "Un sistema che analizza migliaia di transazioni bancarie per identificare quelle fraudolente appartiene a quale categoria?",
               "options": [
-                "GPT-3.5 di OpenAI, per la sua velocità",
-                "Claude di Anthropic, per la sua grande context window",
-                "Llama di Meta, perché è open source",
-                "Gemini, perché è integrato con Chrome"
+                "AI generativa — perché crea nuove categorie di frode",
+                "AI predittiva — perché classifica transazioni esistenti come fraudolente o legittime",
+                "Entrambe — non c'è differenza pratica",
+                "Nessuna delle due — è solo statistica tradizionale"
               ],
               "correct": 1,
-              "explanation": "Esatto! Claude di Anthropic supporta fino a 200.000 token di contesto — equivalente a un romanzo intero — rendendolo ideale per analisi di documenti lunghi."
+              "explanation": "Esatto! Il rilevamento frodi è un classico caso di AI predittiva/discriminativa: il sistema analizza pattern in dati esistenti e produce una classificazione (frode/non frode) con un punteggio di confidenza."
             }
           ]
         },
         {
           "id": "f8",
-          "title": "Cosa può (e non può) fare l'AI",
+          "title": "Come scegliere il modello giusto",
           "duration": 5,
           "xp": 15,
-          "concept": "Capire i confini reali dell'AI ti evita sia di sopravvalutarla che di ignorarla. Gli LLM eccellono in: generare e riformulare testi, riassumere, tradurre, brainstorming, rispondere a domande generali, scrivere codice, spiegare concetti complessi. Fanno fatica con: fatti molto recenti (dopo la loro data di addestramento), calcoli matematici precisi, ragionamenti multi-step lunghi senza supporto, dati in tempo reale, e qualsiasi cosa che richieda memoria o azioni nel mondo reale — a meno di strumenti aggiuntivi.",
-          "example": "Eccellente: 'Aiutami a strutturare questa proposta commerciale'. Pericoloso da usare senza verifica: 'Qual è l'aliquota IVA per questo prodotto nel 2025?' o 'Calcola l'ammortamento di questo asset'. Non possibile (di base): 'Mandami un'email domani mattina alle 9'.",
-          "tip": "💡 Usa l'AI come un collaboratore brillante con un'ottima cultura generale ma zero accesso al mondo esterno e nessuna memoria. Delegagli la struttura e la forma — tienimi la responsabilità dei fatti.",
+          "concept": "Con decine di modelli disponibili, la domanda 'quale uso?' è legittima. La risposta dipende da tre variabili: il <strong>tipo di compito</strong>, la <strong>quantità di contesto</strong> necessaria e le <strong>esigenze di privacy</strong>. Per compiti di testo generale (email, report, brainstorming): qualsiasi modello frontier funziona bene — scegli quello con cui ti trovi meglio. Per testi molto lunghi o analisi di documenti: Claude o Gemini per la loro context window ampia. Per coding: GPT-4o o Claude Sonnet sono i più citati dagli sviluppatori. Per dati sensibili che non puoi inviare al cloud: modelli locali come Llama via LM Studio. Per integrazione con Google Workspace: Gemini. La velocità di evoluzione del settore significa che questa classifica cambia ogni 3-4 mesi.",
+          "example": "Un avvocato che deve analizzare un contratto di 80 pagine: usa Claude o Gemini (context window ampia). Un marketer che deve scrivere 20 varianti di un headline: qualsiasi modello frontier. Un medico che vuole analizzare cartelle cliniche senza inviarle al cloud: LM Studio con Llama in locale. Un developer che vuole autocomplete intelligente nel suo editor: Cursor o GitHub Copilot (modelli specializzati per il codice).",
+          "tip": "💡 La scelta del modello vale il 20% del risultato. Il restante 80% dipende dalla qualità del prompt. Prima di cambiare modello, prova a migliorare il prompt con quello che stai già usando.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Per quale scenario è più indicato un modello AI eseguito localmente (es. Llama via LM Studio)?",
+              "options": [
+                "Quando si vuole la massima qualità delle risposte",
+                "Quando si lavora con dati sensibili che non possono essere inviati a server esterni",
+                "Quando non si ha una connessione internet",
+                "Quando si vuole risparmiare sui costi dell'abbonamento"
+              ],
+              "correct": 1,
+              "explanation": "Corretto! La privacy è il caso d'uso principale per i modelli locali. Se lavori con dati soggetti a GDPR, segreti aziendali o informazioni cliniche, eseguire il modello sul tuo computer elimina il rischio di trasmissione a server di terze parti."
+            }
+          ]
+        },
+        {
+          "id": "f9",
+          "title": "L'AI che vede, ascolta e parla",
+          "duration": 5,
+          "xp": 10,
+          "concept": "Per anni gli LLM hanno lavorato solo con il testo. Oggi i modelli <strong>multimodali</strong> ricevono ed elaborano testo, immagini, audio e video in modo nativo, all'interno dello stesso modello. La parola chiave è <em>nativo</em>: non è un plugin che trascrive l'audio e lo passa al testo, ma un unico sistema che ragiona su tutti i formati insieme, mantenendo il contesto tra un tipo di input e l'altro. GPT-4o (la 'o' sta per <em>omni</em>) di OpenAI e Gemini di Google sono i principali esempi di questo approccio. Claude 3.5 di Anthropic gestisce testo e immagini con alta precisione analitica.",
+          "example": "Usi pratici già disponibili oggi: fotografare un contratto cartaceo e chiedere di riassumere le clausole principali; caricare il grafico di un report Excel e chiedere di commentare il trend; incollare uno screenshot di un'email e chiedere di rispondere nel proprio stile; descrivere un problema con la voce invece di scriverlo. Con Gemini puoi persino caricare un video di 30 minuti e chiedere 'al minuto 18 cosa viene mostrato?'.",
+          "tip": "💡 La multimodalità cambia il prompt: con le immagini funziona meglio descrivere cosa vuoi ottenere ('elenca tutti i numeri che vedi nella tabella') piuttosto che fare domande generiche ('analizza questa immagine').",
           "source": "OpenAI",
           "quiz": [
             {
-              "question": "Per quale di questi compiti l'AI è meno affidabile senza verifica?",
+              "question": "Cosa significa che un modello AI è 'nativo' multimodale?",
               "options": [
-                "Riformulare un paragrafo in tono più professionale",
-                "Tradurre un testo dall'italiano all'inglese",
-                "Fornire dati normativi o calcoli fiscali precisi",
-                "Fare brainstorming di idee per un nome di prodotto"
+                "Che usa plugin separati per convertire immagini e audio in testo prima di elaborarli",
+                "Che elabora testo, immagini e audio all'interno dello stesso modello, mantenendo il contesto tra formati diversi",
+                "Che può essere usato su qualsiasi dispositivo senza installazione",
+                "Che risponde in più lingue contemporaneamente"
               ],
-              "correct": 2,
-              "explanation": "Corretto! Dati normativi, calcoli precisi e informazioni legali/fiscali sono esattamente i casi in cui l'AI può allucinare con più sicurezza apparente. Sempre da verificare con fonti ufficiali."
+              "correct": 1,
+              "explanation": "Esatto! La differenza tra multimodale nativo e approccio a pipeline è sostanziale: nel modello nativo il contesto si mantiene tra i formati, quindi può ragionare su 'questa immagine e questo testo insieme', non solo su ognuno separatamente."
             },
             {
-              "question": "Qual è l'approccio corretto per usare l'AI in modo efficace?",
+              "question": "Cosa significa la 'o' in GPT-4o?",
               "options": [
-                "Fidarsi ciecamente delle risposte perché il modello è stato addestrato su milioni di dati",
-                "Non usarla mai per testi importanti",
-                "Delegarle struttura e forma, mantenendo la responsabilità sui fatti",
-                "Usarla solo per compiti creativi, mai per lavoro professionale"
+                "Open — perché è parzialmente open source",
+                "Omni — perché integra testo, audio, immagini e video in un unico modello",
+                "Online — perché ha accesso a internet in tempo reale",
+                "Optimized — perché è più veloce delle versioni precedenti"
               ],
-              "correct": 2,
-              "explanation": "Esatto! L'AI è un amplificatore delle tue capacità, non un sostituto del tuo giudizio. Struttura, stile, brainstorming: ottima. Fatti verificabili: sempre controlla."
+              "correct": 1,
+              "explanation": "Corretto! GPT-4o è stato lanciato da OpenAI nel maggio 2024 con l'obiettivo esplicito di integrare tutti i formati in un unico modello omnimodale."
+            }
+          ]
+        },
+        {
+          "id": "f10",
+          "title": "Fine-tuning e RAG: due modi per personalizzare l'AI",
+          "duration": 5,
+          "xp": 15,
+          "concept": "Un LLM di base sa molte cose generali, ma non sa nulla di te, della tua azienda o dei tuoi documenti. Esistono due approcci principali per rimediare. Il <strong>fine-tuning</strong> significa riaddestrare il modello su un dataset specifico: cambia le connessioni interne del modello e modifica il suo comportamento di default. È costoso, richiede dati di qualità e va rifatto ogni volta che i dati cambiano. Il <strong>RAG</strong> (Retrieval-Augmented Generation) non tocca il modello: ogni volta che riceve una domanda, prima cerca nei tuoi documenti le informazioni rilevanti, poi le usa come contesto per rispondere. È più flessibile, aggiornabile in tempo reale e nella maggior parte dei casi pratici funziona meglio del fine-tuning.",
+          "example": "Immagina di volere un assistente AI che risponda sulle politiche interne della tua azienda. Con il fine-tuning: addestri il modello su tutti i tuoi manuali interni — ma quando aggiorni una policy devi riaddestrare tutto. Con RAG: carichi i documenti in un database, il modello li cerca al momento del bisogno — quando cambia una policy, aggiorni solo quel documento. La maggior parte dei chatbot aziendali intelligenti usa RAG, non fine-tuning.",
+          "tip": "💡 Regola pratica: se vuoi che l'AI 'sappia cose nuove' usa RAG. Se vuoi che l'AI 'parli in modo diverso' (un tono specifico, un formato fisso) considera il fine-tuning.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Qual è la differenza principale tra fine-tuning e RAG?",
+              "options": [
+                "Il fine-tuning funziona solo con OpenAI, RAG solo con Anthropic",
+                "Il fine-tuning modifica il modello internamente; RAG fornisce informazioni esterne al momento della domanda senza modificare il modello",
+                "RAG è più preciso del fine-tuning in tutti i casi",
+                "Non c'è differenza pratica: entrambi servono ad aggiornare la conoscenza del modello"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! La distinzione fondamentale è dove avviene la personalizzazione: dentro il modello (fine-tuning) o fuori, al momento dell'inferenza (RAG). Questa differenza ha implicazioni enormi su costi, flessibilità e manutenzione."
+            },
+            {
+              "question": "Un'azienda vuole un chatbot che risponda sulle sue FAQ aggiornate ogni settimana. Quale approccio è più adatto?",
+              "options": [
+                "Fine-tuning — perché produce risposte più accurate",
+                "RAG — perché i documenti si aggiornano senza dover riaddestrare il modello",
+                "Entrambi insieme sono sempre necessari",
+                "Nessuno dei due — basta un LLM standard"
+              ],
+              "correct": 1,
+              "explanation": "Corretto! Per contenuti che cambiano frequentemente, RAG è la scelta ovvia: aggiorni il database di documenti e il modello risponde subito con le informazioni nuove, senza costi di riaddestramento."
+            }
+          ]
+        },
+        {
+          "id": "f11",
+          "title": "Come si valutano i modelli AI",
+          "duration": 5,
+          "xp": 10,
+          "concept": "Ogni settimana un'azienda annuncia 'il miglior modello AI del mondo'. Per capire se è vero o marketing, servono i <strong>benchmark</strong> — test standardizzati che misurano le capacità dei modelli in modo comparabile. I principali: <strong>MMLU</strong> misura la conoscenza su 57 materie accademiche — i modelli top superano il 90%, ma il test è ormai quasi saturo. <strong>GPQA</strong> misura il ragionamento esperto in biologia, fisica e chimica su domande così difficili che i PhD umani rispondono correttamente solo al 65%. <strong>HumanEval</strong> misura la capacità di scrivere codice funzionante. L'<strong>Arena Elo</strong> (LMSYS Chatbot Arena) usa le preferenze reali degli utenti: due modelli rispondono allo stesso prompt e gli utenti votano il migliore — è il benchmark più difficile da manipolare.",
+          "example": "Quando OpenAI annuncia che GPT-4o supera Claude su MMLU, è vero ma poco utile: MMLU è così saturo che la differenza tra i modelli top è sotto il 2%. La metrica più affidabile per uso pratico è l'Arena Elo, perché riflette l'esperienza reale di milioni di utenti, non un test accademico. Per compiti di ragionamento complesso, GPQA è il benchmark più credibile oggi.",
+          "tip": "💡 Prima di scegliere un modello per un compito specifico, non guardare solo i benchmark generali. Cerca test sul tuo caso d'uso: coding, ragionamento, lingue non inglesi, testi lunghi. I numeri aggregati nascondono differenze enormi sui casi specifici.",
+          "source": "OpenAI",
+          "quiz": [
+            {
+              "question": "Perché l'MMLU benchmark è considerato 'saturo' nel 2025-2026?",
+              "options": [
+                "Perché è troppo difficile e nessun modello riesce a superare il 50%",
+                "Perché i modelli top superano tutti il 90% e le differenze tra loro sono inferiori al 2%, rendendolo poco utile per distinguerli",
+                "Perché misura solo la lingua inglese",
+                "Perché è stato ritirato dalle aziende AI"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! Quando tutti i modelli frontier superano il 90% su un test, quel test non differenzia più. MMLU resta utile per eliminare i modelli deboli, ma non per scegliere tra i modelli top."
+            },
+            {
+              "question": "Cos'è l'Arena Elo (LMSYS Chatbot Arena)?",
+              "options": [
+                "Un benchmark accademico sviluppato da Google per misurare il ragionamento",
+                "Una classifica basata sulle preferenze reali degli utenti: due modelli rispondono allo stesso prompt e gli utenti votano il migliore",
+                "Un sistema di valutazione usato solo internamente da OpenAI",
+                "Un test che misura la velocità di risposta dei modelli"
+              ],
+              "correct": 1,
+              "explanation": "Corretto! L'Arena Elo è particolarmente affidabile perché riflette le preferenze di milioni di utenti reali su prompt reali — non scenari costruiti appositamente. È meno manipolabile dei benchmark tradizionali."
             }
           ]
         }
@@ -253,58 +322,47 @@
       "lessons": [
         {
           "id": "p1",
-          "title": "Cos'è un prompt",
+          "title": "Cos'è un prompt e perché conta",
           "duration": 5,
           "xp": 10,
-          "concept": "Il <strong>prompt</strong> è semplicemente il testo che scrivi all'AI per ottenere una risposta. Ma la parola nasconde molta profondità: un prompt è anche l'istruzione, il contesto, il ruolo e il formato che stai comunicando al modello — spesso tutto insieme. La qualità del prompt è direttamente proporzionale alla qualità della risposta. La disciplina di scrivere prompt efficaci si chiama <strong>prompt engineering</strong> — e non richiede competenze tecniche, solo chiarezza di pensiero.",
-          "example": "Prompt scarso: 'Scrivimi qualcosa sul clima.' → Risposta generica e inutile. Prompt efficace: 'Scrivi un paragrafo di 80 parole sul cambiamento climatico, adatto a un pubblico di piccoli imprenditori italiani, con tono diretto e una call to action finale.' → Risposta precisa e usabile.",
-          "tip": "💡 Tratta ogni prompt come una breve di lavoro a un collaboratore. Più è precisa, meno revisioni servono dopo.",
+          "concept": "Un <strong>prompt</strong> è qualsiasi istruzione, domanda o testo che invii a un modello AI. È l'interfaccia principale tra te e il modello — e la qualità del prompt determina quasi interamente la qualità della risposta. Non è esagerato: lo stesso modello con un prompt diverso produce output radicalmente diversi sullo stesso argomento. Il <strong>prompt engineering</strong> è la disciplina di scrivere prompt efficaci, e non richiede competenze tecniche — richiede chiarezza di pensiero, capacità di comunicare il contesto e sapere cosa si vuole ottenere. È, in sostanza, la capacità di comunicare con precisione.",
+          "example": "Prompt 1: 'Scrivimi un'email.' — Risultato: generico, inutilizzabile. Prompt 2: 'Scrivi un'email professionale ma cordiale a un cliente B2B che ha aspettato 3 settimane una risposta. Devo scusarmi, spiegare il ritardo (problemi interni di cui non posso dare dettagli), e proporre una call questa settimana. Tono: diretto, non eccessivamente formale. Lunghezza: max 8 righe.' — Risultato: utilizzabile con piccole modifiche. La differenza è solo la qualità del prompt.",
+          "tip": "💡 Prima di scrivere un prompt, chiediti: 'Se dessi questa istruzione a un collaboratore umano senza alcun contesto, saprebbe cosa fare?' Se la risposta è no, il prompt ha bisogno di più contesto.",
           "source": "Anthropic",
           "quiz": [
             {
-              "question": "Cosa determina principalmente la qualità di una risposta AI?",
+              "question": "Da cosa dipende principalmente la qualità di una risposta AI?",
               "options": [
-                "La velocità della connessione internet",
-                "Il modello AI scelto — i migliori danno sempre risposte ottime",
-                "La qualità e la precisione del prompt",
-                "Il momento della giornata in cui si usa l'AI"
+                "Dalla potenza del modello usato",
+                "Dalla qualità del prompt — lo stesso modello produce output radicalmente diversi con prompt diversi",
+                "Dal momento della giornata in cui si fa la domanda",
+                "Dall'abbonamento: i piani a pagamento danno risposte migliori"
               ],
-              "correct": 2,
-              "explanation": "Esatto! Il prompt è la variabile più importante. Anche il modello migliore produce output mediocri con istruzioni vaghe. La buona notizia: il prompt engineering si impara rapidamente."
+              "correct": 1,
+              "explanation": "Esatto! Il prompt è il fattore che più influenza la qualità dell'output. Investire 2 minuti in più a costruire un prompt preciso vale più che cambiare modello o abbonamento."
             }
           ]
         },
         {
           "id": "p2",
-          "title": "Anatomia di un buon prompt",
+          "title": "Anatomia di un prompt efficace",
           "duration": 5,
           "xp": 10,
-          "concept": "Un prompt efficace ha tipicamente quattro componenti: <strong>1. Ruolo</strong> — chi deve essere l'AI in questa risposta; <strong>2. Contesto</strong> — le informazioni di sfondo necessarie; <strong>3. Compito</strong> — cosa deve fare esattamente; <strong>4. Formato</strong> — come vuoi la risposta (lunghezza, struttura, tono). Non tutti i prompt richiedono tutte e quattro le componenti, ma conoscerle ti permette di diagnosticare perché una risposta non soddisfa: di solito manca una di queste pezzi.",
-          "example": "<em>Ruolo:</em> 'Sei un esperto di marketing digitale.' <em>Contesto:</em> 'Ho un e-commerce di prodotti artigianali italiani, target 35-55 anni.' <em>Compito:</em> 'Suggeriscimi 5 idee per post Instagram per il mese di dicembre.' <em>Formato:</em> 'Per ogni idea: titolo, caption di 50 parole, hashtag consigliati.'",
-          "tip": "💡 Quando una risposta AI non ti soddisfa, invece di riformulare tutto, chiediti: quale dei quattro elementi manca o è vago? Aggiungi solo quello e rigenera.",
+          "concept": "Un prompt efficace ha tipicamente quattro componenti: <strong>contesto</strong> (chi sei, qual è la situazione), <strong>compito</strong> (cosa deve fare esattamente l'AI), <strong>formato</strong> (come deve essere strutturata la risposta) e <strong>vincoli</strong> (cosa escludere, limiti di lunghezza, tono). Non tutti i prompt richiedono tutti e quattro gli elementi — per compiti semplici bastano compito e formato. Ma per compiti complessi, omettere il contesto è il motivo principale per cui la risposta risulta generica o inutilizzabile. Anthropic e OpenAI nelle loro guide ufficiali enfatizzano entrambi l'importanza del contesto come primo elemento da fornire.",
+          "example": "Prompt senza struttura: 'Aiutami con la presentazione.' Prompt strutturato: [Contesto] 'Sono un consulente che deve presentare a un CDA di 8 persone i risultati di un'analisi sui costi IT.' [Compito] 'Crea uno schema per una presentazione di 15 minuti.' [Formato] 'Slide con titolo, 3 punti principali per slide, nota per il presentatore.' [Vincoli] 'Max 10 slide, evita il gergo tecnico, focus su implicazioni economiche non su dettagli tecnici.'",
+          "tip": "💡 Il contesto è l'elemento più spesso omesso e quello che più migliora le risposte. Prima di scrivere il compito, scrivi sempre chi sei e perché hai bisogno di quella cosa.",
           "source": "Anthropic",
           "quiz": [
             {
-              "question": "Quali sono le quattro componenti di un prompt efficace?",
+              "question": "Qual è l'elemento di un prompt più spesso omesso ma più impattante?",
               "options": [
-                "Lingua, lunghezza, parole chiave, urgenza",
-                "Ruolo, contesto, compito, formato",
-                "Titolo, corpo, esempi, conclusione",
-                "Chi, cosa, quando, perché"
+                "Il formato dell'output desiderato",
+                "Il contesto — chi sei e qual è la situazione",
+                "I vincoli di lunghezza",
+                "Il tono della risposta"
               ],
               "correct": 1,
-              "explanation": "Corretto! Ruolo, Contesto, Compito e Formato. Questi quattro elementi coprono quasi tutti i casi in cui un prompt risulta vago o produce output insoddisfacenti."
-            },
-            {
-              "question": "Una risposta AI non ti soddisfa. Qual è il primo passo più efficiente?",
-              "options": [
-                "Cambiare modello AI",
-                "Riscrivere l'intero prompt da capo",
-                "Identificare quale dei quattro elementi manca e aggiungerlo",
-                "Fare la stessa domanda più volte finché la risposta migliora"
-              ],
-              "correct": 2,
-              "explanation": "Esatto! Diagnostica prima di riscrivere. Nella maggior parte dei casi manca il ruolo o il formato — aggiungere solo quello risolve il problema."
+              "explanation": "Esatto! Il contesto è la componente che trasforma un prompt generico in uno specifico. Senza contesto, il modello produce la risposta media per quel tipo di richiesta — che quasi mai è quella di cui hai bisogno."
             }
           ]
         },
@@ -313,801 +371,119 @@
           "title": "Zero-shot prompting",
           "duration": 5,
           "xp": 10,
-          "concept": "Il <strong>zero-shot prompting</strong> significa chiedere all'AI di fare qualcosa senza fornire esempi di come farlo — ti basi solo sulla sua conoscenza generale. È il modo in cui la maggior parte delle persone usa l'AI ogni giorno, spesso senza saperlo. Funziona bene per compiti comuni e ben definiti: scrivere email, riassumere testi, tradurre, rispondere a domande generali. Quando il compito è insolito, molto specifico o richiede uno stile preciso, il zero-shot da solo non basta.",
-          "example": "'Riassumi questo articolo in 5 punti' → zero-shot puro, funziona benissimo. 'Scrivi una risposta a questo reclamo usando il tono specifico del nostro servizio clienti' → senza esempi del tuo tono reale, il risultato sarà generico.",
-          "tip": "💡 Zero-shot è il punto di partenza. Se la risposta non è abbastanza precisa, la prossima lezione ti mostra come aggiungere esempi per guidare meglio il modello.",
+          "concept": "Lo <strong>zero-shot prompting</strong> significa chiedere al modello di eseguire un compito senza fornire esempi di come farlo — ci si affida alla conoscenza già presente nel modello. È l'approccio più comune e funziona bene per compiti che rientrano chiaramente nel training del modello: scrivere email, riassumere testi, rispondere a domande generali. Fallisce quando il compito è molto specifico, quando il formato desiderato è insolito o quando serve uno stile molto preciso. In questi casi, aggiungere esempi (few-shot) o istruzioni più dettagliate risolve spesso il problema.",
+          "example": "Zero-shot efficace: 'Riassumi questo articolo in 3 punti chiave.' Il modello conosce bene questo tipo di compito e produce un buon output senza esempi. Zero-shot inefficace: 'Scrivi una scheda prodotto nel nostro formato interno.' Qui il modello non conosce il tuo formato interno — serve un esempio (few-shot) o una descrizione dettagliata del formato.",
+          "tip": "💡 Zero-shot è il punto di partenza naturale. Se il risultato non è quello che vuoi, prima di riscrivere il prompt da zero, prova ad aggiungere un singolo esempio di output desiderato — spesso è sufficiente.",
           "source": "OpenAI",
           "quiz": [
             {
-              "question": "In quale situazione il zero-shot prompting funziona meglio?",
+              "question": "Quando è sufficiente il zero-shot prompting?",
               "options": [
-                "Quando vuoi riprodurre esattamente il tono di un documento aziendale",
-                "Quando il compito è comune e ben definito, come riassumere o tradurre",
-                "Quando hai bisogno di un output molto tecnico e specializzato",
-                "Quando vuoi che l'AI imiti lo stile di un autore specifico"
+                "Solo per compiti molto semplici come tradurre singole parole",
+                "Per compiti che rientrano chiaramente nel training del modello e non richiedono un formato molto specifico",
+                "Mai — è sempre meglio fornire esempi",
+                "Solo con i modelli più potenti come GPT-4o e Claude Opus"
               ],
               "correct": 1,
-              "explanation": "Giusto! Per compiti standard — riassumere, tradurre, rispondere a domande — il zero-shot è efficiente. Per compiti che richiedono stile o formato precisi, servono esempi."
+              "explanation": "Corretto! Zero-shot funziona bene per compiti comuni e ben definiti. La necessità di esempi emerge quando il compito è insolito, il formato è specifico o lo stile richiesto è molto preciso."
             }
           ]
         },
         {
           "id": "p4",
-          "title": "Few-shot prompting",
+          "title": "Few-shot prompting: insegna con gli esempi",
           "duration": 5,
           "xp": 15,
-          "concept": "Il <strong>few-shot prompting</strong> consiste nel fornire all'AI uno o più esempi del risultato che vuoi, prima di chiederle di fare il compito. È uno dei metodi più potenti e sottoutilizzati. Gli esempi mostrano al modello il formato, il tono, la lunghezza e lo stile desiderati in modo molto più efficace di qualsiasi istruzione verbale. Bastano 2-3 esempi ben scelti per trasformare radicalmente la qualità dell'output.",
-          "example": "Stai scrivendo risposte ai commenti social della tua azienda. Invece di spiegare il tono, mostri: 'Commento: \"Ottimo prodotto!\" → Risposta: \"Grazie mille! Fa davvero piacere 😊 Ti aspettiamo presto!\"'. Poi: 'Commento: \"Il pacco è arrivato in ritardo\" → Risposta: \"Ci dispiace molto, capiamo la frustrazione. Ti contatteremo in privato per risolvere subito ❤️\"'. Ora chiedi: 'Genera una risposta a: [nuovo commento]'. Il modello capisce perfettamente il tuo stile.",
-          "tip": "💡 Hai dei documenti o testi già scritti nel tuo stile? Incollane un pezzo come esempio — è il modo più veloce per 'clonare' il tuo stile nell'AI.",
+          "concept": "Il <strong>few-shot prompting</strong> consiste nel fornire al modello 2-5 esempi del tipo di output desiderato prima della richiesta vera e propria. Il modello 'impara' il pattern dagli esempi e lo applica al nuovo caso. È uno degli approcci più potenti perché non richiede di spiegare le regole — si mostra direttamente il risultato desiderato. Funziona particolarmente bene per: classificazione di testi, estrazione di informazioni in formato specifico, risposta in uno stile o tono preciso, qualsiasi compito ripetitivo con output strutturato.",
+          "example": "Vuoi classificare il sentiment dei feedback dei clienti. Invece di spiegare cosa intendi per positivo/negativo/neutro, mostri esempi: 'Il prodotto è arrivato velocemente e funziona bene → POSITIVO. Il servizio clienti non risponde → NEGATIVO. Il prodotto è come descritto → NEUTRO. Ora classifica: Ho aspettato 2 settimane e il prodotto era danneggiato →'. Il modello applica esattamente il pattern dei tuoi esempi, compresi i casi limite.",
+          "tip": "💡 La qualità degli esempi conta più della quantità. Due esempi perfetti e rappresentativi battono dieci esempi mediocri. Scegli esempi che coprano i casi 'difficili' o ambigui del tuo compito specifico.",
           "source": "Anthropic",
           "quiz": [
             {
-              "question": "Qual è il vantaggio principale del few-shot prompting rispetto al zero-shot?",
+              "question": "Perché il few-shot prompting è spesso più efficace di una lunga spiegazione delle regole?",
               "options": [
-                "Consuma meno token e costa meno",
-                "Permette all'AI di accedere a internet per trovare esempi",
-                "Gli esempi mostrano formato, tono e stile molto più efficacemente delle istruzioni verbali",
-                "Funziona solo con ChatGPT-4 e modelli recenti"
+                "Perché usa meno token e quindi costa meno",
+                "Perché gli esempi mostrano direttamente il pattern desiderato, che il modello applica con più precisione di regole astratte",
+                "Perché funziona solo con i modelli più recenti",
+                "Non è più efficace — le regole esplicite danno sempre risultati migliori"
               ],
-              "correct": 2,
-              "explanation": "Esatto! 'Mostrare' è più efficace di 'spiegare'. Tre buoni esempi comunicano lo stile desiderato meglio di un paragrafo di istruzioni."
+              "correct": 1,
+              "explanation": "Esatto! Mostrare è spesso più preciso che spiegare. Gli esempi trasmettono informazioni implicite — tono, livello di dettaglio, gestione dei casi edge — che sono difficili da articolare in regole esplicite."
             }
           ]
         },
         {
           "id": "p5",
-          "title": "Chain-of-Thought",
+          "title": "Chain-of-thought: ragiona step by step",
           "duration": 5,
           "xp": 15,
-          "concept": "Il <strong>Chain-of-Thought (CoT)</strong> è una tecnica che invita l'AI a ragionare passo dopo passo prima di dare la risposta finale. Gli LLM tendono a fare errori su problemi complessi quando rispondono \"d'istinto\". Forzarli a esplicitare il ragionamento migliora significativamente l'accuratezza, specialmente per problemi matematici, logici o multi-step. Si attiva con frasi come \"Ragiona passo dopo passo\", \"Spiega il tuo ragionamento\", o \"Prima analizza il problema, poi dai la risposta\".",
-          "example": "Senza CoT: 'Quante ore di lavoro servono per un progetto da 15.000€ a 85€/h?' → L'AI potrebbe rispondere 176h sbagliando. Con CoT: 'Ragiona passo dopo passo: quante ore servono per un progetto da 15.000€ a 85€/h?' → L'AI scrive: '15.000 ÷ 85 = 176,47. Arrotondando: circa 176 ore e 30 minuti.' Stessa domanda, risposta più precisa e verificabile.",
-          "tip": "💡 Per qualsiasi problema che richieda più di un passaggio logico, aggiungi sempre 'Ragiona passo dopo passo' al tuo prompt. È una delle tecniche con il miglior rapporto semplicità/efficacia.",
-          "source": "Anthropic",
+          "concept": "Il <strong>chain-of-thought prompting</strong> (CoT) è una tecnica che induce il modello a esplicitare il ragionamento intermedio prima di dare la risposta finale. Invece di chiedere direttamente 'qual è la risposta?', si chiede 'ragiona step by step e poi rispondi'. La ricerca di Google Brain e altri ha dimostrato che questo approccio migliora significativamente le performance su compiti di ragionamento, matematica, logica e pianificazione — perché il modello non può 'saltare' a una risposta plausibile senza verificarla. Basta aggiungere 'pensa ad alta voce' o 'ragiona step by step' alla fine del prompt.",
+          "example": "Senza CoT: 'Se ho 3 riunioni da 45 minuti, una pausa pranzo di 1 ora, e la giornata lavorativa finisce alle 18, da che ora devo iniziare per finire tutto entro le 18?' → Il modello potrebbe rispondere velocemente e sbagliare. Con CoT: stessa domanda + 'ragiona step by step' → Il modello elenca i calcoli: 3×45=135 min di riunioni + 60 min pranzo = 195 min totali = 3h15min. Se finisco alle 18, devo iniziare alle 14:45. Risposta corretta.",
+          "tip": "💡 Chain-of-thought è particolarmente utile per decisioni complesse: 'Analizza i pro e contro di queste due opzioni ragionando step by step prima di dare una raccomandazione.' Rende il ragionamento del modello trasparente e verificabile.",
+          "source": "Google",
           "quiz": [
             {
-              "question": "Quando è particolarmente utile il Chain-of-Thought prompting?",
+              "question": "Perché il chain-of-thought prompting migliora le risposte su compiti di ragionamento?",
               "options": [
-                "Quando vuoi risposte più brevi e dirette",
-                "Per problemi complessi che richiedono ragionamento multi-step",
-                "Per compiti creativi come scrivere poesie",
-                "Quando usi modelli vecchi con contesto limitato"
+                "Perché usa più token e quindi il modello ha più spazio per rispondere",
+                "Perché forza il modello a esplicitare i passaggi intermedi, impedendogli di saltare direttamente a una risposta plausibile ma errata",
+                "Perché attiva una modalità speciale del modello riservata ai ragionamenti complessi",
+                "Funziona solo per la matematica, non per altri tipi di ragionamento"
               ],
               "correct": 1,
-              "explanation": "Esatto! Il CoT brilla su problemi logici, matematici o multi-step. Forzare il ragionamento esplicito riduce gli errori perché il modello non può 'saltare' i passaggi intermedi."
-            },
-            {
-              "question": "Quale frase attiva efficacemente il Chain-of-Thought in un prompt?",
-              "options": [
-                "'Sii breve e diretto'",
-                "'Rispondi in formato JSON'",
-                "'Ragiona passo dopo passo'",
-                "'Usa un tono formale'"
-              ],
-              "correct": 2,
-              "explanation": "Corretto! 'Ragiona passo dopo passo' è la formula classica del CoT. Semplice da aggiungere, grande impatto sulla qualità del ragionamento."
+              "explanation": "Esatto! Il ragionamento esplicito step-by-step riduce gli errori perché ogni passaggio intermedio può essere verificato prima di procedere al successivo. È come mostrare il lavoro in un esercizio di matematica."
             }
           ]
         },
         {
           "id": "p6",
-          "title": "Il System Prompt",
+          "title": "Role prompting: dai un ruolo all'AI",
           "duration": 5,
-          "xp": 15,
-          "concept": "Il <strong>system prompt</strong> è un'istruzione speciale che definisce il comportamento generale del modello per tutta la conversazione, prima ancora che l'utente scriva qualcosa. È separato dai messaggi normali e ha priorità più alta. In ChatGPT si chiama \"Custom Instructions\", in Claude si imposta nelle API o in certi client. Il system prompt è lo strumento con cui aziende e sviluppatori configurano l'AI per casi d'uso specifici: un assistente clienti, un tutor, un editor. Per l'utente normale, impostarlo una volta sola risparmia molto tempo.",
-          "example": "System prompt personale esempio: 'Sei un assistente professionale per un avvocato specializzato in diritto del lavoro. Rispondi sempre in italiano, con tono formale. Quando non sei certo di un dato normativo, dillo esplicitamente. Non inventare mai riferimenti legislativi. Struttura le risposte lunghe con titoli e bullet point.'",
-          "tip": "💡 In ChatGPT vai su Impostazioni → Personalizzazione → Istruzioni personalizzate. Imposta lì il tuo profilo professionale: ruolo, settore, lingua, stile preferito. Vale per tutte le conversazioni future.",
+          "xp": 10,
+          "concept": "Il <strong>role prompting</strong> consiste nell'assegnare un ruolo o una persona specifica al modello prima di fare la richiesta: 'Sei un avvocato esperto in diritto del lavoro italiano', 'Sei un editor di un quotidiano nazionale', 'Sei un consulente di strategia aziendale con 20 anni di esperienza'. Il modello adatta il vocabolario, il livello di dettaglio, le assunzioni di contesto e lo stile della risposta in base al ruolo assegnato. Non è magia — il modello attinge ai pattern linguistici associati a quella professione nel suo training. Funziona meglio con ruoli specifici e contestualizzati piuttosto che con ruoli generici.",
+          "example": "Senza ruolo: 'Come rispondo a questa email aggressiva di un cliente?' → risposta generica. Con ruolo: 'Sei un customer success manager con 10 anni di esperienza in SaaS B2B. Come gestiresti questa email aggressiva di un cliente enterprise che minaccia di cancellare il contratto?' → risposta molto più specifica al contesto, con terminology e approccio tipico del settore.",
+          "tip": "💡 Combina il role prompting con il contesto specifico: non solo 'sei un medico' ma 'sei un medico di base italiano che deve spiegare una diagnosi a un paziente anziano con scarsa familiarità con i termini medici'. Più specifico è il ruolo, più calibrata è la risposta.",
           "source": "Anthropic",
           "quiz": [
             {
-              "question": "Qual è la caratteristica principale di un system prompt rispetto a un messaggio normale?",
+              "question": "Perché il role prompting migliora la qualità delle risposte?",
               "options": [
-                "È più lungo dei messaggi normali",
-                "Definisce il comportamento dell'AI per tutta la conversazione, con priorità più alta",
-                "Può essere modificato solo dagli sviluppatori",
-                "Funziona solo con Claude di Anthropic"
+                "Perché cambia il modello AI usato internamente",
+                "Perché il modello adatta vocabolario, livello di dettaglio e assunzioni di contesto ai pattern linguistici del ruolo assegnato",
+                "Funziona solo per ruoli professionali, non per personaggi creativi",
+                "Perché riduce il rischio di allucinazioni"
               ],
               "correct": 1,
-              "explanation": "Corretto! Il system prompt è l'istruzione 'di base' che configura l'AI prima dell'interazione. Ha priorità sulle istruzioni dei messaggi normali ed è persistente per tutta la sessione."
+              "explanation": "Corretto! Il role prompting non è un trucco — attiva pattern linguistici e di ragionamento specifici per quella professione o contesto. Un avvocato e un marketer scrivono e ragionano diversamente, e il modello riflette questa differenza."
             }
           ]
         },
         {
           "id": "p7",
-          "title": "Role Prompting",
+          "title": "Il system prompt: istruzioni permanenti",
           "duration": 5,
-          "xp": 10,
-          "concept": "Il <strong>role prompting</strong> consiste nell'assegnare all'AI un ruolo o una persona specifica per guidare il tono, la prospettiva e la profondità della risposta. Non è solo un trucco stilistico: quando assegni un ruolo preciso, attivi parti diverse del 'sapere' del modello — un esperto di marketing pensa a problemi diversi rispetto a un avvocato o a un consulente finanziario. Il ruolo non deve essere di una persona reale; funziona anche con ruoli professionali astratti o combinazioni inusuali.",
-          "example": "'Sei un consulente di McKinsey specializzato in PMI italiane' → risposta strutturata, framework decisionali, linguaggio da consulenza. 'Sei un artigiano falegname con 30 anni di esperienza' → risposta pratica, diretta, piena di esperienza concreta. Stessa domanda, mondi diversi.",
-          "tip": "💡 Per ottenere il massimo, combina il ruolo con il contesto del tuo settore specifico. 'Sei un esperto di marketing' è debole. 'Sei un esperto di marketing digitale per studi professionali italiani' è molto più preciso.",
-          "source": "OpenAI",
+          "xp": 15,
+          "concept": "Il <strong>system prompt</strong> è un'istruzione speciale che viene fornita al modello prima dell'inizio della conversazione e che rimane attiva per tutta la sessione. È separato dalla conversazione visibile all'utente e ha priorità più alta rispetto ai messaggi normali. Negli strumenti consumer come ChatGPT si chiama 'istruzioni personalizzate'; nell'API si chiama letteralmente 'system'. I casi d'uso principali: definire un ruolo fisso per il modello, impostare un tono e uno stile di risposta permanente, fornire contesto aziendale che non vuoi ripetere ogni volta, stabilire regole su cosa rispondere e cosa non rispondere.",
+          "example": "System prompt per un assistente personale: 'Sei il mio assistente professionale. Conoscimi: sono un avvocato fiscalista con studio a Milano, lavoro principalmente con PMI, scrivo in italiano ma ricevo documenti in inglese. Quando rispondo ai clienti usa un tono professionale ma non freddo. Quando elaboro documenti tecnici sii preciso e cita le fonti normative. Non inventare mai riferimenti legislativi — se non sei sicuro, dimmelo esplicitamente.' Questo prompt rimane attivo per tutta la sessione senza doverlo ripetere.",
+          "tip": "💡 Nei tool consumer (ChatGPT, Claude.ai), il system prompt si chiama 'istruzioni personalizzate' o 'memoria'. Dedicare 15 minuti a configurarlo bene vale settimane di prompt migliorati — è l'investimento con il ROI più alto nel workflow AI.",
+          "source": "Anthropic",
           "quiz": [
             {
-              "question": "Perché il role prompting migliora la qualità delle risposte?",
+              "question": "Qual è la differenza tra un system prompt e un normale messaggio nella chat?",
               "options": [
-                "Perché fa lavorare di più il modello",
-                "Perché attiva parti diverse del sapere del modello e guida tono e prospettiva",
-                "Perché i ruoli aumentano il numero di token disponibili",
-                "Perché confonde il modello in modo produttivo"
+                "Il system prompt è visibile all'AI ma non all'utente",
+                "Il system prompt viene fornito prima della conversazione, ha priorità più alta e rimane attivo per tutta la sessione",
+                "Il system prompt funziona solo nelle versioni a pagamento",
+                "Non c'è differenza: è solo un modo diverso di iniziare il primo messaggio"
               ],
               "correct": 1,
-              "explanation": "Esatto! Assegnare un ruolo preciso orienta il modello verso un dominio di conoscenza specifico e imposta tono, terminologia e framework di ragionamento coerenti con quel ruolo."
+              "explanation": "Esatto! Il system prompt è il 'livello meta' della conversazione: imposta il contesto e le regole prima che inizi lo scambio vero e proprio. La sua priorità più alta significa che le sue istruzioni tendono a prevalere su eventuali richieste contrastanti nei messaggi successivi."
             }
           ]
         },
         {
           "id": "p8",
-          "title": "Prompt per compiti complessi",
-          "duration": 5,
-          "xp": 15,
-          "concept": "Per compiti complessi, la strategia più efficace è <strong>spezzare il problema</strong> in più prompt sequenziali invece di chiedere tutto in una volta. Ogni prompt fa una cosa sola, bene. Questo approccio — chiamato prompt chaining — produce risultati molto più controllabili e di qualità superiore rispetto al tentativo di ottenere tutto in un unico mega-prompt. Puoi anche chiedere all'AI di creare il piano prima di eseguirlo: 'Prima dimmi come affronteresti questo compito, poi aspetta la mia conferma prima di procedere.'",
-          "example": "Invece di: 'Scrivi un'analisi di mercato completa per il mio business plan.' → Dividi in: (1) 'Identifica i 5 competitor principali per [settore]' → (2) 'Per ognuno, analizza punti di forza e debolezze' → (3) 'Ora suggerisci come posizionarmi in modo differenziato.' Ogni step controlla e migliora il precedente.",
-          "tip": "💡 Se un compito richiederebbe più di un paragrafo per essere descritto a un collaboratore umano, spezzalo in step. Vale la stessa regola con l'AI.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Qual è il vantaggio del prompt chaining per compiti complessi?",
-              "options": [
-                "Riduce il costo delle API",
-                "Permette di controllare e correggere ogni step, producendo risultati più precisi",
-                "È più veloce di un singolo prompt lungo",
-                "Funziona meglio con modelli piccoli e veloci"
-              ],
-              "correct": 1,
-              "explanation": "Corretto! Il chaining dà controllo a ogni passaggio. Se uno step va storto, lo correggi lì — invece di ricevere un output lungo e sbagliato alla fine."
-            }
-          ]
-        },
-        {
-          "id": "p9",
-          "title": "Errori comuni nel prompting",
+          "title": "Iterazione: il prompt è un dialogo",
           "duration": 5,
           "xp": 10,
-          "concept": "Conoscere gli errori più frequenti ti fa risparmiare molto tempo. I più comuni: <strong>1. Troppo vago</strong> — 'Aiutami con la mia email' senza contesto. <strong>2. Troppo lungo e dispersivo</strong> — paragoni di istruzioni senza struttura chiara. <strong>3. Domande multiple in un unico prompt</strong> — il modello risponde superficialmente a tutte. <strong>4. Nessun formato specificato</strong> — il modello sceglie per te, spesso sbagliando. <strong>5. Non correggere in chat</strong> — molti rifanno il prompt da capo invece di dire all'AI cosa migliorare nella risposta appena data.",
-          "example": "Invece di ricominciare tutto, scrivi: 'La risposta è buona ma troppo lunga. Riducila a metà mantenendo solo i punti più importanti' oppure 'Ottimo, ora riscrivi il secondo paragrafo in tono più informale'. Correggere in chat è spesso più efficiente che riscrivere il prompt.",
-          "tip": "💡 L'AI ricorda tutto il contesto della chat corrente. Usala come una conversazione reale: feedback, correzioni, richieste di variazioni. Non trattarla come un motore di ricerca da interrogare ogni volta da zero.",
-          "source": "OpenAI",
-          "quiz": [
-            {
-              "question": "Qual è il modo più efficiente per migliorare una risposta AI che è quasi giusta ma non perfetta?",
-              "options": [
-                "Riscrivere l'intero prompt da capo in una nuova chat",
-                "Cambiare modello AI",
-                "Dare feedback specifico nella stessa chat: cosa tenere e cosa cambiare",
-                "Aggiungere più parole chiave al prompt originale"
-              ],
-              "correct": 2,
-              "explanation": "Corretto! La conversazione è il tuo strumento. Correggere in chat è veloce, preciso e sfrutta il contesto già costruito. Ricominciare da capo spreca tutto quel contesto."
-            }
-          ]
-        },
-        {
-          "id": "p10",
-          "title": "Prompt templating",
-          "duration": 5,
-          "xp": 15,
-          "concept": "Il <strong>prompt template</strong> è un prompt riutilizzabile con delle variabili al posto delle informazioni specifiche. Invece di riscrivere ogni volta lo stesso prompt, lo scrivi una volta con placeholder tipo [ARGOMENTO], [NOME_CLIENTE], [SETTORE] e lo incolli riempiendo solo le variabili. I team che usano l'AI in modo professionale costruiscono librerie di template per i compiti ricorrenti: email, offerte commerciali, analisi, report. Questo garantisce coerenza qualitativa e velocità.",
-          "example": "Template email di follow-up: 'Sei un consulente professionale nel settore [SETTORE]. Scrivi un'email di follow-up dopo una riunione con [NOME_CLIENTE]. L'obiettivo della riunione era [OBIETTIVO]. I prossimi passi concordati sono: [PROSSIMI_PASSI]. Tono: professionale ma caldo. Lunghezza: massimo 150 parole.'",
-          "tip": "💡 Crea una nota sul tuo telefono o un documento condiviso con i tuoi 5-10 template AI più usati. Risparmierai ore ogni settimana su compiti ripetitivi.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Qual è il principale vantaggio dei prompt template?",
-              "options": [
-                "Rendono i prompt più lunghi e quindi più efficaci",
-                "Permettono risposte in tempo reale",
-                "Garantiscono coerenza e risparmiano tempo su compiti ricorrenti",
-                "Funzionano solo con abbonamenti a pagamento"
-              ],
-              "correct": 2,
-              "explanation": "Esatto! I template standardizzano la qualità e eliminano il lavoro di riscrivere istruzioni ogni volta. Sono il fondamento di un uso professionale dell'AI."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "lavoro",
-      "emoji": "💼",
-      "title": "AI nel lavoro",
-      "lessons": [
-        {
-          "id": "l1",
-          "title": "AI per scrivere meglio",
-          "duration": 5,
-          "xp": 10,
-          "concept": "Uno degli usi più immediati e produttivi dell'AI è migliorare la scrittura professionale. Non si tratta di fare scrivere tutto all'AI — si tratta di usarla come un editor sempre disponibile. Puoi usarla per: correggere tono e grammatica, riformulare testi troppo tecnici o informali, adattare lo stesso messaggio a pubblici diversi, trovare l'incipit giusto quando sei bloccato, o condensare email troppo lunghe. La chiave è partire sempre da una tua bozza — anche grezza — e chiedere all'AI di migliorarla, non di scriverla tutta.",
-          "example": "Hai scritto un'email complicata a un cliente difficile e non sei sicuro del tono. Incollala nell'AI con: 'Questa email è per un cliente insoddisfatto. Il mio obiettivo è scusarmi senza ammettere colpa legale, mantenere il rapporto e proporre una soluzione. Riscrivi mantenendo i fatti ma migliorando il tono.'",
-          "tip": "💡 'Scrivi tu' vs 'Migliora il mio testo': il secondo approccio produce sempre risultati più autentici e coerenti con la tua voce. Usa l'AI come editore, non come ghostwriter.",
-          "source": "OpenAI",
-          "quiz": [
-            {
-              "question": "Qual è l'approccio più efficace per usare l'AI nella scrittura professionale?",
-              "options": [
-                "Lasciare che l'AI scriva tutto dal nulla",
-                "Usarla solo per correggere errori grammaticali",
-                "Partire da una tua bozza e chiedere all'AI di migliorarla",
-                "Usarla solo per testi informali, mai per quelli professionali"
-              ],
-              "correct": 2,
-              "explanation": "Corretto! Partire dalla tua bozza mantiene la tua voce e il tuo punto di vista — l'AI migliora la forma, tu mantieni la sostanza."
-            }
-          ]
-        },
-        {
-          "id": "l2",
-          "title": "AI per analizzare documenti",
-          "duration": 5,
-          "xp": 10,
-          "concept": "L'analisi di documenti lunghi è uno dei casi d'uso più sottovalutati e produttivi. Puoi incollare (o allegare, con modelli che lo supportano) contratti, relazioni, articoli, email lunghe e chiedere all'AI di estrarne informazioni specifiche, riassumerli, trovare incongruenze o confrontarli. Modelli con context window ampia come Claude sono ideali per questo. Attenzione sempre alla privacy: non caricare documenti con dati sensibili su piattaforme non autorizzate dalla tua azienda.",
-          "example": "Hai un contratto di 40 pagine. Invece di leggerlo tutto, chiedi: 'Questo è un contratto di fornitura. Elenca: 1) le principali obbligazioni a mio carico, 2) le clausole di penale, 3) le condizioni di recesso, 4) qualsiasi termine che potrebbe essere svantaggioso per me.' Ottieni in 30 secondi quello che richiederebbe un'ora di lettura.",
-          "tip": "💡 Crea sempre un riassunto strutturato prima di leggere un documento lungo. Poi leggi solo le sezioni che l'AI ha identificato come critiche. Taglia i tempi di lettura del 70%.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Quale precauzione è fondamentale quando si usano documenti aziendali con l'AI?",
-              "options": [
-                "Usare solo file in formato PDF",
-                "Non caricare documenti con dati sensibili su piattaforme non autorizzate",
-                "Inviare sempre una copia al proprio avvocato prima",
-                "Usare solo Claude, mai ChatGPT"
-              ],
-              "correct": 1,
-              "explanation": "Corretto! La privacy è prioritaria. Verifica sempre le policy del tuo strumento AI prima di caricare contratti, dati clienti o informazioni riservate."
-            }
-          ]
-        },
-        {
-          "id": "l3",
-          "title": "AI per brainstorming",
-          "duration": 5,
-          "xp": 10,
-          "concept": "L'AI è un interlocutore straordinario per il brainstorming perché non ha inibizioni, non si stanca e non giudica le idee. Può generare decine di variazioni, esplorare angolazioni inusuali, fare da avvocato del diavolo e sfidare le tue assunzioni. La tecnica più efficace è il <strong>brainstorming strutturato</strong>: non chiedere genericamente 'dammi idee', ma dare un vincolo preciso — target, budget, stile, settore — e chiedere un numero specifico di opzioni radicalmente diverse tra loro.",
-          "example": "'Sto lanciando un servizio di consulenza fiscale per freelance under 35. Dammi 10 idee per il nome, divise in: 3 istituzionali e seri, 3 moderni e tech, 4 creativi e ironici. Per ognuno, una frase che spiega l'associazione mentale che crea.'",
-          "tip": "💡 Dopo il brainstorming, chiedi all'AI di fare l'avvocato del diavolo: 'Quali di queste idee potrebbero non funzionare e perché?' Ottieni in pochi secondi la critica che normalmente richiede un team.",
-          "source": "OpenAI",
-          "quiz": [
-            {
-              "question": "Come si ottiene un brainstorming più utile dall'AI?",
-              "options": [
-                "Chiedendo 'dammi tante idee possibili senza limiti'",
-                "Dando vincoli precisi: target, stile, numero di idee, categorie",
-                "Facendo la stessa domanda tre volte e scegliendo la risposta migliore",
-                "Usando solo il zero-shot senza contesto"
-              ],
-              "correct": 1,
-              "explanation": "Esatto! I vincoli paradossalmente liberano la creatività — dell'AI e la tua. Un brief preciso produce idee più pertinenti e diverse tra loro."
-            }
-          ]
-        },
-        {
-          "id": "l4",
-          "title": "AI per la ricerca",
-          "duration": 5,
-          "xp": 10,
-          "concept": "L'AI può accelerare enormemente la fase di ricerca e raccolta informazioni — ma con un'importante distinzione: gli LLM base rispondono con la loro conoscenza fino alla data di addestramento, mentre strumenti come Perplexity AI, ChatGPT con ricerca web attiva, o Gemini con Google Search integrato accedono a informazioni recenti. Per ricerche su fatti attuali, normative vigenti o dati di mercato, usa sempre strumenti con accesso al web e verifica le fonti citate.",
-          "example": "Per capire un settore sconosciuto rapidamente: 'Sono un consulente che deve incontrare un cliente nel settore [settore]. Fammi una panoramica: dimensione del mercato italiano, 3-4 trend principali 2024-2025, principali sfide del settore, terminologia tecnica che dovrei conoscere.' Prep di 5 minuti invece di 2 ore.",
-          "tip": "💡 Per fatti recenti usa Perplexity o ChatGPT con web search attivo. Per elaborazione, strutturazione e analisi di testi che già possiedi, qualsiasi LLM va bene.",
-          "source": "Google",
-          "quiz": [
-            {
-              "question": "Quale strumento è più adatto per ricercare informazioni recenti e aggiornate?",
-              "options": [
-                "Qualsiasi LLM, perché sono tutti aggiornati in tempo reale",
-                "Solo Claude, perché ha la context window più grande",
-                "Strumenti con accesso al web come Perplexity o ChatGPT con ricerca attiva",
-                "Gli LLM base, perché non citano fonti errate"
-              ],
-              "correct": 2,
-              "explanation": "Corretto! Gli LLM base hanno una data di cutoff. Per informazioni recenti servono strumenti con accesso web. Perplexity AI è specificamente progettato per questo."
-            }
-          ]
-        },
-        {
-          "id": "l5",
-          "title": "Automatizzare con l'AI",
-          "duration": 5,
-          "xp": 15,
-          "concept": "Oltre all'uso diretto in chat, l'AI può essere integrata in flussi di lavoro automatizzati tramite strumenti no-code come <strong>Make</strong> (ex Integromat) e <strong>Zapier</strong>. Questi tool collegano l'AI ad altre app: quando arriva un'email → l'AI la classifica → la smista nella cartella giusta. Ogni nuovo lead → l'AI scrive una risposta personalizzata → la manda. Un documento viene caricato → l'AI lo riassume → invia il riassunto su Slack. Tutto senza scrivere codice.",
-          "example": "Un professionista riceve 50 email al giorno. Con Make + OpenAI: ogni email viene classificata automaticamente (urgente / da leggere / newsletter), le urgenti ottengono una bozza di risposta pronta in bozze, le newsletter vengono riassunte settimanalmente. Tempo risparmiato: 1-2 ore al giorno.",
-          "tip": "💡 Inizia con un'automazione sola, semplice, su un processo che fai ogni giorno. Anche solo 'classifica le mie email in entrata' può cambiare la tua giornata.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Cosa sono Make e Zapier nel contesto dell'AI?",
-              "options": [
-                "Modelli AI alternativi a ChatGPT",
-                "Strumenti no-code per collegare l'AI ad altre app e creare automazioni",
-                "Piattaforme per addestrare modelli AI personalizzati",
-                "Estensioni browser per usare l'AI su qualsiasi sito"
-              ],
-              "correct": 1,
-              "explanation": "Esatto! Make e Zapier sono strumenti di automazione no-code che fungono da 'colla' tra l'AI e le altre app che usi — email, calendar, CRM, Slack e molto altro."
-            }
-          ]
-        },
-        {
-          "id": "l6",
-          "title": "AI per il tuo settore",
-          "duration": 5,
-          "xp": 10,
-          "concept": "L'AI non è uno strumento generico uguale per tutti — il suo valore reale emerge quando la adatti al tuo settore specifico con prompt personalizzati, terminologia corretta e casi d'uso mirati. Un avvocato la usa diversamente da un architetto, un HR diversamente da un commercialista. La personalizzazione avviene principalmente tramite il system prompt professionale (che hai imparato nel percorso Prompting) e la costruzione di template specifici per i compiti ricorrenti del tuo lavoro.",
-          "example": "HR: analisi CV, job description, comunicazioni ai candidati. Avvocato: ricerca normativa (da verificare), bozze di lettere, spiegazione concetti a clienti. Commercialista: spiegazione di concetti fiscali ai clienti, redazione di comunicazioni, analisi di documenti. Marketer: copy, content calendar, analisi competitor.",
-          "tip": "💡 Dedica 30 minuti a mappare i 5 compiti più ripetitivi del tuo lavoro. Per ognuno, crea un template prompt. Quelle 5 ore mensili diventano automazioni che lavorano per te.",
-          "source": "OpenAI",
-          "quiz": [
-            {
-              "question": "Come si massimizza il valore dell'AI per un settore professionale specifico?",
-              "options": [
-                "Usando solo i modelli più costosi e potenti",
-                "Personalizzando con system prompt, terminologia di settore e template per compiti ricorrenti",
-                "Chiedendo all'AI di simulare un esperto del tuo settore ogni volta",
-                "Usando l'AI solo per i compiti meno importanti"
-              ],
-              "correct": 1,
-              "explanation": "Corretto! La personalizzazione è la chiave. System prompt professionale + template settoriali = strumento su misura per il tuo lavoro specifico."
-            }
-          ]
-        },
-        {
-          "id": "l7",
-          "title": "I limiti dell'AI al lavoro",
-          "duration": 5,
-          "xp": 10,
-          "concept": "Anche nel contesto professionale, alcuni limiti dell'AI sono strutturali e non cambieranno presto. L'AI non ha responsabilità legale — le decisioni che impattano persone, clienti o contratti restano sempre in capo a te. Non conosce il contesto specifico della tua azienda, dei tuoi clienti, della tua storia professionale — a meno che tu non glielo dica ogni volta. Non è aggiornata sull'ultima normativa. E, soprattutto, può sembrare sicura anche quando sbaglia.",
-          "example": "Un avvocato che usa l'AI per trovare precedenti giurisprudenziali e non li verifica rischia di citare sentenze inesistenti in tribunale — è già successo. La responsabilità professionale non si delega all'AI.",
-          "tip": "💡 La regola pratica: tutto ciò che firmi o che impatta direttamente un cliente deve passare dal tuo giudizio. L'AI è il tuo collaboratore, non il tuo sostituto.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Chi ha la responsabilità legale e professionale di un output prodotto con l'aiuto dell'AI?",
-              "options": [
-                "Il produttore del modello AI (es. OpenAI, Anthropic)",
-                "Nessuno, perché l'AI è uno strumento automatico",
-                "Sempre il professionista che ha usato l'AI e firmato il documento",
-                "Dipende dal tipo di abbonamento AI scelto"
-              ],
-              "correct": 2,
-              "explanation": "Esatto! La responsabilità professionale non si delega. Il professionista risponde sempre del proprio lavoro, indipendentemente dagli strumenti utilizzati."
-            }
-          ]
-        },
-                {
-          "id": "l8",
-          "title": "Costruire il tuo workflow AI",
-          "duration": 5,
-          "xp": 15,
-          "concept": "Il vero salto di produttività non viene dall'uso occasionale dell'AI, ma dalla costruzione di un <strong>workflow sistematico</strong>: una serie di passaggi definiti in cui l'AI ha un ruolo preciso per ogni tipo di compito ricorrente. Non si costruisce in un giorno — si parte da un processo, si testa, si migliora, poi si aggiunge il successivo. Chi ha un workflow AI consolidato risparmia in media 2-4 ore a settimana, non perché l'AI sia magica, ma perché elimina la frizione decisionale: non devi ogni volta pensare 'come lo chiedo?', hai già la risposta pronta.",
-          "example": "Workflow per rispondere alle email complesse: 1) Incolla l'email nell'AI con il tuo template 'classifica e suggerisci'. 2) L'AI identifica il tipo e il tono del mittente. 3) Genera 3 bozze di risposta con toni diversi. 4) Tu scegli e aggiusti in 30 secondi. 5) Invii. Totale: 3 minuti invece di 20. Moltiplicato per 10 email al giorno: un'ora risparmiata ogni giorno.",
-          "tip": "💡 Documenta il tuo workflow anche solo in un file di testo. Un sistema scritto si migliora, si condivide col team e non sparisce quando cambi dispositivo.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Qual è la differenza tra usare l'AI occasionalmente e avere un workflow AI?",
-              "options": [
-                "Il workflow richiede un abbonamento premium",
-                "Con il workflow hai risposte migliori perché l'AI impara da te",
-                "Il workflow elimina la frizione decisionale: sai già come usare l'AI per ogni compito ricorrente",
-                "Non c'è differenza pratica, dipende solo dalla frequenza d'uso"
-              ],
-              "correct": 2,
-              "explanation": "Esatto! La vera produttività non viene dalla potenza del modello ma dall'eliminazione della frizione. Quando hai template e passaggi definiti, smetti di perdere tempo a capire come fare la domanda giusta."
-            }
-          ]
-        },
-        {
-          "id": "l9",
-          "title": "Il tuo piano AI personale",
-          "duration": 5,
-          "xp": 15,
-          "concept": "Arrivati alla fine di questo percorso, il passo più utile è trasformare quello che hai imparato in un <strong>piano personale concreto</strong>: 3 compiti del tuo lavoro che automatizzi con l'AI questa settimana, 2 template da costruire, 1 workflow da testare per 30 giorni. L'AI non cambia la vita in un giorno — la cambia attraverso piccoli miglioramenti accumulati nel tempo. Chi fa questo piano e lo segue per un mese si ritrova con un set di strumenti su misura che nessun corso può darti già pronto.",
-          "example": "Piano esempio per un avvocato: (1) Template per rispondere a richieste di preventivo. (2) Template per spiegare concetti legali complessi ai clienti in linguaggio semplice. (3) Workflow per analizzare contratti: estrai obbligazioni, penali, condizioni di recesso. Prima settimana: testa solo il punto 1. Seconda settimana: aggiungi il 2. Terza settimana: aggiungi il 3.",
-          "tip": "💡 Non cercare la perfezione. Un template imperfetto usato ogni giorno vale dieci template perfetti che non usi mai. Inizia grezzo, migliora nel tempo.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Qual è l'approccio più efficace per integrare l'AI nel proprio lavoro?",
-              "options": [
-                "Sostituire tutti i processi esistenti con l'AI il prima possibile",
-                "Aspettare che l'AI sia abbastanza matura prima di usarla seriamente",
-                "Iniziare da un processo alla volta, testare, migliorare, poi aggiungerne altri",
-                "Usare l'AI solo per i compiti meno importanti per non rischiare errori"
-              ],
-              "correct": 2,
-              "explanation": "Corretto! L'integrazione graduale è la strategia più sostenibile. Un processo alla volta, testato e raffinato, costruisce un sistema solido. Cercare di cambiare tutto in una volta porta frustrazione e abbandono."
-            },
-            {
-              "question": "Cosa rende un template AI davvero utile nel tempo?",
-              "options": [
-                "Essere molto lungo e dettagliato per coprire ogni scenario",
-                "Essere usato ogni giorno, anche se imperfetto, e migliorato gradualmente",
-                "Essere scritto da un esperto di prompt engineering certificato",
-                "Funzionare solo con un modello AI specifico"
-              ],
-              "correct": 1,
-              "explanation": "Esatto! La costanza batte la perfezione. Un template semplice che usi ogni giorno ti insegna cosa migliorare. Uno perfetto che non usi non ti dà nulla."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "privacy",
-      "emoji": "🛡️",
-      "title": "AI & Privacy",
-      "lessons": [
-        {
-          "id": "pr1",
-          "title": "Perché la privacy AI ti riguarda",
-          "duration": 5,
-          "xp": 10,
-          "concept": "Ogni volta che scrivi qualcosa a ChatGPT, Claude o Gemini, quei dati vengono inviati ai server dell'azienda produttrice — spesso negli Stati Uniti. Questo non è un problema in assoluto, ma lo diventa quando condividi informazioni personali, dati di clienti, strategie aziendali riservate o qualsiasi cosa che non vorresti fosse letta da terzi. La questione non è 'l'AI è pericolosa' — è 'so cosa succede ai dati che le affido?' In Europa, la risposta a questa domanda ha anche implicazioni legali precise legate al <strong>GDPR</strong>.",
-          "example": "Un commercialista che incolla i dati fiscali di un cliente in ChatGPT per farsi aiutare con un calcolo sta potenzialmente inviando dati personali sensibili a server fuori dall'UE, senza aver informato il cliente né verificato se il suo contratto di lavoro lo permette. Non è fantascienza — è già successo in molti studi professionali.",
-          "tip": "💡 La regola pratica è semplice: prima di incollare qualcosa in un tool AI, chiediti 'sarei a disagio se questa informazione fosse letta da qualcun altro?' Se la risposta è sì, anonimizzala o non usarla.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Cosa succede ai dati che invii a un tool AI come ChatGPT?",
-              "options": [
-                "Vengono elaborati localmente sul tuo dispositivo e non escono mai",
-                "Vengono inviati ai server dell'azienda produttrice, spesso fuori dall'UE",
-                "Vengono cancellati automaticamente dopo 24 ore",
-                "Vengono cifrati in modo che nessuno possa leggerli, nemmeno OpenAI"
-              ],
-              "correct": 1,
-              "explanation": "Corretto! I dati vengono inviati ai server del provider — che sia OpenAI, Anthropic o Google. Capire dove vanno e come vengono trattati è il primo passo per usare l'AI in modo consapevole."
-            }
-          ]
-        },
-        {
-          "id": "pr2",
-          "title": "Cos'è il GDPR e perché conta",
-          "duration": 5,
-          "xp": 10,
-          "concept": "Il <strong>GDPR</strong> (General Data Protection Regulation) è il regolamento europeo sulla protezione dei dati personali, in vigore dal 2018. Stabilisce che i dati personali dei cittadini europei devono essere trattati con specifiche garanzie: consenso informato, finalità dichiarata, minimizzazione dei dati raccolti, diritto alla cancellazione. Per chi usa l'AI in contesto professionale, il GDPR si applica ogni volta che i dati trattati riguardano persone fisiche identificabili: clienti, dipendenti, fornitori. Non è una questione solo per i grandi — si applica anche ai liberi professionisti e alle piccole imprese.",
-          "example": "Se sei un consulente HR e usi l'AI per analizzare i CV dei candidati, stai trattando dati personali. Devi avere una base legale per farlo (es. il consenso del candidato), e devi poter dimostrare che il tool AI che usi offre garanzie adeguate. In caso di controllo, 'non lo sapevo' non è una difesa valida.",
-          "tip": "💡 Il GDPR non vieta di usare l'AI — richiede che tu sappia cosa fai con i dati altrui. La chiave è la consapevolezza e la documentazione, non l'astensione.",
-          "source": "Google",
-          "quiz": [
-            {
-              "question": "Il GDPR si applica al tuo uso dell'AI se:",
-              "options": [
-                "Usi tool AI con abbonamento a pagamento",
-                "Tratti dati personali di persone fisiche identificabili, anche come libero professionista",
-                "Hai un'azienda con più di 50 dipendenti",
-                "Usi server fisicamente ubicati in Europa"
-              ],
-              "correct": 1,
-              "explanation": "Esatto! Il GDPR si applica a chiunque tratti dati personali di cittadini UE, indipendentemente dalle dimensioni dell'azienda. Anche un singolo freelance che gestisce i dati dei propri clienti è soggetto al regolamento."
-            },
-            {
-              "question": "Qual è l'approccio corretto al GDPR nell'uso dell'AI?",
-              "options": [
-                "Evitare completamente l'AI per non incorrere in violazioni",
-                "Usare l'AI liberamente — la responsabilità è del provider",
-                "Essere consapevoli di cosa si tratta, avere una base legale e documentare",
-                "Applicare il GDPR solo se si hanno più di 10 clienti"
-              ],
-              "correct": 2,
-              "explanation": "Corretto! Il GDPR è una questione di consapevolezza e processo, non di divieto. Sapere cosa tratti, perché lo tratti e come lo proteggi è la base di ogni uso professionale responsabile."
-            }
-          ]
-        },
-        {
-          "id": "pr3",
-          "title": "Le policy dei principali tool AI",
-          "duration": 5,
-          "xp": 15,
-          "concept": "Ogni provider AI ha una policy diversa su come usa i dati che gli invii. Le differenze sono importanti e spesso sconosciute agli utenti. <strong>OpenAI</strong> (ChatGPT): di default usa le conversazioni per migliorare i modelli, ma puoi disattivarlo dalle impostazioni. Con l'API o ChatGPT Team/Enterprise i dati non vengono usati per l'addestramento. <strong>Anthropic</strong> (Claude): non usa le conversazioni degli utenti API per addestrare i modelli. <strong>Google</strong> (Gemini): nelle versioni consumer può usare i dati per migliorare i servizi; le versioni Workspace hanno garanzie maggiori. La versione che usi — gratuita, a pagamento, API — fa una differenza enorme.",
-          "example": "La stessa identica domanda inviata a ChatGPT gratuito vs ChatGPT Enterprise ha due destini completamente diversi: nel primo caso può essere usata per addestrare il modello, nel secondo è contrattualmente esclusa da qualsiasi uso esterno alla sessione.",
-          "tip": "💡 Per uso professionale con dati sensibili, usa sempre le versioni a pagamento o API dei provider — non le versioni gratuite consumer. Il costo è minimo rispetto al rischio.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Qual è la differenza principale tra ChatGPT gratuito e ChatGPT Enterprise riguardo ai dati?",
-              "options": [
-                "Enterprise è più veloce ma usa gli stessi dati",
-                "Nella versione gratuita le conversazioni possono essere usate per addestrare il modello; in Enterprise no",
-                "La versione gratuita è più sicura perché non richiede login",
-                "Non c'è differenza — OpenAI tratta tutti i dati allo stesso modo"
-              ],
-              "correct": 1,
-              "explanation": "Esatto! Il piano che scegli determina come vengono trattati i tuoi dati. Per uso professionale con informazioni sensibili, le versioni business/enterprise offrono garanzie contrattuali che le versioni gratuite non hanno."
-            }
-          ]
-        },
-        {
-          "id": "pr4",
-          "title": "Dati sensibili: cosa non mandare mai",
-          "duration": 5,
-          "xp": 15,
-          "concept": "Esistono categorie di dati che richiedono protezione rafforzata per legge e che non dovresti mai inviare a tool AI non certificati per quel trattamento. Il GDPR individua categorie speciali: dati sanitari, dati biometrici, orientamento sessuale, opinioni politiche, dati relativi a condanne penali. Fuori dalle categorie speciali, ci sono dati che per buon senso professionale non si condividono: strategie aziendali riservate, dati finanziari di clienti, password e credenziali, segreti industriali, dati di minori.",
-          "example": "Cosa puoi fare se devi comunque usare l'AI su documenti con dati sensibili? <strong>Anonimizzare</strong>: sostituisci nomi, CF, indirizzi con placeholder prima di incollare. 'Mario Rossi, CF RSSMRA80A01H501Z' diventa 'CLIENTE_A, CF_RIMOSSO'. L'AI ti aiuta ugualmente, ma non riceve i dati reali.",
-          "tip": "💡 L'anonimizzazione prima di usare l'AI non è solo una precauzione legale — ti protegge anche da eventuali data breach futuri sul provider. Crea un template di 'sanitizzazione' per i tuoi documenti più comuni.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Hai un documento medico di un paziente e vuoi usare l'AI per aiutarti a strutturare una relazione. Cosa fai?",
-              "options": [
-                "Lo invii direttamente — ChatGPT è sicuro e cifrato",
-                "Anonimizzi il documento sostituendo i dati personali con placeholder prima di inviarlo",
-                "Usi solo Google Gemini che è europeo e quindi GDPR-compliant",
-                "Non puoi mai usare l'AI con documenti medici in nessun caso"
-              ],
-              "correct": 1,
-              "explanation": "Corretto! L'anonimizzazione è la soluzione pratica. Rimuovi o sostituisci i dati identificativi prima di inviare il documento — l'AI può aiutarti sulla struttura e il contenuto senza mai ricevere i dati reali della persona."
-            },
-            {
-              "question": "Quale di questi dati rientra nelle 'categorie speciali' del GDPR con protezione rafforzata?",
-              "options": [
-                "L'indirizzo email di un cliente",
-                "Il nome e cognome di un fornitore",
-                "I dati sanitari di una persona",
-                "Il numero di telefono di un collaboratore"
-              ],
-              "correct": 2,
-              "explanation": "Esatto! I dati sanitari sono una categoria speciale GDPR che richiede base legale esplicita e misure di sicurezza rinforzate. Email, nomi e telefoni sono dati personali ordinari — protetti, ma non nelle categorie speciali."
-            }
-          ]
-        },
-        {
-          "id": "pr5",
-          "title": "AI in azienda: come fare le cose per bene",
-          "duration": 5,
-          "xp": 10,
-          "concept": "Se usi l'AI in un contesto aziendale — anche come libero professionista con clienti — ci sono alcune pratiche di base che ti proteggono sia legalmente che professionalmente. Prima di tutto: <strong>verifica cosa permette il tuo contratto</strong> con i clienti riguardo all'uso di tool di terze parti. Poi: <strong>scegli tool con DPA</strong> (Data Processing Agreement) — un contratto specifico sul trattamento dei dati che i provider seri offrono. Infine: <strong>forma chi lavora con te</strong> — il rischio più comune non è tecnico, è umano: un collaboratore che incolla un database clienti in ChatGPT senza sapere cosa sta facendo.",
-          "example": "Una piccola agenzia di marketing decide di usare l'AI per i testi dei clienti. I passi corretti: (1) Firmano il DPA con OpenAI/Anthropic. (2) Creano una policy interna di due righe su cosa si può e non si può inviare all'AI. (3) La condividono col team. Tempo totale: meno di un'ora. Rischio ridotto: significativamente.",
-          "tip": "💡 Un DPA non è un documento complicato — è un modulo standard che quasi tutti i provider offrono. Cercalo nelle impostazioni account o scrivi al supporto. Per uso professionale è quasi sempre disponibile.",
-          "source": "Google",
-          "quiz": [
-            {
-              "question": "Cos'è un DPA (Data Processing Agreement) nel contesto dell'AI?",
-              "options": [
-                "Un abbonamento premium che sblocca funzioni avanzate",
-                "Un contratto tra te e il provider AI che definisce come vengono trattati i dati",
-                "Un certificato di sicurezza che garantisce zero violazioni",
-                "Un documento richiesto solo dalle aziende con più di 250 dipendenti"
-              ],
-              "correct": 1,
-              "explanation": "Corretto! Il DPA è l'accordo contrattuale che formalizza le responsabilità del provider sul trattamento dei dati. È fondamentale per l'uso professionale perché ti dà garanzie legali che la versione consumer non offre."
-            }
-          ]
-        },
-        {
-          "id": "pr6",
-          "title": "Il futuro: AI Act e nuove regole",
-          "duration": 5,
-          "xp": 15,
-          "concept": "Il <strong>EU AI Act</strong> è il primo regolamento europeo specificamente dedicato all'intelligenza artificiale, entrato gradualmente in vigore dal 2024. Classifica i sistemi AI per livello di rischio: inaccettabile (vietati), alto rischio (con obblighi severi), limitato rischio (con obblighi di trasparenza), rischio minimo (liberamente usabili). I sistemi ad alto rischio includono: AI usata in selezione del personale, scoring creditizio, decisioni giudiziarie, sistemi di sorveglianza. Per la maggior parte degli usi quotidiani professionali si ricade nella categoria a rischio minimo o limitato.",
-          "example": "Un'azienda che usa l'AI per filtrare automaticamente i CV e decidere chi non chiamare a colloquio sta usando un sistema AI ad alto rischio secondo l'AI Act — con obblighi di trasparenza verso i candidati e di supervisione umana. Un'azienda che usa l'AI per aiutare un HR a scrivere le job description sta usando un sistema a rischio minimo.",
-          "tip": "💡 L'AI Act non è un ostacolo — è un framework che chiarisce le regole del gioco. Conoscerlo ti mette in vantaggio rispetto a chi lo ignora e rischia sanzioni future.",
-          "source": "Google",
-          "quiz": [
-            {
-              "question": "Secondo l'EU AI Act, quale uso dell'AI rientra nella categoria 'alto rischio'?",
-              "options": [
-                "Usare l'AI per scrivere email di marketing",
-                "Usare l'AI per generare immagini creative",
-                "Usare l'AI per filtrare automaticamente le candidature di lavoro",
-                "Usare l'AI per tradurre documenti interni"
-              ],
-              "correct": 2,
-              "explanation": "Esatto! I sistemi AI che prendono o influenzano decisioni su persone — come la selezione del personale — sono classificati ad alto rischio dall'AI Act. Richiedono trasparenza, supervisione umana e documentazione specifica."
-            },
-            {
-              "question": "L'EU AI Act si applica:",
-              "options": [
-                "Solo alle aziende tech che sviluppano modelli AI",
-                "Solo alle aziende con sede legale in Europa",
-                "A chiunque usi sistemi AI che impattano persone nell'UE, indipendentemente da dove ha sede",
-                "Solo a sistemi AI con più di 1 milione di utenti"
-              ],
-              "correct": 2,
-              "explanation": "Corretto! Come il GDPR, l'AI Act ha portata extraterritoriale: si applica a chiunque fornisca o usi sistemi AI che impattano persone nell'UE, anche se l'azienda ha sede fuori dall'Europa."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "agenti",
-      "emoji": "🤖",
-      "title": "Agenti & Futuro",
-      "lessons": [
-        {
-          "id": "ag1",
-          "title": "Cosa sono gli agenti AI",
-          "duration": 5,
-          "xp": 10,
-          "concept": "Fino ad ora abbiamo parlato di LLM che <em>rispondono</em> — tu scrivi, loro scrivono. Un <strong>agente AI</strong> va oltre: è un sistema che non si limita a rispondere ma può <em>agire</em> nel mondo. Può eseguire ricerche, cliccare su pagine web, scrivere e eseguire codice, inviare email, interagire con altre applicazioni. La differenza fondamentale è l'autonomia: un agente può completare un compito multi-step senza che tu intervenga a ogni passaggio. È come avere un assistente che non solo ti suggerisce cosa fare, ma lo fa direttamente per te.",
-          "example": "Esempio reale: un agente AI a cui chiedi 'Analizza le ultime 50 recensioni del mio prodotto su Amazon e preparami un report con i temi principali e i suggerimenti di miglioramento.' Un LLM normale aspetta che tu incolli le recensioni. Un agente le va a cercare da solo, le analizza, struttura il report e te lo consegna — tutto senza intervento umano intermedio.",
-          "tip": "💡 Gli agenti AI non sono fantascienza futura — esistono già. Strumenti come Claude con computer use, ChatGPT con Actions, e Cursor per il codice sono forme di agente già disponibili oggi.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Qual è la differenza principale tra un LLM standard e un agente AI?",
-              "options": [
-                "L'agente AI è più intelligente e fa meno errori",
-                "L'LLM risponde al testo; l'agente può compiere azioni nel mondo reale in modo autonomo",
-                "L'agente AI funziona solo in locale senza internet",
-                "Non c'è differenza pratica — 'agente' è solo un termine di marketing"
-              ],
-              "correct": 1,
-              "explanation": "Esatto! Il salto concettuale è dall'AI che risponde all'AI che agisce. Un agente può eseguire sequenze di azioni — cercare, cliccare, scrivere codice, inviare — senza intervento umano a ogni step."
-            }
-          ]
-        },
-        {
-          "id": "ag2",
-          "title": "Come funziona un agente",
-          "duration": 5,
-          "xp": 10,
-          "concept": "Un agente AI funziona attraverso un ciclo continuo chiamato <strong>ReAct loop</strong> (Reason + Act): pensa a cosa fare, esegue un'azione, osserva il risultato, poi decide il passo successivo sulla base di quello che ha visto. Questo ciclo si ripete finché il compito non è completato o finché l'agente non decide che ha bisogno dell'intervento umano. Gli ingredienti essenziali sono tre: un <strong>LLM</strong> che ragiona, un set di <strong>tool</strong> (strumenti) che l'agente può usare, e una <strong>memoria</strong> che tiene traccia di cosa è già stato fatto.",
-          "example": "Obiettivo: 'Prenota il volo più economico Milano-Barcellona per il 15 maggio.' Ciclo: (1) Ragiona: devo cercare i voli. (2) Usa il tool di ricerca voli. (3) Osserva i risultati. (4) Ragiona: devo confrontare i prezzi. (5) Identifica il più economico. (6) Ragiona: devo procedere alla prenotazione. (7) Chiede conferma umana prima di pagare. Fine.",
-          "tip": "💡 La supervisione umana resta fondamentale negli agenti attuali — soprattutto per azioni irreversibili come pagamenti, invio di email o cancellazione di file. I migliori agenti chiedono conferma prima di agire in modo definitivo.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Cos'è il ciclo ReAct in un agente AI?",
-              "options": [
-                "Un framework per addestrare i modelli AI più velocemente",
-                "Il ciclo continuo di ragionamento, azione e osservazione del risultato che guida l'agente",
-                "Un protocollo di sicurezza che blocca azioni pericolose",
-                "Il modo in cui gli agenti AI comunicano tra loro"
-              ],
-              "correct": 1,
-              "explanation": "Corretto! ReAct (Reason + Act) è il cuore degli agenti: il modello ragiona, esegue, osserva il risultato, e decide il passo successivo. Questo ciclo è ciò che dà agli agenti la capacità di affrontare compiti multi-step."
-            }
-          ]
-        },
-        {
-          "id": "ag3",
-          "title": "Cos'è RAG",
-          "duration": 5,
-          "xp": 15,
-          "concept": "<strong>RAG</strong> sta per Retrieval-Augmented Generation — in italiano: generazione aumentata dal recupero di informazioni. È una tecnica che risolve uno dei limiti più grandi degli LLM: la conoscenza bloccata alla data di addestramento. Con RAG, prima di generare una risposta il modello recupera documenti rilevanti da una base di conoscenza esterna (la tua documentazione aziendale, un database, articoli recenti), li usa come contesto, e solo poi genera la risposta. Il risultato è un'AI che 'sa' cose che non erano nel suo addestramento originale — i tuoi dati, aggiornati in tempo reale.",
-          "example": "Immagina un chatbot di assistenza clienti per una software house. Senza RAG: risponde con conoscenze generali, non sa nulla del tuo prodotto specifico. Con RAG: prima cerca nella tua documentazione tecnica, nei ticket risolti, nei changelog — poi risponde usando quelle informazioni. Può rispondere a domande come 'Come configuro l'integrazione con Salesforce nella versione 3.2?' con precisione reale.",
-          "tip": "💡 RAG è la tecnologia dietro a molti chatbot aziendali intelligenti. Quando un'azienda ti dice 'abbiamo un AI addestrato sui nostri dati', nella maggior parte dei casi usa RAG, non un vero fine-tuning del modello.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Qual problema risolve principalmente la tecnica RAG?",
-              "options": [
-                "Rende il modello più veloce nelle risposte",
-                "Riduce i costi delle API di accesso ai modelli",
-                "Permette al modello di rispondere usando conoscenze esterne aggiornate, non solo quelle dell'addestramento",
-                "Migliora la qualità grammaticale delle risposte"
-              ],
-              "correct": 2,
-              "explanation": "Esatto! RAG risolve il problema della conoscenza statica. Invece di rispondere solo con ciò che ha imparato durante l'addestramento, il modello recupera informazioni aggiornate da fonti esterne prima di generare la risposta."
-            },
-            {
-              "question": "Un'azienda dice 'il nostro chatbot AI è addestrato sui nostri documenti interni'. Cosa usa molto probabilmente?",
-              "options": [
-                "Un modello AI sviluppato completamente da zero",
-                "RAG — che recupera i documenti aziendali come contesto prima di rispondere",
-                "Un semplice motore di ricerca con parole chiave",
-                "Fine-tuning completo su tutti i documenti aziendali"
-              ],
-              "correct": 1,
-              "explanation": "Corretto! RAG è la soluzione più comune per 'far sapere all'AI le cose della nostra azienda' perché è più economica e aggiornabile del fine-tuning. Il modello base rimane invariato; cambiano solo i documenti che recupera."
-            }
-          ]
-        },
-        {
-          "id": "ag4",
-          "title": "Cos'è MCP",
-          "duration": 5,
-          "xp": 15,
-          "concept": "<strong>MCP</strong> (Model Context Protocol) è un protocollo aperto sviluppato da Anthropic che standardizza il modo in cui i modelli AI si connettono a strumenti e fonti di dati esterni. Prima di MCP, ogni integrazione tra un modello AI e un'app esterna (GitHub, Google Drive, database, API) richiedeva uno sviluppo custom. MCP è come un connettore universale: definisce un linguaggio comune che permette a qualsiasi modello AI compatibile di connettersi a qualsiasi tool che supporti il protocollo — senza lavoro di integrazione ad hoc.",
-          "example": "Con MCP, Claude può connettersi direttamente al tuo repository GitHub, leggere il codice, fare commit, aprire issue — tutto nella stessa conversazione. O al tuo Google Drive per leggere e modificare documenti. O al tuo database aziendale per fare query. E lo stesso vale per qualsiasi altro modello che adotti il protocollo.",
-          "tip": "💡 MCP è molto recente (fine 2024) ma si sta diffondendo rapidamente. Se senti parlare di 'AI con accesso agli strumenti' o 'AI che lavora con le tue app', MCP è spesso la tecnologia sottostante.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Qual è il principale vantaggio di MCP rispetto alle integrazioni AI precedenti?",
-              "options": [
-                "È più veloce perché usa meno token",
-                "Standardizza le connessioni AI-tool, eliminando la necessità di integrazioni custom per ogni coppia",
-                "Funziona solo offline per maggiore sicurezza",
-                "È esclusivo di Claude e non disponibile ad altri modelli"
-              ],
-              "correct": 1,
-              "explanation": "Esatto! MCP è un protocollo universale — come l'USB per i dispositivi fisici. Invece di sviluppare ogni volta un connettore diverso per ogni combinazione AI+tool, esiste un linguaggio standard che funziona per tutti."
-            }
-          ]
-        },
-        {
-          "id": "ag5",
-          "title": "Tool use e function calling",
-          "duration": 5,
-          "xp": 10,
-          "concept": "Il <strong>tool use</strong> (o function calling) è la capacità di un LLM di decidere autonomamente quando chiamare una funzione esterna — un'API, uno script, un database — e di interpretarne il risultato. Non è l'AI che esegue il codice direttamente: è l'AI che dice 'ho bisogno di chiamare questo strumento con questi parametri', il sistema esegue la chiamata, e restituisce il risultato all'AI che lo usa per continuare il ragionamento. È il meccanismo base che trasforma un LLM in un agente capace di interagire con il mondo esterno.",
-          "example": "Prompt: 'Quant'è il tempo a Milano adesso?' Un LLM senza tool use inventa o ammette di non saperlo. Un LLM con tool use: (1) Riconosce che serve un dato in tempo reale. (2) Chiama il tool 'get_weather(city=Milano)'. (3) Riceve la risposta JSON dall'API meteo. (4) Risponde: 'A Milano adesso sono 18°C con cielo parzialmente nuvoloso.' Stessa domanda, risultati radicalmente diversi.",
-          "tip": "💡 Ogni volta che usi ChatGPT con la ricerca web attiva, con l'interprete di codice o con plugin — stai già usando il tool use. Non è una tecnologia futura: è già nelle mani di tutti.",
-          "source": "OpenAI",
-          "quiz": [
-            {
-              "question": "Cosa fa concretamente il tool use in un LLM?",
-              "options": [
-                "Permette all'AI di imparare nuove cose durante la conversazione",
-                "Permette all'AI di decidere quando chiamare funzioni esterne e usarne i risultati nel ragionamento",
-                "Aumenta la velocità di generazione del testo",
-                "Permette all'AI di modificare il proprio codice sorgente"
-              ],
-              "correct": 1,
-              "explanation": "Esatto! Il tool use è il ponte tra il ragionamento del modello e il mondo esterno. L'AI non esegue direttamente — decide quando e come chiamare strumenti esterni, poi usa i risultati per rispondere."
-            }
-          ]
-        },
-        {
-          "id": "ag6",
-          "title": "I rischi degli agenti AI",
-          "duration": 5,
-          "xp": 15,
-          "concept": "Più potere di azione significa più potenziale di danno in caso di errore. I rischi principali degli agenti AI sono: <strong>prompt injection</strong> — un contenuto malevolo nei dati che l'agente legge che gli fa eseguire azioni non volute; <strong>azioni irreversibili</strong> — un agente che cancella file, invia email o fa acquisti non può facilmente tornare indietro; <strong>escalation di privilegi</strong> — l'agente che usa i permessi che ha per fare più di quanto dovrebbe; <strong>loop infiniti</strong> — l'agente che continua a provare soluzioni sbagliate consumando risorse. Non sono ragioni per non usare gli agenti, ma per usarli con supervisione e limiti espliciti.",
-          "example": "Un agente a cui dai accesso alla tua email per gestire le risposte potrebbe — se mal configurato o vittima di prompt injection — rispondere a email che non doveva toccare, inoltrare informazioni riservate o cancellare messaggi importanti. Il principio del minimo privilegio vale anche qui: dai all'agente solo i permessi strettamente necessari.",
-          "tip": "💡 Regola d'oro per gli agenti: inizia in modalità 'chiedi conferma prima di agire'. Solo dopo aver verificato che il comportamento è quello atteso puoi abilitare l'esecuzione autonoma.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Cos'è la prompt injection nel contesto degli agenti AI?",
-              "options": [
-                "Una tecnica per migliorare le prestazioni del modello",
-                "Un attacco in cui contenuti malevoli nei dati letti dall'agente lo fanno eseguire azioni non volute",
-                "Il processo di inserimento di istruzioni nel system prompt",
-                "Un errore di configurazione che rallenta l'agente"
-              ],
-              "correct": 1,
-              "explanation": "Corretto! La prompt injection è uno dei rischi più insidiosi degli agenti: se l'agente legge dati esterni (email, documenti, pagine web) contenenti istruzioni nascoste, potrebbe eseguirle. È il motivo per cui la supervisione umana resta essenziale."
-            },
-            {
-              "question": "Qual è il principio di sicurezza più importante quando si configura un agente AI?",
-              "options": [
-                "Dargli quanti più permessi possibile per massimizzare l'autonomia",
-                "Usare solo modelli open source per trasparenza",
-                "Dargli solo i permessi strettamente necessari e iniziare con conferma umana obbligatoria",
-                "Disabilitare l'accesso a internet per sicurezza"
-              ],
-              "correct": 2,
-              "explanation": "Esatto! Il principio del minimo privilegio vale doppio con gli agenti. Meno permessi hai dato, meno danno può fare un errore. Inizia sempre con supervisione umana su ogni azione, poi allarga l'autonomia gradualmente."
-            }
-          ]
-        },
-        {
-          "id": "ag7",
-          "title": "Dove stiamo andando",
-          "duration": 5,
-          "xp": 15,
-          "concept": "Il 2025-2026 ha segnato il passaggio dagli LLM come strumenti di risposta agli agenti come colleghi digitali capaci di lavorare in autonomia su task complessi. Le direzioni più concrete del prossimo futuro: <strong>agenti multi-agente</strong> — team di AI specializzate che collaborano dividendosi il lavoro; <strong>computer use</strong> — AI che usano il computer come un essere umano, navigando interfacce grafiche; <strong>AI personale continua</strong> — modelli con memoria persistente che ti conoscono nel tempo e si adattano al tuo stile. Tutto questo non è fantascienza: esistono già versioni early di ognuna di queste tecnologie.",
-          "example": "Oggi puoi già usare Claude con computer use per automatizzare task su interfacce grafiche che non hanno API. Cursor e Windsurf sono agenti per sviluppatori che scrivono, testano e correggono codice in autonomia. Perplexity è un agente di ricerca. Quello che sembrava futuristico 18 mesi fa è già nel telefono di milioni di persone.",
-          "tip": "💡 La competenza più duratura non è imparare a usare uno strumento specifico — è capire i principi sottostanti. I tool cambieranno ogni 6 mesi; la capacità di ragionare su come usare l'AI nel tuo lavoro resterà per anni.",
-          "source": "Anthropic",
-          "quiz": [
-            {
-              "question": "Cosa si intende con 'computer use' nel contesto degli agenti AI?",
-              "options": [
-                "L'uso dell'AI per ottimizzare le prestazioni del computer",
-                "La capacità dell'AI di interagire con interfacce grafiche come farebbe un essere umano",
-                "Un sistema di sicurezza che monitora l'uso del computer",
-                "Un protocollo per connettere più computer in rete"
-              ],
-              "correct": 1,
-              "explanation": "Esatto! Computer use è la capacità di un agente AI di vedere lo schermo, cliccare, scrivere e navigare interfacce grafiche — esattamente come farebbe un essere umano. Apre la porta all'automazione di qualsiasi task visibile sullo schermo, anche senza API."
-            },
-            {
-              "question": "Qual è la competenza più duratura da sviluppare nel mondo AI in rapida evoluzione?",
-              "options": [
-                "Imparare a usare perfettamente ChatGPT nella versione attuale",
-                "Specializzarsi in un solo strumento AI per diventarne esperto",
-                "Capire i principi fondamentali dell'AI per adattarsi a qualsiasi tool futuro",
-                "Seguire ogni aggiornamento di ogni modello disponibile"
-              ],
-              "correct": 2,
-              "explanation": "Corretto! I tool cambiano rapidamente — quello che hai imparato qui sono i principi che restano stabili: come funzionano gli LLM, come si comunica con l'AI, cosa ci si può fidare e cosa va verificato. Questi ti servono qualunque cosa esca nei prossimi anni."
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+          "concept": "Il prompt engineering non è un processo lineare — è iterativo. Raramente il primo prompt produce l'output perfetto, e non deve: l'approccio corretto è trattare ogni risposta come un punto di partenza da raffinare. Le tecniche di raffinamento più efficaci: <strong>feedback esplicito</strong> ('la risposta è troppo lunga, riduci a metà e elimina la parte su X'), <strong>richiesta di varianti</strong> ('dammi 3 versioni diverse di questo'), <strong>inversione del prompt</strong> ('cosa
