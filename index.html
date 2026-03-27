@@ -33,51 +33,42 @@
     }
     </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+    <!-- ✅ Google Analytics 4 — deve stare nel <head>, il prima possibile -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HMLKJZRDQN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HMLKJZRDQN', {
+            // Invia automaticamente lo scroll depth a 90%
+            'send_page_view': true
+        });
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-
         .gradient-text {
             background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-        }
-        .gradient-bg-soft {
-            background: linear-gradient(135deg, #eef2ff, #f5f3ff, #fdf2f8);
-        }
-
-        .card-hover {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
-        }
-
-        /* Blob decorativi hero */
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-            pointer-events: none;
-        }
-
+        .gradient-bg { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+        .gradient-bg-soft { background: linear-gradient(135deg, #eef2ff, #f5f3ff, #fdf2f8); }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(99,102,241,0.1); }
+        .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.15; pointer-events: none; }
         details summary::-webkit-details-marker { display: none; }
         .faq-arrow { transition: transform 0.2s ease; display: inline-block; }
         details[open] .faq-arrow { transform: rotate(45deg); }
-
-        /* Animazione numero counter */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(16px); }
             to   { opacity: 1; transform: translateY(0); }
         }
-        .fade-up { animation: fadeUp 0.5s ease both; }
+        .fade-up   { animation: fadeUp 0.5s ease both; }
         .fade-up-2 { animation: fadeUp 0.5s ease 0.1s both; }
         .fade-up-3 { animation: fadeUp 0.5s ease 0.2s both; }
     </style>
@@ -94,11 +85,15 @@
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
                 <a href="#percorsi" class="hover:text-indigo-600 transition-colors">Percorsi</a>
                 <a href="#faq" class="hover:text-indigo-600 transition-colors">FAQ</a>
-                <a href="progress.html" class="hover:text-indigo-600 transition-colors">I miei progressi</a>
+                <a href="progress.html" class="hover:text-indigo-600 transition-colors"
+                   onclick="gtag('event','nav_click',{link:'progressi'})">
+                    I miei progressi
+                </a>
             </div>
             <a href="learn.html"
                class="gradient-bg text-white text-sm font-semibold px-5 py-2.5 rounded-xl
-                      hover:opacity-90 transition-opacity shadow-lg shadow-indigo-200">
+                      hover:opacity-90 transition-opacity shadow-lg shadow-indigo-200"
+               onclick="gtag('event','cta_click',{position:'navbar',label:'Inizia gratis'})">
                 Inizia gratis →
             </a>
         </div>
@@ -106,13 +101,11 @@
 
     <!-- HERO -->
     <section class="relative pt-36 pb-28 px-6 overflow-hidden">
-        <!-- Blob decorativi -->
         <div class="blob w-96 h-96 bg-indigo-400 top-10 -left-20"></div>
         <div class="blob w-80 h-80 bg-purple-400 top-20 right-0"></div>
         <div class="blob w-64 h-64 bg-pink-400 bottom-0 left-1/3"></div>
 
         <div class="relative max-w-3xl mx-auto text-center">
-            <!-- Pill badge -->
             <div class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 text-sm font-semibold
                         px-4 py-2 rounded-full mb-8 border border-indigo-100 fade-up">
                 <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></span>
@@ -134,32 +127,30 @@
                 <a href="learn.html"
                    class="gradient-bg text-white font-bold text-lg px-10 py-4 rounded-2xl
                           hover:opacity-90 transition-all shadow-2xl shadow-indigo-200
-                          hover:scale-105 active:scale-95">
+                          hover:scale-105 active:scale-95"
+                   onclick="gtag('event','cta_click',{position:'hero',label:'Inizia la prima lezione'})">
                     Inizia la prima lezione 🚀
                 </a>
                 <a href="#percorsi"
                    class="text-gray-500 font-medium text-sm hover:text-indigo-600 transition-colors
-                          flex items-center gap-1.5">
+                          flex items-center gap-1.5"
+                   onclick="gtag('event','cta_click',{position:'hero',label:'Guarda i percorsi'})">
                     Guarda i percorsi
                     <span class="text-xs">↓</span>
                 </a>
             </div>
 
-            <!-- Fonte badge discreti -->
             <div class="mt-12 flex flex-wrap items-center justify-center gap-3 fade-up-3">
                 <span class="text-xs text-gray-300 font-medium uppercase tracking-wide">Basato su</span>
-                <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-gray-50
-                             border border-gray-100 px-3 py-1.5 rounded-full">
+                <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-full">
                     <img src="https://www.anthropic.com/favicon.ico" class="w-3.5 h-3.5" onerror="this.style.display='none'">
                     Anthropic
                 </span>
-                <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-gray-50
-                             border border-gray-100 px-3 py-1.5 rounded-full">
+                <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-full">
                     <img src="https://openai.com/favicon.ico" class="w-3.5 h-3.5" onerror="this.style.display='none'">
                     OpenAI
                 </span>
-                <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-gray-50
-                             border border-gray-100 px-3 py-1.5 rounded-full">
+                <span class="flex items-center gap-1.5 text-xs text-gray-400 bg-gray-50 border border-gray-100 px-3 py-1.5 rounded-full">
                     <img src="https://www.google.com/favicon.ico" class="w-3.5 h-3.5" onerror="this.style.display='none'">
                     Google
                 </span>
@@ -187,7 +178,7 @@
         </div>
     </section>
 
-    <!-- COME FUNZIONA (semplificato) -->
+    <!-- COME FUNZIONA -->
     <section class="py-24 px-6">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-14">Come funziona?</h2>
@@ -222,7 +213,7 @@
         </div>
     </section>
 
-    <!-- PER CHI (minimalista) -->
+    <!-- PER CHI -->
     <section class="py-24 px-6">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4">Non serve essere tecnici</h2>
@@ -271,7 +262,8 @@
                     </p>
                     <a href="learn.html"
                        class="inline-block bg-white text-indigo-600 font-bold px-8 py-3.5 rounded-xl
-                              hover:bg-gray-50 transition-colors shadow-lg text-sm">
+                              hover:bg-gray-50 transition-colors shadow-lg text-sm"
+                       onclick="gtag('event','cta_click',{position:'cta_finale',label:'Inizia adesso'})">
                         Inizia adesso, è gratis 🚀
                     </a>
                 </div>
@@ -281,8 +273,7 @@
 
     <!-- FOOTER -->
     <footer class="border-t border-gray-100 py-8 px-6">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between
-                    gap-4 text-sm text-gray-400">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
             <div class="flex items-center gap-2">
                 <span class="text-lg">🧠</span>
                 <span class="font-semibold text-gray-600">MiniMind</span>
@@ -290,74 +281,56 @@
                 <span>Gratis, in italiano, per sempre</span>
             </div>
             <div class="flex gap-6">
-                <a href="learn.html" class="hover:text-indigo-600 transition-colors">Inizia a imparare</a>
-                <a href="progress.html" class="hover:text-indigo-600 transition-colors">I miei progressi</a>
+                <a href="learn.html" class="hover:text-indigo-600 transition-colors"
+                   onclick="gtag('event','nav_click',{link:'learn_footer'})">
+                    Inizia a imparare
+                </a>
+                <a href="progress.html" class="hover:text-indigo-600 transition-colors"
+                   onclick="gtag('event','nav_click',{link:'progressi_footer'})">
+                    I miei progressi
+                </a>
             </div>
         </div>
     </footer>
 
     <script src="js/progress.js"></script>
     <script>
+        // ─── Dati percorsi ────────────────────────────────────────
         const tracks = [
             {
-                id: "fondamentali",
-                emoji: "🧠",
-                title: "Fondamentali AI",
+                id: "fondamentali", emoji: "🧠", title: "Fondamentali AI",
                 description: "Come funziona davvero un LLM, cosa sono i token, perché l'AI a volte inventa cose. Il punto di partenza per capire, non solo usare.",
-                lessons: 8,
-                level: "Principiante",
+                lessons: 8, level: "Principiante",
                 levelColor: "text-green-600 bg-green-50",
-                accent: "bg-white border-gray-200",
-                dot: "bg-indigo-500",
-                bar: "bg-indigo-500"
+                accent: "bg-white border-gray-200", bar: "bg-indigo-500"
             },
             {
-                id: "prompting",
-                emoji: "✍️",
-                title: "Prompt Engineering",
+                id: "prompting", emoji: "✍️", title: "Prompt Engineering",
                 description: "Impara a fare le domande giuste. Zero-shot, few-shot, chain-of-thought: le tecniche che cambiano la qualità delle risposte.",
-                lessons: 10,
-                level: "Intermedio",
+                lessons: 10, level: "Intermedio",
                 levelColor: "text-blue-600 bg-blue-50",
-                accent: "bg-white border-gray-200",
-                dot: "bg-purple-500",
-                bar: "bg-purple-500"
+                accent: "bg-white border-gray-200", bar: "bg-purple-500"
             },
             {
-                id: "lavoro",
-                emoji: "💼",
-                title: "AI nel lavoro",
+                id: "lavoro", emoji: "💼", title: "AI nel lavoro",
                 description: "Strumenti pratici per marketer, avvocati, HR e freelance. Come integrare l'AI nel tuo flusso di lavoro, da subito.",
-                lessons: 9,
-                level: "Pratico",
+                lessons: 9, level: "Pratico",
                 levelColor: "text-purple-600 bg-purple-50",
-                accent: "bg-white border-gray-200",
-                dot: "bg-blue-500",
-                bar: "bg-blue-500"
+                accent: "bg-white border-gray-200", bar: "bg-blue-500"
             },
             {
-                id: "privacy",
-                emoji: "🛡️",
-                title: "AI e Privacy",
+                id: "privacy", emoji: "🛡️", title: "AI e Privacy",
                 description: "GDPR, dati sensibili, dove finiscono le tue informazioni. Quello che ogni professionista deve sapere prima di usare l'AI.",
-                lessons: 6,
-                level: "Essenziale",
+                lessons: 6, level: "Essenziale",
                 levelColor: "text-orange-600 bg-orange-50",
-                accent: "bg-white border-gray-200",
-                dot: "bg-green-500",
-                bar: "bg-green-500"
+                accent: "bg-white border-gray-200", bar: "bg-green-500"
             },
             {
-                id: "agenti",
-                emoji: "🤖",
-                title: "Agenti e Futuro",
+                id: "agenti", emoji: "🤖", title: "Agenti e Futuro",
                 description: "Cosa sono gli agenti AI, come funziona RAG, cos'è MCP. Il prossimo livello, spiegato senza tecnicismi.",
-                lessons: 7,
-                level: "Avanzato",
+                lessons: 7, level: "Avanzato",
                 levelColor: "text-red-600 bg-red-50",
-                accent: "bg-white border-gray-200",
-                dot: "bg-orange-500",
-                bar: "bg-orange-500"
+                accent: "bg-white border-gray-200", bar: "bg-orange-500"
             }
         ];
 
@@ -365,44 +338,57 @@
         const progress = Progress.get();
 
         tracks.forEach(t => {
-            const done = progress[t.id]?.completed?.length || 0;
-            const pct  = Math.round((done / t.lessons) * 100);
+            const done        = progress[t.id]?.completed?.length || 0;
+            const pct         = Math.round((done / t.lessons) * 100);
+            const isStarted   = done > 0;
             const statusLabel = done === 0        ? 'Inizia'
                               : done === t.lessons ? '✅ Completato'
                               : `${done} di ${t.lessons}`;
-            const isStarted = done > 0;
 
-            grid.innerHTML += `
-                <a href="learn.html?track=${t.id}"
-                   class="group block p-7 rounded-3xl border card-hover ${t.accent}
-                          hover:border-indigo-200 hover:shadow-md transition-all">
-                    <div class="flex items-start justify-between mb-5">
-                        <div class="flex items-center gap-3">
-                            <span class="text-3xl">${t.emoji}</span>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full ${t.levelColor}">
-                                ${t.level}
-                            </span>
-                        </div>
-                        <span class="text-xs font-semibold ${isStarted ? 'text-indigo-600' : 'text-gray-300'}">
-                            ${statusLabel}
+            const card = document.createElement('a');
+            card.href  = `learn.html?track=${t.id}`;
+            card.className = `group block p-7 rounded-3xl border card-hover ${t.accent}
+                              hover:border-indigo-200 hover:shadow-md transition-all`;
+
+            // ✅ Traccia quale percorso viene cliccato
+            card.addEventListener('click', () => {
+                gtag('event', 'track_click', {
+                    track_id:   t.id,
+                    track_name: t.title,
+                    pct_done:   pct,
+                    is_new:     !isStarted
+                });
+            });
+
+            card.innerHTML = `
+                <div class="flex items-start justify-between mb-5">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">${t.emoji}</span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full ${t.levelColor}">
+                            ${t.level}
                         </span>
                     </div>
-                    <h3 class="font-bold text-lg mb-2 group-hover:text-indigo-600 transition-colors">
-                        ${t.title}
-                    </h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-5">${t.description}</p>
-                    <div class="flex items-center justify-between text-xs text-gray-300 mb-2">
-                        <span>${t.lessons} lezioni · ${t.lessons * 5} minuti</span>
-                        <span>${pct}%</span>
-                    </div>
-                    <div class="h-1 bg-gray-100 rounded-full overflow-hidden">
-                        <div class="h-full rounded-full transition-all duration-500 ${t.bar}"
-                             style="width:${pct}%"></div>
-                    </div>
-                </a>
+                    <span class="text-xs font-semibold ${isStarted ? 'text-indigo-600' : 'text-gray-300'}">
+                        ${statusLabel}
+                    </span>
+                </div>
+                <h3 class="font-bold text-lg mb-2 group-hover:text-indigo-600 transition-colors">
+                    ${t.title}
+                </h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-5">${t.description}</p>
+                <div class="flex items-center justify-between text-xs text-gray-300 mb-2">
+                    <span>${t.lessons} lezioni · ${t.lessons * 5} minuti</span>
+                    <span>${pct}%</span>
+                </div>
+                <div class="h-1 bg-gray-100 rounded-full overflow-hidden">
+                    <div class="h-full rounded-full transition-all duration-500 ${t.bar}"
+                         style="width:${pct}%"></div>
+                </div>
             `;
+            grid.appendChild(card);
         });
 
+        // Card "in arrivo"
         grid.innerHTML += `
             <div class="p-7 rounded-3xl border border-dashed border-gray-200
                         flex items-center justify-center text-center min-h-[200px]">
@@ -413,7 +399,7 @@
             </div>
         `;
 
-        // FAQ
+        // ─── FAQ ──────────────────────────────────────────────────
         const faqs = [
             {
                 q: "Devo registrarmi?",
@@ -434,19 +420,63 @@
         ];
 
         const faqList = document.getElementById('faq-list');
-        faqs.forEach(f => {
-            faqList.innerHTML += `
-                <details class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                    <summary class="flex items-center justify-between p-5 cursor-pointer
-                                    font-semibold text-sm text-gray-800 hover:bg-gray-50 select-none">
-                        <span>${f.q}</span>
-                        <span class="faq-arrow text-gray-400 text-xl ml-4 flex-shrink-0 font-light">+</span>
-                    </summary>
-                    <div class="px-5 pb-5 text-gray-500 text-sm leading-relaxed border-t border-gray-100 pt-4">
-                        ${f.a}
-                    </div>
-                </details>
+        faqs.forEach((f, i) => {
+            const el = document.createElement('details');
+            el.className = 'bg-white border border-gray-200 rounded-2xl overflow-hidden';
+            el.innerHTML = `
+                <summary class="flex items-center justify-between p-5 cursor-pointer
+                                font-semibold text-sm text-gray-800 hover:bg-gray-50 select-none">
+                    <span>${f.q}</span>
+                    <span class="faq-arrow text-gray-400 text-xl ml-4 flex-shrink-0 font-light">+</span>
+                </summary>
+                <div class="px-5 pb-5 text-gray-500 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                    ${f.a}
+                </div>
             `;
+            // ✅ Traccia apertura FAQ
+            el.addEventListener('toggle', () => {
+                if (el.open) {
+                    gtag('event', 'faq_open', { question_index: i, question: f.q });
+                }
+            });
+            faqList.appendChild(el);
+        });
+
+        // ─── Scroll depth tracking ────────────────────────────────
+        // Invia un evento quando l'utente raggiunge i percorsi (interesse reale)
+        const percorsiSection = document.getElementById('percorsi');
+        const faqSection      = document.getElementById('faq');
+        const scrollObserver  = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const section = entry.target.id;
+                    gtag('event', 'section_viewed', { section_id: section });
+                    scrollObserver.unobserve(entry.target); // una volta sola
+                }
+            });
+        }, { threshold: 0.3 });
+
+        scrollObserver.observe(percorsiSection);
+        scrollObserver.observe(faqSection);
+
+        // ─── Engagement time ─────────────────────────────────────
+        // Utenti che restano più di 30 secondi = interesse reale
+        setTimeout(() => {
+            gtag('event', 'engaged_30s', { page: 'homepage' });
+        }, 30000);
+
+        // ─── Returning user ───────────────────────────────────────
+        // Capire se l'utente ha già progressi (è già stato sul sito)
+        const state        = Progress.get();
+        const hasProgress  = state.totalXP > 0;
+        const totalDone    = Progress.totalCompleted(state);
+
+        gtag('event', 'page_view_enriched', {
+            has_progress:   hasProgress,
+            lessons_done:   totalDone,
+            total_xp:       state.totalXP,
+            streak_days:    state.streakDays,
+            user_type:      hasProgress ? 'returning' : 'new'
         });
     </script>
 </body>
