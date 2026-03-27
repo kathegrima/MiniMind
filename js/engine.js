@@ -286,21 +286,52 @@ function completeLesson() {
     hide('quiz-content');
     show('complete-content');
 
-    const lesson    = currentLesson;
-    const perfect   = quizState.score === lesson.quiz.length;
-    const xpEarned  = perfect ? lesson.xp : Math.round(lesson.xp * 0.7);
+    const lesson  = currentLesson;
+    const total   = lesson.quiz.length;
+    const score   = quizState.score;
+    const perfect = score === total;
+    const ratio   = total > 0 ? score / total : 0;
+
+    // XP proporzionale alle risposte corrette
+    // 0 corrette → 0 XP
+    // Parziale   → XP proporzionale (min 30% se almeno 1 giusta)
+    // Perfetto   → XP pieno
+    let xpEarned = 0;
+    if (perfect) {
+        xpEarned = lesson.xp;
+    } else if (score > 0) {
+        xpEarned = Math.max(Math.round(lesson.xp * ratio), Math.round(lesson.xp * 0.3));
+    }
+    // score === 0 → xpEarned resta 0
 
     // Salva progressi
     const badge = Progress.completeLesson(currentTrackId, lesson.id, xpEarned);
     refreshNavXP();
 
-    // UI completamento
-    document.getElementById('complete-emoji').textContent    = perfect ? '🎉' : '💪';
-    document.getElementById('complete-title').textContent    = perfect ? 'Perfetto!' : 'Lezione completata!';
-    document.getElementById('complete-xp').textContent       = `+${xpEarned} XP`;
-    document.getElementById('complete-subtitle').textContent = perfect
-        ? `Hai risposto correttamente a tutte le domande. Sei in forma!`
-        : `Hai risposto a ${quizState.score}/${lesson.quiz.length} domande. Ripassala quando vuoi!`;
+    // Emoji e titolo in base alla performance
+    const perf = ratio === 1 ? 'perfect'
+               : ratio >= 0.5 ? 'good'
+               : score > 0 ? 'low'
+               : 'zero';
+
+    const ui = {
+        perfect: { emoji: '🎉', title: 'Perfetto!',           color: 'text-green-600' },
+        good:    { emoji: '💪', title: 'Bel lavoro!',         color: 'text-indigo-600' },
+        low:     { emoji: '📖', title: 'Lezione completata',  color: 'text-amber-600' },
+        zero:    { emoji: '🔄', title: 'Ripassala ancora',    color: 'text-red-500' }
+    }[perf];
+
+    document.getElementById('complete-emoji').textContent    = ui.emoji;
+    document.getElementById('complete-title').textContent    = ui.title;
+    document.getElementById('complete-title').className      = `text-3xl font-bold mb-3 ${ui.color}`;
+    document.getElementById('complete-xp').textContent       = xpEarned > 0 ? `+${xpEarned} XP` : '0 XP — riprova per guadagnare punti!';
+    document.getElementById('complete-xp').className         = `text-2xl font-bold ${xpEarned > 0 ? 'text-indigo-600' : 'text-gray-400'}`;
+
+    document.getElementById('complete-subtitle').textContent =
+        perf === 'perfect' ? `Tutte le ${total} domande corrette. Sei in forma!`
+      : perf === 'good'    ? `${score} su ${total} corrette. Stai andando bene.`
+      : perf === 'low'     ? `${score} su ${total} corrette. Vale la pena ripassarla.`
+      : `Nessuna risposta corretta questa volta. Ripassala — ci vogliono solo 2 minuti.`;
 
     // Badge
     if (badge) {
@@ -310,33 +341,40 @@ function completeLesson() {
         document.getElementById('badge-desc').textContent  = badge.desc;
     }
 
-    // Bottone prossima lezione
+    // Pulsante prossima lezione
     const nextIdx = currentLessonIdx + 1;
     const hasNext = nextIdx < currentTrack.lessons.length;
     const btnNext = document.getElementById('btn-next');
 
     if (hasNext) {
         btnNext.textContent = `Prossima: ${currentTrack.lessons[nextIdx].title} →`;
+        btnNext.onclick     = () => nextLesson();
     } else {
         btnNext.textContent = '🏆 Hai finito il percorso!';
         btnNext.onclick     = () => showTracks();
     }
 
+    // Aggiunge bottone "Riprova" se performance bassa
+    if (perf === 'zero' || perf === 'low') {
+        const retryBtn = document.createElement('button');
+        retryBtn.textContent  = '🔄 Riprova il quiz';
+        retryBtn.className    = 'w-full bg-amber-50 border border-amber-200 text-amber-700 font-semibold py-3 rounded-2xl hover:bg-amber-100 transition-colors mt-0';
+        retryBtn.onclick      = () => {
+            quizState = { current: 0, score: 0, answered: false };
+            hide('complete-content');
+            show('quiz-content');
+            renderQuestion();
+        };
+        // Inserisce il bottone dopo il pulsante "Torna al percorso"
+        const btnBack = document.querySelector('#complete-content .flex.flex-col.gap-3');
+        if (btnBack) btnBack.appendChild(retryBtn);
+    }
+
     // Streak pulse
-    const streakEl = document.getElementById('streak-count');
-    streakEl.parentElement.classList.add('streak-pulse');
-    setTimeout(() => streakEl.parentElement.classList.remove('streak-pulse'), 600);
+    document.getElementById('streak-count').parentElement.classList.add('streak-pulse');
+    setTimeout(() => document.getElementById('streak-count').parentElement.classList.remove('streak-pulse'), 600);
 
     document.getElementById('lesson-progress-bar').style.width = '100%';
-}
-
-function nextLesson() {
-    const nextIdx = currentLessonIdx + 1;
-    if (nextIdx < currentTrack.lessons.length) {
-        openLesson(currentTrackId, nextIdx);
-    } else {
-        showTracks();
-    }
 }
 
 // ─── Utils ────────────────────────────────────────────────────────
