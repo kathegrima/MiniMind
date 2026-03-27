@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMind – Impara l'AI in 5 minuti al giorno</title>
+    <meta name="description" content="MiniMind trasforma i concetti dell'intelligenza artificiale in micro-lezioni pratiche. Gratis, in italiano, senza basi tecniche.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.12);
+        }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary .arrow { transform: rotate(180deg); }
+        .arrow { transition: transform 0.2s ease; display: inline-block; }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- ───── NAVBAR ───── -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="text-2xl">🧠</span>
+                <span class="text-xl font-bold gradient-text">MiniMind</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
+                <a href="#percorsi" class="hover:text-indigo-600 transition-colors">Percorsi</a>
+                <a href="#come-funziona" class="hover:text-indigo-600 transition-colors">Come funziona</a>
+                <a href="#faq" class="hover:text-indigo-600 transition-colors">FAQ</a>
+                <a href="progress.html" class="hover:text-indigo-600 transition-colors">I miei progressi</a>
+            </div>
+            <a href="learn.html" class="bg-indigo-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors shadow-md shadow-indigo-200">
+                Inizia gratis →
+            </a>
+        </div>
+    </nav>
+
+    <!-- ───── HERO ───── -->
+    <section class="pt-36 pb-24 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-sm font-medium px-4 py-2 rounded-full mb-8 border border-indigo-100">
+                <span>✨</span>
+                <span>Gratis per sempre · In italiano · Zero basi tecniche richieste</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+                Diventa <span class="gradient-text">fluente in AI</span><br>
+                in 5 minuti al giorno
+            </h1>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+                MiniMind trasforma i concetti complessi dell'intelligenza artificiale
+                in micro-lezioni pratiche. Niente teoria pesante — solo ciò che ti serve davvero,
+                nel tempo di un caffè.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="learn.html" class="group bg-indigo-600 text-white font-semibold text-lg px-8 py-4 rounded-2xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 flex items-center justify-center gap-2">
+                    <span>Inizia il primo percorso</span>
+                    <span class="group-hover:translate-x-1 transition-transform">🚀</span>
+                </a>
+                <a href="#percorsi" class="bg-gray-100 text-gray-700 font-semibold text-lg px-8 py-4 rounded-2xl hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
+                    <span>Esplora i percorsi</span>
+                    <span>↓</span>
+                </a>
+            </div>
+
+            <!-- Source badges -->
+            <div class="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-gray-400">
+                <span class="font-medium text-gray-400">Contenuti basati su:</span>
+                <span class="flex items-center gap-1.5 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full">
+                    <img src="https://www.anthropic.com/favicon.ico" class="w-4 h-4" onerror="this.style.display='none'">
+                    Anthropic
+                </span>
+                <span class="flex items-center gap-1.5 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full">
+                    <img src="https://openai.com/favicon.ico" class="w-4 h-4" onerror="this.style.display='none'">
+                    OpenAI
+                </span>
+                <span class="flex items-center gap-1.5 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full">
+                    <img src="https://www.google.com/favicon.ico" class="w-4 h-4" onerror="this.style.display='none'">
+                    Google
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── STATS ───── -->
+    <section class="py-12 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 border-y border-gray-100">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="grid grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-extrabold text-indigo-600">5</div>
+                    <div class="text-sm text-gray-500 mt-1 font-medium">Percorsi tematici</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-extrabold text-purple-600">5 min</div>
+                    <div class="text-sm text-gray-500 mt-1 font-medium">Per ogni lezione</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-extrabold text-pink-600">0€</div>
+                    <div class="text-sm text-gray-500 mt-1 font-medium">Per sempre</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── COME FUNZIONA ───── -->
+    <section id="come-funziona" class="py-28 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Come funziona?</h2>
+                <p class="text-gray-500 text-lg max-w-xl mx-auto">È come Duolingo, ma ti insegna a capire e usare l'intelligenza artificiale.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center p-8 rounded-3xl bg-indigo-50 border border-indigo-100 card-hover">
+                    <div class="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5">📖</div>
+                    <h3 class="font-bold text-lg mb-3">Leggi la lezione</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Un concetto alla volta, spiegato con parole semplici e un esempio concreto. Niente muri di testo, niente gergo inutile.</p>
+                </div>
+                <div class="text-center p-8 rounded-3xl bg-purple-50 border border-purple-100 card-hover">
+                    <div class="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5">🧩</div>
+                    <h3 class="font-bold text-lg mb-3">Mettiti alla prova</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Un piccolo quiz per fissare il concetto. Sbagliare va benissimo — anzi, è il modo migliore per ricordare.</p>
+                </div>
+                <div class="text-center p-8 rounded-3xl bg-pink-50 border border-pink-100 card-hover">
+                    <div class="w-14 h-14 bg-pink-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5">🏆</div>
+                    <h3 class="font-bold text-lg mb-3">Guadagna XP e badge</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Ogni lezione ti dà punti esperienza. Costruisci la tua striscia giornaliera, scala i livelli, sblocca nuovi badge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── PERCORSI ───── -->
+    <section id="percorsi" class="py-28 px-6 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Scegli il tuo percorso</h2>
+                <p class="text-gray-500 text-lg">Inizia da dove vuoi. Ogni percorso è autonomo e indipendente.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6" id="tracks-grid"></div>
+        </div>
+    </section>
+
+    <!-- ───── FOR WHO ───── -->
+    <section class="py-28 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Per chi è MiniMind?</h2>
+            <p class="text-gray-500 text-lg mb-14 max-w-xl mx-auto">Non devi scrivere codice, non devi avere un background tecnico. Devi solo essere curioso.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 card-hover">
+                    <div class="text-3xl mb-3">👩‍💼</div>
+                    <div class="font-semibold text-sm">Manager e HR</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 card-hover">
+                    <div class="text-3xl mb-3">⚖️</div>
+                    <div class="font-semibold text-sm">Avvocati e notai</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 card-hover">
+                    <div class="text-3xl mb-3">📣</div>
+                    <div class="font-semibold text-sm">Marketer e creativi</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 card-hover">
+                    <div class="text-3xl mb-3">🏪</div>
+                    <div class="font-semibold text-sm">Liberi professionisti</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ───── FAQ ───── -->
+    <section id="faq" class="py-28 px-6 bg-gray-50">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-14">Domande frequenti</h2>
+            <div class="space-y-3" id="faq-list"></div>
+        </div>
+    </section>
+
+    <!-- ───── CTA FINALE ───── -->
+    <section class="py-28 px-6">
+        <div class="max-w-2xl mx-auto text-center">
+            <div class="text-5xl mb-6">🧠</div>
+            <h2 class="text-3xl font-bold mb-4">Pronto a iniziare?</h2>
+            <p class="text-gray-500 text-lg mb-10">La tua prima lezione ti aspetta. Ci vogliono 5 minuti.<br>Nessuna registrazione, nessuna carta di credito.</p>
+            <a href="learn.html" class="inline-block bg-indigo-600 text-white font-semibold text-lg px-10 py-4 rounded-2xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 hover:scale-105">
+                Inizia adesso — è gratis 🚀
+            </a>
+        </div>
+    </section>
+
+    <!-- ───── FOOTER ───── -->
+    <footer class="border-t border-gray-100 py-10 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+            <div class="flex items-center gap-2">
+                <span class="text-xl">🧠</span>
+                <span class="font-semibold text-gray-600">MiniMind</span>
+                <span>— Impara l'AI in 5 minuti al giorno</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="learn.html" class="hover:text-indigo-600 transition-colors">Inizia a imparare</a>
+                <a href="progress.html" class="hover:text-indigo-600 transition-colors">I miei progressi</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ───── SCRIPT ───── -->
+    <script>
+        // Definizione percorsi
+        const tracks = [
+            {
+                id: "fondamentali",
+                emoji: "🧠",
+                title: "Fondamentali AI",
+                description: "Cos'è un LLM, come 'pensa' l'AI, cosa sono i token e il contesto, perché l'AI a volte inventa cose. Il punto di partenza per capire davvero.",
+                lessons: 8,
+                level: "Principiante",
+                levelColor: "text-green-600 bg-green-50 border-green-200",
+                accent: "border-indigo-200 bg-indigo-50",
+                bar: "bg-indigo-500"
+            },
+            {
+                id: "prompting",
+                emoji: "✍️",
+                title: "Prompt Engineering",
+                description: "Impara a parlare con l'AI in modo efficace. Zero-shot, few-shot, chain-of-thought: le tecniche che fanno davvero la differenza.",
+                lessons: 10,
+                level: "Intermedio",
+                levelColor: "text-blue-600 bg-blue-50 border-blue-200",
+                accent: "border-purple-200 bg-purple-50",
+                bar: "bg-purple-500"
+            },
+            {
+                id: "lavoro",
+                emoji: "💼",
+                title: "AI nel lavoro",
+                description: "Strumenti pratici per marketer, avvocati, HR, freelance. Come integrare l'AI nel tuo flusso di lavoro quotidiano, da subito.",
+                lessons: 9,
+                level: "Pratico",
+                levelColor: "text-purple-600 bg-purple-50 border-purple-200",
+                accent: "border-blue-200 bg-blue-50",
+                bar: "bg-blue-500"
+            },
+            {
+                id: "privacy",
+                emoji: "🛡️",
+                title: "AI & Privacy",
+                description: "GDPR, dati sensibili, dove finiscono le tue informazioni. Quello che ogni professionista deve sapere prima di usare l'AI in azienda.",
+                lessons: 6,
+                level: "Essenziale",
+                levelColor: "text-orange-600 bg-orange-50 border-orange-200",
+                accent: "border-green-200 bg-green-50",
+                bar: "bg-green-500"
+            },
+            {
+                id: "agenti",
+                emoji: "🤖",
+                title: "Agenti & Futuro",
+                description: "Cosa sono gli agenti AI, come funziona RAG, cos'è MCP. Il prossimo livello dell'AI, spiegato senza tecnicismi inutili.",
+                lessons: 7,
+                level: "Avanzato",
+                levelColor: "text-red-600 bg-red-50 border-red-200",
+                accent: "border-orange-200 bg-orange-50",
+                bar: "bg-orange-500"
+            }
+        ];
+
+        // Render percorsi
+        const grid = document.getElementById('tracks-grid');
+        const progress = JSON.parse(localStorage.getItem('mm_progress') || '{}');
+
+        tracks.forEach(t => {
+            const done = progress[t.id]?.completed || 0;
+            const pct = Math.round((done / t.lessons) * 100);
+            const statusLabel = done === 0 ? 'Non iniziato'
+                : done === t.lessons ? '✅ Completato!'
+                : `${pct}% completato`;
+
+            grid.innerHTML += `
+                <a href="learn.html?track=${t.id}" class="group block p-7 rounded-3xl border-2 ${t.accent} card-hover">
+                    <div class="flex items-start justify-between mb-5">
+                        <span class="text-4xl">${t.emoji}</span>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full border ${t.levelColor}">${t.level}</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">${t.title}</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-5">${t.description}</p>
+                    <div class="flex items-center justify-between text-xs text-gray-400 mb-2">
+                        <span>${t.lessons} lezioni · ~${t.lessons * 5} minuti totali</span>
+                        <span class="${done > 0 ? 'text-indigo-600 font-semibold' : ''}">${statusLabel}</span>
+                    </div>
+                    <div class="h-1.5 bg-white/80 rounded-full overflow-hidden border border-gray-200">
+                        <div class="h-full rounded-full transition-all duration-500 ${t.bar}" style="width:${pct}%"></div>
+                    </div>
+                </a>
+            `;
+        });
+
+        // Card "in arrivo"
+        grid.innerHTML += `
+            <div class="p-7 rounded-3xl border-2 border-dashed border-gray-200 flex items-center justify-center text-center min-h-[200px]">
+                <div>
+                    <div class="text-4xl mb-3">✨</div>
+                    <p class="font-semibold text-gray-400">Nuovi percorsi in arrivo</p>
+                    <p class="text-sm text-gray-300 mt-1">Aggiornamenti ogni mese</p>
+                </div>
+            </div>
+        `;
+
+        // FAQ
+        const faqs = [
+            {
+                q: "Devo registrarmi per usare MiniMind?",
+                a: "No, puoi iniziare subito senza creare un account. I tuoi progressi vengono salvati automaticamente nel browser. Se vuoi accedere da più dispositivi, potrai creare un account gratuito (prossimamente)."
+            },
+            {
+                q: "I contenuti sono aggiornati?",
+                a: "Sì. Le lezioni sono basate su fonti ufficiali di Anthropic, OpenAI e Google. Il mondo AI cambia rapidamente — MiniMind si aggiorna con lui, senza che tu debba fare nulla."
+            },
+            {
+                q: "Quanto tempo ci vuole per completare un percorso?",
+                a: "Con 5 minuti al giorno, completi un percorso in 2-3 settimane. Puoi anche fare più lezioni di fila se hai voglia — non c'è nessun limite."
+            },
+            {
+                q: "Serve avere basi tecniche?",
+                a: "Assolutamente no. MiniMind è pensato per tutti — che tu sia un avvocato, un artigiano o un manager. Nessun codice, nessun algoritmo: solo concetti pratici e applicabili subito."
+            },
+            {
+                q: "È davvero gratis? Senza trucchi?",
+                a: "Sì. MiniMind è e resterà completamente gratuito. Non ci sono piani premium, paywall o contenuti nascosti. Il nostro obiettivo è rendere l'educazione sull'AI accessibile a tutti in Italia."
+            }
+        ];
+
+        const faqList = document.getElementById('faq-list');
+        faqs.forEach(f => {
+            faqList.innerHTML += `
+                <details class="group bg-white border border-gray-200 rounded-2xl overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50">
+                        <span>${f.q}</span>
+                        <span class="arrow text-gray-400 text-lg ml-4 flex-shrink-0">↓</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-500 text-sm leading-relaxed border-t border-gray-100 pt-4">${f.a}</div>
+                </details>
+            `;
+        });
+    </script>
+</body>
+</html>
