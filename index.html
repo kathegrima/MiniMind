@@ -34,16 +34,13 @@
     </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-    <!-- ✅ Google Analytics 4 — deve stare nel <head>, il prima possibile -->
+    <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HMLKJZRDQN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-HMLKJZRDQN', {
-            // Invia automaticamente lo scroll depth a 90%
-            'send_page_view': true
-        });
+        gtag('config', 'G-HMLKJZRDQN', { 'send_page_view': true });
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -163,7 +160,7 @@
         <div class="max-w-2xl mx-auto px-6">
             <div class="grid grid-cols-3 gap-4 text-center">
                 <div class="p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <div class="text-4xl font-black text-indigo-600 mb-1">40</div>
+                    <div class="text-4xl font-black text-indigo-600 mb-1">47</div>
                     <div class="text-sm text-gray-500 font-medium">Lezioni pratiche</div>
                 </div>
                 <div class="p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
@@ -295,42 +292,61 @@
 
     <script src="js/progress.js"></script>
     <script>
-        // ─── Dati percorsi ────────────────────────────────────────
         const tracks = [
             {
-                id: "fondamentali", emoji: "🧠", title: "Fondamentali AI",
+                id: "fondamentali",
+                emoji: "🧠",
+                title: "Fondamentali AI",
                 description: "Come funziona davvero un LLM, cosa sono i token, perché l'AI a volte inventa cose. Il punto di partenza per capire, non solo usare.",
-                lessons: 8, level: "Principiante",
+                lessons: 11,
+                level: "Principiante",
                 levelColor: "text-green-600 bg-green-50",
-                accent: "bg-white border-gray-200", bar: "bg-indigo-500"
+                accent: "bg-white border-gray-200",
+                bar: "bg-indigo-500"
             },
             {
-                id: "prompting", emoji: "✍️", title: "Prompt Engineering",
+                id: "prompting",
+                emoji: "✍️",
+                title: "Prompt Engineering",
                 description: "Impara a fare le domande giuste. Zero-shot, few-shot, chain-of-thought: le tecniche che cambiano la qualità delle risposte.",
-                lessons: 10, level: "Intermedio",
+                lessons: 12,
+                level: "Intermedio",
                 levelColor: "text-blue-600 bg-blue-50",
-                accent: "bg-white border-gray-200", bar: "bg-purple-500"
+                accent: "bg-white border-gray-200",
+                bar: "bg-purple-500"
             },
             {
-                id: "lavoro", emoji: "💼", title: "AI nel lavoro",
+                id: "lavoro",
+                emoji: "💼",
+                title: "AI nel lavoro",
                 description: "Strumenti pratici per marketer, avvocati, HR e freelance. Come integrare l'AI nel tuo flusso di lavoro, da subito.",
-                lessons: 9, level: "Pratico",
+                lessons: 9,
+                level: "Pratico",
                 levelColor: "text-purple-600 bg-purple-50",
-                accent: "bg-white border-gray-200", bar: "bg-blue-500"
+                accent: "bg-white border-gray-200",
+                bar: "bg-blue-500"
             },
             {
-                id: "privacy", emoji: "🛡️", title: "AI e Privacy",
+                id: "privacy",
+                emoji: "🛡️",
+                title: "AI e Privacy",
                 description: "GDPR, dati sensibili, dove finiscono le tue informazioni. Quello che ogni professionista deve sapere prima di usare l'AI.",
-                lessons: 6, level: "Essenziale",
+                lessons: 6,
+                level: "Essenziale",
                 levelColor: "text-orange-600 bg-orange-50",
-                accent: "bg-white border-gray-200", bar: "bg-green-500"
+                accent: "bg-white border-gray-200",
+                bar: "bg-green-500"
             },
             {
-                id: "agenti", emoji: "🤖", title: "Agenti e Futuro",
+                id: "agenti",
+                emoji: "🤖",
+                title: "Agenti e Futuro",
                 description: "Cosa sono gli agenti AI, come funziona RAG, cos'è MCP. Il prossimo livello, spiegato senza tecnicismi.",
-                lessons: 7, level: "Avanzato",
+                lessons: 7,
+                level: "Avanzato",
                 levelColor: "text-red-600 bg-red-50",
-                accent: "bg-white border-gray-200", bar: "bg-orange-500"
+                accent: "bg-white border-gray-200",
+                bar: "bg-orange-500"
             }
         ];
 
@@ -347,10 +363,8 @@
 
             const card = document.createElement('a');
             card.href  = `learn.html?track=${t.id}`;
-            card.className = `group block p-7 rounded-3xl border card-hover ${t.accent}
-                              hover:border-indigo-200 hover:shadow-md transition-all`;
+            card.className = `group block p-7 rounded-3xl border card-hover ${t.accent} hover:border-indigo-200 hover:shadow-md transition-all`;
 
-            // ✅ Traccia quale percorso viene cliccato
             card.addEventListener('click', () => {
                 gtag('event', 'track_click', {
                     track_id:   t.id,
@@ -388,7 +402,6 @@
             grid.appendChild(card);
         });
 
-        // Card "in arrivo"
         grid.innerHTML += `
             <div class="p-7 rounded-3xl border border-dashed border-gray-200
                         flex items-center justify-center text-center min-h-[200px]">
@@ -399,7 +412,7 @@
             </div>
         `;
 
-        // ─── FAQ ──────────────────────────────────────────────────
+        // FAQ
         const faqs = [
             {
                 q: "Devo registrarmi?",
@@ -433,50 +446,36 @@
                     ${f.a}
                 </div>
             `;
-            // ✅ Traccia apertura FAQ
             el.addEventListener('toggle', () => {
-                if (el.open) {
-                    gtag('event', 'faq_open', { question_index: i, question: f.q });
-                }
+                if (el.open) gtag('event', 'faq_open', { question_index: i, question: f.q });
             });
             faqList.appendChild(el);
         });
 
-        // ─── Scroll depth tracking ────────────────────────────────
-        // Invia un evento quando l'utente raggiunge i percorsi (interesse reale)
-        const percorsiSection = document.getElementById('percorsi');
-        const faqSection      = document.getElementById('faq');
-        const scrollObserver  = new IntersectionObserver((entries) => {
+        // Scroll depth
+        const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const section = entry.target.id;
-                    gtag('event', 'section_viewed', { section_id: section });
-                    scrollObserver.unobserve(entry.target); // una volta sola
+                    gtag('event', 'section_viewed', { section_id: entry.target.id });
+                    scrollObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.3 });
 
-        scrollObserver.observe(percorsiSection);
-        scrollObserver.observe(faqSection);
+        scrollObserver.observe(document.getElementById('percorsi'));
+        scrollObserver.observe(document.getElementById('faq'));
 
-        // ─── Engagement time ─────────────────────────────────────
-        // Utenti che restano più di 30 secondi = interesse reale
-        setTimeout(() => {
-            gtag('event', 'engaged_30s', { page: 'homepage' });
-        }, 30000);
+        // Engagement 30s
+        setTimeout(() => gtag('event', 'engaged_30s', { page: 'homepage' }), 30000);
 
-        // ─── Returning user ───────────────────────────────────────
-        // Capire se l'utente ha già progressi (è già stato sul sito)
-        const state        = Progress.get();
-        const hasProgress  = state.totalXP > 0;
-        const totalDone    = Progress.totalCompleted(state);
-
+        // Utente con progressi esistenti
+        const state = Progress.get();
         gtag('event', 'page_view_enriched', {
-            has_progress:   hasProgress,
-            lessons_done:   totalDone,
-            total_xp:       state.totalXP,
-            streak_days:    state.streakDays,
-            user_type:      hasProgress ? 'returning' : 'new'
+            has_progress: state.totalXP > 0,
+            lessons_done: Progress.totalCompleted(state),
+            total_xp:     state.totalXP,
+            streak_days:  state.streakDays,
+            user_type:    state.totalXP > 0 ? 'returning' : 'new'
         });
     </script>
 </body>
