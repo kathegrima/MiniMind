@@ -1023,14 +1023,37 @@
             }
           ]
         },
-        {
+                {
           "id": "a2",
           "title": "Come funzionano gli agenti: tool calling e loop",
           "duration": 5,
           "xp": 15,
           "concept": "Gli agenti AI funzionano attraverso un loop iterativo: <strong>osserva</strong> (analizza la situazione e gli strumenti disponibili), <strong>pianifica</strong> (decide il prossimo passo), <strong>agisce</strong> (usa uno strumento), <strong>osserva il risultato</strong> (valuta cosa è successo), <strong>ripete</strong> fino al completamento. Il <strong>tool calling</strong> è la capacità di invocare funzioni esterne: ricerca web, esecuzione codice, invio email, lettura/scrittura file, chiamate API. I framework più usati per costruire agenti sono LangChain, LangGraph (Python) e AutoGen di Microsoft.",
-          "example": "Agente per ricerca competitiva: obiettivo 'analizza i 3 principali competitor di Acme SpA e scrivi un report'. Loop: 1) cerca 'Acme SpA competitor' sul web, 2) identifica i 3 nomi, 3) per ognuno cerca prezzi, feature, recensioni, 4) confronta su una matrice, 5) genera il report in Markdown. Ogni passo usa il tool 'web search'. L'umano ha dato solo l'obiettivo — l'agente ha eseguito 15+ 
-                        "explanation": "Esatto! Il loop osserva-pianifica-agisci-osserva è il cuore di qualsiasi agente AI. Capire questo ciclo aiuta a progettare agenti affidabili e a capire quando e perché possono fallire."
+          "example": "Agente per ricerca competitiva: obiettivo 'analizza i 3 principali competitor di Acme SpA e scrivi un report'. Loop: 1) cerca 'Acme SpA competitor' sul web, 2) identifica i 3 nomi, 3) per ognuno cerca prezzi, feature, recensioni, 4) confronta su una matrice, 5) genera il report in Markdown. Ogni passo usa il tool 'web search'. L'umano ha dato solo l'obiettivo — l'agente ha eseguito 15+ azioni in autonomia.",
+          "tip": "💡 Il loop osserva-pianifica-agisci non è lineare: un agente può tornare indietro, correggere un passo sbagliato e riprovare. Questa capacità di auto-correzione è ciò che rende gli agenti molto più potenti di una semplice sequenza di prompt.",
+          "source": "Anthropic",
+          "quiz": [
+            {
+              "question": "Come funziona il ciclo di un agente AI?",
+              "options": [
+                "Riceve una domanda e risponde direttamente senza passi intermedi",
+                "Loop iterativo: osserva la situazione, pianifica il passo successivo, agisce con uno strumento, osserva il risultato e ripete",
+                "Esegue sempre un numero fisso di passi predefiniti",
+                "Funziona solo se connesso a internet in tempo reale"
+              ],
+              "correct": 1,
+              "explanation": "Esatto! Il loop osserva-pianifica-agisci-osserva è il cuore di qualsiasi agente AI. Capire questo ciclo aiuta a progettare agenti affidabili e a capire quando e perché possono fallire."
+            },
+            {
+              "question": "Cos'è il tool calling in un agente AI?",
+              "options": [
+                "La capacità del modello di imparare nuovi strumenti in autonomia",
+                "La capacità di invocare funzioni esterne come ricerca web, esecuzione codice o chiamate API",
+                "Un metodo per chiamare altri modelli AI durante l'esecuzione",
+                "La funzione che permette all'agente di parlare con voce"
+              ],
+              "correct": 1,
+              "explanation": "Corretto! Il tool calling è ciò che trasforma un LLM passivo in un agente attivo. Senza strumenti, il modello può solo rispondere; con gli strumenti può agire nel mondo."
             }
           ]
         },
