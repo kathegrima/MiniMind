@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO primario -->
     <title>MiniMind – Impara l'AI in 5 minuti al giorno | Gratis in italiano</title>
     <meta name="description" content="MiniMind è la piattaforma italiana gratuita per imparare l'intelligenza artificiale. 5 percorsi, 40 lezioni, quiz e badge. Nessuna registrazione richiesta.">
     <meta name="keywords" content="imparare AI, intelligenza artificiale italiano, prompt engineering, corso AI gratuito, ChatGPT spiegato, Claude AI, LLM">
     <meta name="author" content="MiniMind">
     <link rel="canonical" href="https://kathegrima.github.io/MiniMind/">
 
-    <!-- Open Graph (anteprima su WhatsApp, LinkedIn, Facebook) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kathegrima.github.io/MiniMind/">
     <meta property="og:title" content="MiniMind – Impara l'AI in 5 minuti al giorno">
@@ -20,13 +18,11 @@
     <meta property="og:locale" content="it_IT">
     <meta property="og:site_name" content="MiniMind">
 
-    <!-- Twitter/X card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MiniMind – Impara l'AI in 5 minuti al giorno">
     <meta name="twitter:description" content="5 percorsi gratuiti sull'AI in italiano. Nessuna registrazione richiesta.">
     <meta name="twitter:image" content="https://kathegrima.github.io/MiniMind/og-image.png">
 
-    <!-- Schema.org structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -41,16 +37,32 @@
     }
     </script>
 
-    <!-- Favicons -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- ... resto degli stili ... -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.12);
+        }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary .arrow { transform: rotate(180deg); }
+        .arrow { transition: transform 0.2s ease; display: inline-block; }
+    </style>
 </head>
 <body class="bg-white text-gray-900">
 
-    <!-- ───── NAVBAR ───── -->
+    <!-- NAVBAR -->
     <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 z-50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2">
@@ -69,7 +81,7 @@
         </div>
     </nav>
 
-    <!-- ───── HERO ───── -->
+    <!-- HERO -->
     <section class="pt-36 pb-24 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <div class="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-sm font-medium px-4 py-2 rounded-full mb-8 border border-indigo-100">
@@ -95,8 +107,6 @@
                     <span>↓</span>
                 </a>
             </div>
-
-            <!-- Source badges -->
             <div class="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-gray-400">
                 <span class="font-medium text-gray-400">Contenuti basati su:</span>
                 <span class="flex items-center gap-1.5 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-full">
@@ -115,7 +125,7 @@
         </div>
     </section>
 
-    <!-- ───── STATS ───── -->
+    <!-- STATS -->
     <section class="py-12 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 border-y border-gray-100">
         <div class="max-w-3xl mx-auto px-6">
             <div class="grid grid-cols-3 gap-8 text-center">
@@ -135,7 +145,7 @@
         </div>
     </section>
 
-    <!-- ───── COME FUNZIONA ───── -->
+    <!-- COME FUNZIONA -->
     <section id="come-funziona" class="py-28 px-6">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
@@ -162,7 +172,7 @@
         </div>
     </section>
 
-    <!-- ───── PERCORSI ───── -->
+    <!-- PERCORSI -->
     <section id="percorsi" class="py-28 px-6 bg-gray-50">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
@@ -173,7 +183,7 @@
         </div>
     </section>
 
-    <!-- ───── FOR WHO ───── -->
+    <!-- PER CHI -->
     <section class="py-28 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4">Per chi è MiniMind?</h2>
@@ -199,7 +209,7 @@
         </div>
     </section>
 
-    <!-- ───── FAQ ───── -->
+    <!-- FAQ -->
     <section id="faq" class="py-28 px-6 bg-gray-50">
         <div class="max-w-2xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-14">Domande frequenti</h2>
@@ -207,7 +217,7 @@
         </div>
     </section>
 
-    <!-- ───── CTA FINALE ───── -->
+    <!-- CTA FINALE -->
     <section class="py-28 px-6">
         <div class="max-w-2xl mx-auto text-center">
             <div class="text-5xl mb-6">🧠</div>
@@ -219,7 +229,7 @@
         </div>
     </section>
 
-    <!-- ───── FOOTER ───── -->
+    <!-- FOOTER -->
     <footer class="border-t border-gray-100 py-10 px-6">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
             <div class="flex items-center gap-2">
@@ -234,9 +244,9 @@
         </div>
     </footer>
 
-    <!-- ───── SCRIPT ───── -->
+    <!-- SCRIPT — progress.js deve essere caricato prima dello script inline -->
+    <script src="js/progress.js"></script>
     <script>
-        // Definizione percorsi
         const tracks = [
             {
                 id: "fondamentali",
@@ -295,16 +305,17 @@
             }
         ];
 
-        // Render percorsi
-        const grid = document.getElementById('tracks-grid');
-        const progress = JSON.parse(localStorage.getItem('mm_progress') || '{}');
+        const grid     = document.getElementById('tracks-grid');
+        // ✅ FIX: usa Progress.get() invece di leggere localStorage direttamente
+        const progress = Progress.get();
 
         tracks.forEach(t => {
-            const done = progress[t.id]?.completed || 0;
-            const pct = Math.round((done / t.lessons) * 100);
-            const statusLabel = done === 0 ? 'Non iniziato'
-                : done === t.lessons ? '✅ Completato!'
-                : `${pct}% completato`;
+            // ✅ FIX: .completed è un array → serve .length per avere il numero
+            const done = progress[t.id]?.completed?.length || 0;
+            const pct  = Math.round((done / t.lessons) * 100);
+            const statusLabel = done === 0        ? 'Non ancora iniziato'
+                              : done === t.lessons ? '✅ Completato!'
+                              : `${done}/${t.lessons} lezioni`;
 
             grid.innerHTML += `
                 <a href="learn.html?track=${t.id}" class="group block p-7 rounded-3xl border-2 ${t.accent} card-hover">
@@ -315,7 +326,7 @@
                     <h3 class="font-bold text-xl mb-2">${t.title}</h3>
                     <p class="text-sm text-gray-500 leading-relaxed mb-5">${t.description}</p>
                     <div class="flex items-center justify-between text-xs text-gray-400 mb-2">
-                        <span>${t.lessons} lezioni · ~${t.lessons * 5} minuti totali</span>
+                        <span>${t.lessons} lezioni · ~${t.lessons * 5} min totali</span>
                         <span class="${done > 0 ? 'text-indigo-600 font-semibold' : ''}">${statusLabel}</span>
                     </div>
                     <div class="h-1.5 bg-white/80 rounded-full overflow-hidden border border-gray-200">
@@ -325,7 +336,6 @@
             `;
         });
 
-        // Card "in arrivo"
         grid.innerHTML += `
             <div class="p-7 rounded-3xl border-2 border-dashed border-gray-200 flex items-center justify-center text-center min-h-[200px]">
                 <div>
@@ -336,7 +346,6 @@
             </div>
         `;
 
-        // FAQ
         const faqs = [
             {
                 q: "Devo registrarmi per usare MiniMind?",
@@ -375,5 +384,3 @@
     </script>
 </body>
 </html>
-
-
