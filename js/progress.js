@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────────
 //  MiniMind · Progress System
-//  Tutto salvato in localStorage — nessun account, nessuna dipendenza.
+//  localStorage only — nessun account, nessuna dipendenza esterna.
 // ─────────────────────────────────────────────────────────────────
 
 const Progress = (() => {
@@ -8,17 +8,18 @@ const Progress = (() => {
     const KEY = 'mm_progress';
 
     const defaultState = () => ({
-        totalXP:          0,
-        streakDays:       0,
-        lastLearnedDate:  null,
-        badges:           [],
-        fondamentali:     { completed: [] },
-        prompting:        { completed: [] },
-        lavoro:           { completed: [] },
-        privacy:          { completed: [] },
-        agenti:           { completed: [] }
+        totalXP:         0,
+        streakDays:      0,
+        lastLearnedDate: null,
+        badges:          [],
+        fondamentali:    { completed: [] },
+        prompting:       { completed: [] },
+        lavoro:          { completed: [] },
+        privacy:         { completed: [] },
+        agenti:          { completed: [] }
     });
 
+    // ── Lettura ──────────────────────────────────────────────────
     function get() {
         try {
             const raw = localStorage.getItem(KEY);
@@ -29,10 +30,12 @@ const Progress = (() => {
         }
     }
 
+    // ── Scrittura ────────────────────────────────────────────────
     function save(state) {
         localStorage.setItem(KEY, JSON.stringify(state));
     }
 
+    // ── Utilities data ───────────────────────────────────────────
     function today() {
         return new Date().toISOString().slice(0, 10);
     }
@@ -43,6 +46,7 @@ const Progress = (() => {
         );
     }
 
+    // ── Streak ───────────────────────────────────────────────────
     function updateStreak(state) {
         const t    = today();
         const last = state.lastLearnedDate;
@@ -56,13 +60,7 @@ const Progress = (() => {
         return state;
     }
 
-    // ── Totali percorso aggiornati ───────────────────────────────
-    //  fondamentali: 11 lezioni (f1–f11)
-    //  prompting:    12 lezioni (p1–p12)
-    //  lavoro:        9 lezioni
-    //  privacy:       6 lezioni
-    //  agenti:        7 lezioni
-
+    // ── Badge ────────────────────────────────────────────────────
     const BADGES = [
         {
             id:    'first_step',
@@ -96,7 +94,7 @@ const Progress = (() => {
             id:    'on_fire',
             emoji: '🔥',
             name:  'In fiamme',
-            desc:  'Tre giorni di fila. L\'abitudine si sta formando.',
+            desc:  "Tre giorni di fila. L'abitudine si sta formando.",
             check: s => s.streakDays >= 3
         },
         {
@@ -132,20 +130,20 @@ const Progress = (() => {
             emoji: '🧠',
             name:  'Basi solide',
             desc:  'Hai completato "Fondamentali AI". Ora capisci davvero come funziona.',
-            check: s => isTrackComplete(s, 'fondamentali', 11)   // ← aggiornato da 8
+            check: s => isTrackComplete(s, 'fondamentali', 11)
         },
         {
             id:    'track_prompting',
             emoji: '✍️',
             name:  'Prompt Master',
-            desc:  'Hai completato "Prompt Engineering". Sai come parlare con l\'AI.',
-            check: s => isTrackComplete(s, 'prompting', 12)      // ← aggiornato da 10
+            desc:  "Hai completato \"Prompt Engineering\". Sai come parlare con l'AI.",
+            check: s => isTrackComplete(s, 'prompting', 12)
         },
         {
             id:    'track_lavoro',
             emoji: '💼',
             name:  'AI Professional',
-            desc:  'Hai completato "AI nel lavoro". L\'AI lavora per te, non il contrario.',
+            desc:  "Hai completato \"AI nel lavoro\". L'AI lavora per te, non il contrario.",
             check: s => isTrackComplete(s, 'lavoro', 9)
         },
         {
@@ -168,14 +166,15 @@ const Progress = (() => {
             name:  'MiniMind Completo',
             desc:  'Hai completato tutti i percorsi. Non molti ci riescono.',
             check: s =>
-                isTrackComplete(s, 'fondamentali', 11) &&   // ← aggiornato da 8
-                isTrackComplete(s, 'prompting', 12)    &&   // ← aggiornato da 10
+                isTrackComplete(s, 'fondamentali', 11) &&
+                isTrackComplete(s, 'prompting', 12)    &&
                 isTrackComplete(s, 'lavoro', 9)        &&
                 isTrackComplete(s, 'privacy', 6)       &&
                 isTrackComplete(s, 'agenti', 7)
         }
     ];
 
+    // ── Helpers ──────────────────────────────────────────────────
     function totalCompleted(state) {
         return ['fondamentali', 'prompting', 'lavoro', 'privacy', 'agenti']
             .reduce((sum, id) => sum + (state[id]?.completed?.length || 0), 0);
@@ -195,6 +194,7 @@ const Progress = (() => {
         return null;
     }
 
+    // ── Registra lezione completata ──────────────────────────────
     function completeLesson(trackId, lessonId, xpEarned) {
         let state = get();
         if (!state[trackId]) state[trackId] = { completed: [] };
@@ -208,10 +208,12 @@ const Progress = (() => {
         return newBadge;
     }
 
+    // ── Reset ────────────────────────────────────────────────────
     function reset() {
         localStorage.removeItem(KEY);
     }
 
+    // ── API pubblica ─────────────────────────────────────────────
     return {
         get,
         save,
