@@ -7,7 +7,7 @@ let currentTrackId = null;
 let currentLesson  = null;
 let currentLessonIdx = null;
 let currentTrack   = null;
-let quizState      = { current: 0, score: 0, answered: false };
+let quizState      = { current: 0, score: 0, answered: false, shuffledQuiz: null };
 
 // ── Boot ─────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     routeFromURL();
 });
 
-// ✅ FIX: path corretto — lessons.json è nella root del progetto
 async function fetchLessons() {
     const res = await fetch('data/lessons.json');
     if (!res.ok) throw new Error(`HTTP ${res.status} — file non trovato`);
@@ -233,16 +232,51 @@ function renderLesson() {
     hide('complete-content');
 }
 
+// ── Quiz Shuffle ─────────────────────────────────────────────────
+function shuffleArray(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+// Restituisce una copia del quiz con domande e opzioni rimescolate.
+// Il campo `correct` viene aggiornato alla nuova posizione dell'opzione giusta.
+// Per disabilitare su una singola lezione: aggiungi "shuffle": false in lessons.json.
+function prepareQuiz(quiz, shuffleEnabled) {
+    if (!shuffleEnabled) {
+        return quiz.map(q => ({ ...q, options: [...q.options] }));
+    }
+    const shuffledQuestions = shuffleArray(quiz);
+    return shuffledQuestions.map(q => {
+        const opts        = q.options.map((text, i) => ({ text, isCorrect: i === q.correct }));
+        const shuffledOpts = shuffleArray(opts);
+        return {
+            ...q,
+            options: shuffledOpts.map(o => o.text),
+            correct: shuffledOpts.findIndex(o => o.isCorrect)
+        };
+    });
+}
+
 // ── Quiz ─────────────────────────────────────────────────────────
 function startQuiz() {
     hide('lesson-content');
     show('quiz-content');
-    quizState = { current: 0, score: 0, answered: false };
+    const shuffleEnabled = currentLesson.shuffle !== false;
+    quizState = {
+        current:     0,
+        score:       0,
+        answered:    false,
+        shuffledQuiz: prepareQuiz(currentLesson.quiz, shuffleEnabled)
+    };
     renderQuestion();
 }
 
 function renderQuestion() {
-    const quiz      = currentLesson.quiz;
+    const quiz      = quizState.shuffledQuiz;
     const q         = quiz[quizState.current];
     const container = document.getElementById('quiz-questions');
     const total     = quiz.length;
@@ -269,9 +303,9 @@ function renderQuestion() {
 
     const optList = document.getElementById('options-list');
     q.options.forEach((opt, i) => {
-        const btn = document.createElement('button');
-        btn.className = `w-full text-left p-4 rounded-2xl border-2 border-gray-200 bg-white
-                         hover:border-indigo-300 hover:bg-indigo-50 transition-all text-sm font-medium`;
+        const btn       = document.createElement('button');
+        btn.className   = `w-full text-left p-4 rounded-2xl border-2 border-gray-200 bg-white
+                           hover:border-indigo-300 hover:bg-indigo-50 transition-all text-sm font-medium`;
         btn.textContent = opt;
         btn.onclick     = () => selectAnswer(i, q.correct, q.explanation);
         optList.appendChild(btn);
@@ -289,7 +323,7 @@ function selectAnswer(selected, correct, explanation) {
     options.forEach((btn, i) => {
         btn.disabled  = true;
         btn.className = btn.className.replace('hover:border-indigo-300 hover:bg-indigo-50', '');
-        if (i === correct)  btn.className += ' border-green-400 bg-green-50 text-green-800';
+        if (i === correct)                btn.className += ' border-green-400 bg-green-50 text-green-800';
         if (i === selected && !isCorrect) btn.className += ' border-red-400 bg-red-50 text-red-800';
     });
 
@@ -307,7 +341,8 @@ function selectAnswer(selected, correct, explanation) {
 function nextQuestion() {
     quizState.current++;
     quizState.answered = false;
-    if (quizState.current < currentLesson.quiz.length) {
+    // FIX: usa shuffledQuiz.length (non currentLesson.quiz.length)
+    if (quizState.current < quizState.shuffledQuiz.length) {
         renderQuestion();
     } else {
         completeLesson();
@@ -320,7 +355,8 @@ function completeLesson() {
     show('complete-content');
 
     const lesson  = currentLesson;
-    const total   = lesson.quiz.length;
+    // FIX: usa shuffledQuiz.length (non lesson.quiz.length)
+    const total   = quizState.shuffledQuiz.length;
     const score   = quizState.score;
     const ratio   = total > 0 ? score / total : 0;
     const perfect = score === total;
@@ -347,13 +383,13 @@ function completeLesson() {
         zero:    { emoji: '🔄', title: 'Ripassala ancora',   color: 'text-red-500' }
     }[perf];
 
-    document.getElementById('complete-emoji').textContent  = ui.emoji;
-    document.getElementById('complete-title').textContent  = ui.title;
-    document.getElementById('complete-title').className    = `text-3xl font-bold mb-3 ${ui.color}`;
+    document.getElementById('complete-emoji').textContent = ui.emoji;
+    document.getElementById('complete-title').textContent = ui.title;
+    document.getElementById('complete-title').className   = `text-3xl font-bold mb-3 ${ui.color}`;
 
-    document.getElementById('complete-xp').textContent    = xpEarned > 0
+    document.getElementById('complete-xp').textContent = xpEarned > 0
         ? `+${xpEarned} XP` : '0 XP';
-    document.getElementById('complete-xp').className      = `text-2xl font-bold
+    document.getElementById('complete-xp').className   = `text-2xl font-bold
         ${xpEarned > 0 ? 'text-indigo-600' : 'text-gray-400'}`;
 
     document.getElementById('complete-subtitle').textContent =
@@ -390,16 +426,15 @@ function completeLesson() {
     if (existingRetry) existingRetry.remove();
 
     if (perf === 'zero' || perf === 'low') {
-        const retryBtn    = document.createElement('button');
-        retryBtn.id       = 'btn-retry';
+        const retryBtn       = document.createElement('button');
+        retryBtn.id          = 'btn-retry';
         retryBtn.textContent = '🔄 Riprova il quiz';
         retryBtn.className   = `w-full bg-amber-50 border border-amber-200 text-amber-700
                                 font-semibold py-3 rounded-2xl hover:bg-amber-100 transition-colors mt-0`;
-        retryBtn.onclick     = () => {
-            quizState = { current: 0, score: 0, answered: false };
+        // FIX: usa startQuiz() per ri-generare shuffledQuiz prima di riprendere
+        retryBtn.onclick = () => {
             hide('complete-content');
-            show('quiz-content');
-            renderQuestion();
+            startQuiz();
         };
         const btnContainer = document.querySelector('#complete-content .flex.flex-col.gap-3');
         if (btnContainer) btnContainer.appendChild(retryBtn);
@@ -417,12 +452,4 @@ function completeLesson() {
 
 function nextLesson() {
     openLesson(currentTrackId, currentLessonIdx + 1);
-}
-
-function showTracks() {
-    hide('screen-lessons');
-    hide('screen-lesson');
-    show('screen-tracks');
-    renderTracks();
-    setURL('');
 }
